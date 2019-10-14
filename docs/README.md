@@ -1,10 +1,10 @@
 ---
 home: true
-heroImage: /img/hero.png
-heroText: 宗强的博客
+heroImage: /img/shop.png
+heroText: zongqiang-bookmarks
 tagline: 一个小伙子的杂货铺
 actionText: 进铺子看看 →
-actionLink: /FAQ/
+actionLink: /article/
 features:
 - title: Wiki - 求索
   details: 基于书签对知识点进行 整理，吸收，吐纳，归档。吾将上下而求索...
