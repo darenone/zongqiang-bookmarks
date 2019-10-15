@@ -54,13 +54,12 @@ module.exports = {
             '/article/': [
                 ['/article/','简介'],
                 // ['/FAQ/Pool/SkillStack','技术栈'],
-                ['/article/vuePress/article1','如何利用vuePress搭建自己的博客'],
+                ['/article/vuePress/article1','利用vuePress搭建博客'],
                 {
                     title: 'vue相关', // 菜单名
                     children: [ // 子菜单
-                        ['/article/vue/vuex','vuex在项目中的使用总结'], 
-                        ['/article/vue/Digesting','消化中'],
-                        ['/article/vue/DigestWill','待消化']
+                        ['/article/vue/vuex','vuex在项目中的使用'],
+                        ['/article/vue/mock','vue中利用mock模拟后端接口'],
                     ]
                 },
                 {
