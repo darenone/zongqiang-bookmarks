@@ -11,7 +11,7 @@
 ```cmd
 npm install -g vuepress // 全局安装vuepress
 npm init -y // 初始化项目
-mkdir docs // 在vuePress项目里新建docs文件夹，它将是项目的根目录，来放置markdown文件夹和.vuepress文件夹，这也是vuepress去解析的文件夹
+vuePress> mkdir docs // 在vuePress项目里新建docs文件夹，它将是项目的根目录，来放置markdown文件夹和.vuepress文件夹，这也是vuepress去解析的文件夹
 ```
 除了生成的docs文件夹，项目里还多了一个package.json，我们需要做相应的设置：
 ```json
@@ -30,3 +30,12 @@ mkdir docs // 在vuePress项目里新建docs文件夹，它将是项目的根目
 }
 ```
 备注<sup>Tip</sup>：关于生成的静态文件存放目录，可以通过docs/.vuepress/config.js中的dest字段来修改默认存放目录，但是一般不做修改，不然我们后面打包发布到GitHub Pages时会有麻烦，这里我们不动就行了
+
+```cmd
+vuePress> cd docs
+vuePress\docs> mkdir .vuepress // 在docs目录下创建.vuepress目录，主要用来存放一些静态资源，主题配置，自定义组件等
+vuePress\docs> cd .vuepress
+vuePress\docs\.vuepress> cd > config.js // 在.vuepress目录里创建config.js文件，它是vuepress的配置文件，它导出一个JavaScript对象
+vuePress\docs\.vuepress> mkdir public // 在 .vuepress目录下创建public目录，它主要用来存放静态资源文件，例如favicon和pwa的图标
+vuePress\docs> cd > README.md // 在docs目录下，新建README.md 可理解为首页页面
+```
