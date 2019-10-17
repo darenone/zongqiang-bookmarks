@@ -29,10 +29,11 @@ module.exports = {
                 items: [
                     // link：指向链接也可以是外网链接
                     { text: 'gitHub', link: 'https://github.com/darenone'},
-                    { text: 'Segmentfault', link: 'https://segmentfault.com/u/niuzailushang_587d8385a71e9' },
-                    { text: '掘金', link: 'https://juejin.im/user/57ca3f4c128fe1006969be2c' },
+                    { text: 'Segmentfault', link: 'https://segmentfault.com/u/niuzailushang_587d8385a71e9'},
+                    { text: '掘金', link: 'https://juejin.im/user/57ca3f4c128fe1006969be2c'},
                     { text: '知乎专栏', link: 'https://zhuanlan.zhihu.com/zongqiang'},
-                    { text: '简书', link: 'https://www.jianshu.com/u/944f222b2ad4'}
+                    { text: '简书', link: 'https://www.jianshu.com/u/944f222b2ad4'},
+                    { text: 'markDown语法', link: 'https://www.mdeditor.com/'},
                 ]
             },
             // {
