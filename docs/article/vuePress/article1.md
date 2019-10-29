@@ -38,7 +38,7 @@ vuePress\docs> cd .vuepress
 vuePress\docs\.vuepress> cd > config.js // 在.vuepress目录里创建config.js文件，它是vuepress的配置文件，它导出一个JavaScript对象
 vuePress\docs\.vuepress> mkdir public // 在 .vuepress目录下创建public目录，它主要用来存放静态资源文件，例如favicon和pwa的图标
 vuePress\docs> cd > README.md // 在docs目录下，新建README.md 可理解为首页页面
-vuePress\docs\.vuepress> mkdir dist // 在 .vuepress目录下创建public目录,编译好的静态文件放在这里
+vuePress\docs\.vuepress> mkdir dist // 在 .vuepress目录下创建dist目录,编译好的静态文件放在这里
 ```
 ### 项目配置
 
