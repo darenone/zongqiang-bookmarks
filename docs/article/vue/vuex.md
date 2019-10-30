@@ -1,5 +1,5 @@
 ## vuex在项目中的使用详解
-vuex是vue的同一状态管理模式,类似于React的redux，可以将它想象成为一个“前端数据库”，这些数据可以在项目所有的组件中获取，修改，并且在某一页面，对数据的修改可以得到全局的响应。
+vuex是vue的同一状态管理模式,类似于React的redux，可以将它想象成为一个“前端数据库”，这些数据可以在项目中所有的组件中获取，修改，并且在某一组件中对数据的修改可以得到全局的响应。
 
 vuex分为五个部分：
 1. state 单一状态树
@@ -52,7 +52,7 @@ new Vue({
     template: '<App/>'
 })
 ```
-然后回到`store/index.js`文件，写入如下代码：
+回到`store/index.js`文件，写入如下代码：
 ```js
 import Vue from 'vue';
 import Vuex from 'vuex';
@@ -197,7 +197,7 @@ export default {
 }
 </script>
 ```
-小项目可以只需要一个`index.js`文件夹就可以，但是如果项目比较负载可以采用下面的目录
+小项目可以只需要一个`index.js`文件就可以，但是如果项目比较复杂可以采用下面的目录
 ![store目录](./img/002.png "store目录")<br>
 `state.js`
 ```js
@@ -410,4 +410,133 @@ export default {
 }
 </script>
 ```
-最后讲一下action的异步操作：
+最后讲一下action里的异步操作，在以后的开发中可以灵活运用，比如登录或者全局的通知的异步操作可以放到action里面：
+```js
+export default {
+    setScoreAsync(context, score) {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                context.commit('setScore', score);
+                resolve()
+            }, 1000)
+        })
+    },
+    setScoreAjax(context, score) {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                context.commit('setScore', score);
+                resolve()
+            }, 1000)
+        })
+    },
+}
+```
+组件里调用异步示例：
+```js
+<script>
+import {mapState, mapGetters, mapMutations, mapActions} from 'vuex';
+export default {
+    data() {
+        return {
+        }
+    },
+    methods: {
+        ...mapActions(['setScoreAsync']),
+        changeScoreAsync(score) {
+            this.setScoreAsync(score).then(() => {
+                console.log('异步执行')
+            })
+        }
+    }
+}
+</script>
+```
+另外我们再来看一下getters，mutations，actions的另外一种组织形式：<br>
+`方式1`
+```js
+export default {
+    changeShow(context, bool) {
+        context.commit('SET_SHOW', bool);
+    },
+    changeName(context, name) {
+        context.commit('setName', name);
+    },
+    changeSex(context, sex) {
+        context.commit('setSex', sex);
+    },
+    changeScore(context, score) {
+        context.commit('setScore', score);
+    },
+}
+```
+`store`文件下的`index.js`调用如下：
+```js
+import Vue from 'vue';
+import Vuex from 'vuex';
+import state from './state';
+import mutations from './mutations';
+import getters from './getters';
+import actions from './actions';
+Vue.use(Vuex);
+
+const store = new Vuex.Store({
+    state,
+    mutations,
+    getters,
+    actions,
+});
+
+export default store;
+```
+`方式2`
+```js
+let changeShow = (context, bool) => {
+    context.commit('SET_SHOW', bool);
+}
+let changeName = (context, name) => {
+    context.commit('setName', name);
+}
+let changeSex = (context, sex) => {
+    context.commit('setSex', sex);
+}
+let changeScore = (context, score) => {
+    context.commit('setScore', score);
+}
+let setScoreAsync = (context, score) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            context.commit('setScore', score);
+            resolve()
+        }, 1000)
+    })
+}
+let setScoreAjax = (context, score) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            context.commit('setScore', score);
+            resolve()
+        }, 1000)
+    })
+}
+export {changeShow, changeName, changeSex, changeScore, setScoreAsync, setScoreAjax}
+```
+调用方式如下
+`store`文件下的`index.js`调用如下：
+```js
+import Vue from 'vue';
+import Vuex from 'vuex';
+import state from './state';
+import mutations from './mutations';
+import getters from './getters';
+import * as actions from './actions';
+Vue.use(Vuex);
+
+const store = new Vuex.Store({
+    state,
+    mutations,
+    getters,
+    actions,
+});
+
+export default store;
+```
