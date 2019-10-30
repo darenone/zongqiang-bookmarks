@@ -1,4 +1,3 @@
-## 如何利用vuePress搭建自己的博客
 
 我现在自己的博客就是根据vuePress搭建起来的,vuePress它是什么呢？通俗说就是静态网页生成器，它可以将我们写的markdown文件转化成HTML页面，既然名字叫vuePress就证明它是以vue驱动的，而且生成的静态网页就是我们做vue项目打包后的静态网页，都是由vue，vueRouter，webpack驱动的单页应用，本文将一步步带你从无到有创建你的个人博客，并且发布到GitHub Pages上面。
 

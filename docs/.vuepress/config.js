@@ -61,6 +61,7 @@ module.exports = {
                     children: [ // 子菜单
                         ['/article/vue/vuex','vuex在项目中的使用'],
                         ['/article/vue/mock','vue中利用mock模拟后端接口'],
+                        ['/article/vue/styles','在vue项目中如何组织样式styles文件'],
                     ]
                 },
                 {
