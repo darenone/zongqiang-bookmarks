@@ -4,6 +4,12 @@
 ```js
 import '@/styles/index.less' // global css
 ```
+另外也可以在`App.vue`里面引用
+```js
+<style lang="less">
+  @import "styles/index.less";
+</style>
+```
 如果控制台没有报错，最好，如果提示如下内容：
 >*!!vue-style-loader!css-loader?{“sourceMap”:true}!../../../../vue-loader/lib/style-compiler/index?{“vue”:true,”id”:”data-v-570115ee”,”scoped”:false,”hasInlineConfig”:false}!../../../../vux-loader/src/after-less-loader.js!less-loader?{“sourceMap”:true}!../../../../vux-loader/src/style-loader.js!../../../../vue-loader/lib/selector?type=styles&index=0!./index.vue in ./node_modules/vux/src/components/alert/index.vue
 

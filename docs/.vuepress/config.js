@@ -21,6 +21,7 @@ module.exports = {
             // 以 '/' 结尾的默认指向该路径下README.md文件
             {text: '主页', link: '/'}, // 导航条
             {text: '我的文章', link: '/article/'},
+            {text: '网址大全', link: '/website/'},
             // {text: '链接2', link: '/Store/'},
             // {text: '链接3', link: '/Thought/'},
             // 多项，下拉形式
@@ -71,6 +72,9 @@ module.exports = {
                         ['/article/Console/A002','#A002_插件清单']
                     ]
                 },
+            ],
+            '/website/': [
+                ['/website/','网站大全'],
             ],
              // 打开Thought主页链接时生成下面这个菜单
             // '/Thought/':[
