@@ -451,6 +451,7 @@ export default {
 </script>
 ```
 另外我们再来看一下getters，mutations，actions的另外一种组织形式：<br>
+以`actions.js`为例：<br>
 `方式1`
 ```js
 export default {
@@ -475,7 +476,7 @@ import Vuex from 'vuex';
 import state from './state';
 import mutations from './mutations';
 import getters from './getters';
-import actions from './actions';
+import actions from './actions'; // 直接引入
 Vue.use(Vuex);
 
 const store = new Vuex.Store({
@@ -527,7 +528,7 @@ import Vuex from 'vuex';
 import state from './state';
 import mutations from './mutations';
 import getters from './getters';
-import * as actions from './actions';
+import * as actions from './actions'; // 间接引用
 Vue.use(Vuex);
 
 const store = new Vuex.Store({
