@@ -13,3 +13,9 @@
 
 ## 教程
 - [重学前端-极客时间](https://time.geekbang.org/column/article/77804 "重学前端-极客时间") 重学前端-极客时间
+## 资源分享
+- [office 2016安装与破解](https://pan.baidu.com/s/16lNWkvPglt2WF7gGEmxxsw "资源分享") 提取码：3mpa
+- [photoShopCC安装与破解](https://pan.baidu.com/s/10_04Rn14cC15rCvqI0paww "资源分享") 提取码：taxb
+- [postman安装与说明](https://pan.baidu.com/s/15mXc9zqOhdaXgnXgUh_vfQ "资源分享") 提取码：csee
+- [sketchup安装与说明](https://pan.baidu.com/s/1LiCeX5_EpxIFcfNTNhQK8A "资源分享") 提取码：u6bz
+- [xmind8安装与说明](https://pan.baidu.com/s/16AIR4cYuESecqTP86yIVrg "资源分享") 提取码：ha62

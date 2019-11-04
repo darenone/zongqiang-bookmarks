@@ -1,4 +1,4 @@
-在项目开发中，对于样式文件的合理安排，一直没有清晰的思路，完全按照个人喜好来组织项目，这在后期将难以维护，所以为了照顾到其他同事的维护体验，有必要对这一块儿做深入的整理并加以规范，继而形成标准化，让它成为不仅是vue项目开发的标准，也是我在开发其它项目时参照的标准。
+在项目开发中，对于样式文件的合理安排，一直没有清晰的思路，完全按照个人喜好来组织项目，这在后期将难以维护，所以为了照顾到其他同事的维护体验，有必要对这一块儿做深入的整理并加以规范，继而形成标准化，让它成为不仅是vue项目开发的标准，也是我在开发其它项目时参照的标准。接下来，就简单介绍下我是如何管理vue项目中style样式文件的：
 
 在`src`文件夹下新建`styles`文件夹，并在此文件夹下新建`index.less`文件,并且在`main.js`里面引用
 ```js
@@ -16,14 +16,14 @@ import iView from 'iview';
 import 'iview/dist/styles/iview.css';
 Vue.use(iView);
 ```
-如果不想在`mian.js`里面写入样式，可以在`styles`文件夹里，任何一个less问价写入如下代码，这里我们放在`theme`的`index.less`文件里：
+如果不想在`mian.js`里面写入样式，可以在`styles`文件夹里，任何一个less文件写入如下代码，这里我们放在`theme`的`index.less`文件里：
 ```js
 @import '~iview/src/styles/index.less';
 ```
-如果控制台没有报错，最好，如果提示如下内容：
+控制台没有报错最好，如果提示如下内容：
 >*!!vue-style-loader!css-loader?{“sourceMap”:true}!../../../../vue-loader/lib/style-compiler/index?{“vue”:true,”id”:”data-v-570115ee”,”scoped”:false,”hasInlineConfig”:false}!../../../../vux-loader/src/after-less-loader.js!less-loader?{“sourceMap”:true}!../../../../vux-loader/src/style-loader.js!../../../../vue-loader/lib/selector?type=styles&index=0!./index.vue in ./node_modules/vux/src/components/alert/index.vue
 
-一般是缺少相关依赖导致的，提示里有`vue-style-loader!css-loader`，说明是css解析除了问题，这个时候就要看你import的什么样式文件<br>
+一般是缺少相关依赖导致的，提示里有`vue-style-loader!css-loader`，说明是css解析出了问题，这个时候就要看你import的什么样式文件<br>
 如果是css,需要执行如下操作：
 ```
 npm/cnpm install stylus-loader css-loader style-loader --save-dev
@@ -69,7 +69,7 @@ require('!style-loader!css-loader!less-loader!./styles/index.less');
     "xlsx": "^0.15.1"
   },
 ```
-<span style="color:#42c4c6;">遇到的问题</span><sup>Tip</sup>：我把所有的样式文件在index.less里面引入，然后再在main.js里面引入，但是报less变量找不到，我们可以这样解决，某个less文件夹引入了哪个less文件里的变量，就在这个less文件里重新引入这个less文件
+<span style="color:#42c4c6;">遇到的问题</span><sup>Tip</sup>：我把所有的样式文件都在index.less里面引入，然后再在main.js里面引入`index.less`，但是报less变量找不到，我们可以这样解决，某个less文件夹引入了哪个less文件里的变量，就在这个less文件里重新引入这个less文件，例如：
 ```less
 @import '../theme/index.less';
 // 外框样式
@@ -91,3 +91,4 @@ require('!style-loader!css-loader!less-loader!./styles/index.less');
     *zoom: 1;
 }
 ```
+这样子写就不会再报错
