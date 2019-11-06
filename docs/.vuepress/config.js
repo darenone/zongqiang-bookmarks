@@ -60,9 +60,11 @@ module.exports = {
                 {
                     title: 'vue相关', // 菜单名
                     children: [ // 子菜单
+                        ['/article/vue/menu','vue+iview配置导航栏'],
                         ['/article/vue/vuex','vuex在项目中的使用'],
                         ['/article/vue/mock','vue中利用mock模拟后端接口'],
                         ['/article/vue/styles','在vue项目中如何组织样式styles文件'],
+                        ['/article/vue/router','vue项目中router设置'],
                         ['/article/vue/method','vue语法介绍'],
                     ]
                 },

@@ -19,3 +19,5 @@
 - [postman安装与说明](https://pan.baidu.com/s/15mXc9zqOhdaXgnXgUh_vfQ "资源分享") 提取码：csee
 - [sketchup安装与说明](https://pan.baidu.com/s/1LiCeX5_EpxIFcfNTNhQK8A "资源分享") 提取码：u6bz
 - [xmind8安装与说明](https://pan.baidu.com/s/16AIR4cYuESecqTP86yIVrg "资源分享") 提取码：ha62
+- [Axure8 安装包与注册码](https://pan.baidu.com/s/12Fc15YTaoxsV29Yr9Tbr-w "资源分享") 提取码：9qr3
+- [冲浪必备（外面的世界）](https://pan.baidu.com/s/1H5yWNT-ypSoxUmjBfRj4YQ "资源分享") 提取码：j9re

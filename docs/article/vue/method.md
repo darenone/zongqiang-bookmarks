@@ -146,3 +146,27 @@ export default {
     mixins: [ tableFn ]
 }
 ```
+### 路由设置
+```js
+export const asyncRoutes = [
+  {
+    path: '/taskSet',
+    component: Layout,
+    redirect: '/taskSet/list',
+    name: 'taskSet',
+    meta: {
+      title: '任务管理设置',
+      icon: 'example'
+    },
+    children: [
+      {
+        path: 'create',
+        // component: () => import('@/views/taskSet/create.vue'),
+        component: resolve => require(['@/views/taskSet/create.vue'], resolve),
+        name: 'createTask',
+        meta: { title: '创建任务', icon: 'edit' }
+      },
+    ]
+  }
+]
+```
