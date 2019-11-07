@@ -10,6 +10,7 @@ import '@/styles/index.less' // global css
   @import "styles/index.less";
 </style>
 ```
+```
 题外话<sup>Tip</sup>：如果项目引用了`iview`或者`elementUI`，在`main.js`里面，需要引入：
 ```js
 import iView from 'iview';

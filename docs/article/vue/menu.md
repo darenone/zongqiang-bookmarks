@@ -7,5 +7,5 @@
 - 安装node.js 安装完毕cmd输入`node -v`和`npm -v`出现版本号证明安装成功
 - 安装cnpm npm install -g cnpm --registry=https://registry.npm.taobao.org
 - 安装vue-cli脚手架  cnpm install vue-cli -g 安装完毕，输入vue -V 出现版本号证明安装成功
-
+上述步骤操作完毕，我们来down
 
