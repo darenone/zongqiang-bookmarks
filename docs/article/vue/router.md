@@ -32,9 +32,60 @@ export default router;
     ]
 },
 ```
-
-#### 资源
-- router.beforeEach的设置，光猫项目直接写在router/index.js里面，vue-element-admin专门写在permission.js然后再在main.js里面引入，login是直接写在main.js里面
-- [iview导航栏展开收缩的写法](https://blog.csdn.net/qq_41636140/article/details/90757338 "iview导航栏展开收缩的写法")<br>
-- router constantRoutes asyncRoutes
-- router模块写法
+```js
+  // {
+  //   path: '/home',
+  //   name: '首页',
+  //   meta:{
+  //     requiresAuth:true
+  //   },
+  //   component: resolve => require(['@/views/frame.vue'], resolve),
+  //   children: [
+  //     {
+  //       path:'/home',
+  //       name:'首页',
+  //       component: resolve => require(['@/views/home.vue'], resolve),
+  //     },
+  //     {
+  //       path: '/system/org',
+  //       name:'组织机构',
+  //       meta:{
+  //         requiresAuth:true
+  //       },
+  //       component: resolve => require(['@/views/system/org/organization.vue'], resolve),
+  //     },
+  //     {
+  //       path: '/system/personal',
+  //       name:'人员管理',
+  //       meta:{
+  //         requiresAuth:true
+  //       },
+  //       component: resolve => require(['@/views/system/personal/personal.vue'], resolve),
+  //     },
+  //     {
+  //       path: '/system/fun',
+  //       name:'功能管理',
+  //       meta:{
+  //         requiresAuth:true
+  //       },
+  //       component: resolve => require(['@/views/system/fun/fun.vue'], resolve),
+  //     },
+  //     {
+  //       path: '/system/type',
+  //       name:'类型管理',
+  //       meta:{
+  //         requiresAuth:true
+  //       },
+  //       component: resolve => require(['@/views/system/type/type.vue'], resolve),
+  //     },
+  //     {
+  //       path: '/system/log',
+  //       name:'日志管理',
+  //       meta:{
+  //         requiresAuth:true
+  //       },
+  //       component: resolve => require(['@/views/system/logmannagement/logmanagement.vue'], resolve),
+  //     },
+  //   ]
+  // },
+```

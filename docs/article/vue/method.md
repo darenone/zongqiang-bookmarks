@@ -174,3 +174,15 @@ export const asyncRoutes = [
 ### 链接
 - [弹性盒布局兼容写法](https://www.cnblogs.com/yangjie-space/p/4856109.html, '弹性盒布局兼容写法')
 - vue递归获取菜单
+- router.beforeEach的设置，光猫项目直接写在router/index.js里面，vue-element-admin专门写在permission.js然后再在main.js里面引入，login是直接写在main.js里面
+- [iview导航栏展开收缩的写法](https://blog.csdn.net/qq_41636140/article/details/90757338 "iview导航栏展开收缩的写法")<br>
+- router constantRoutes asyncRoutes
+- router模块写法z
+- 打包部署需要注意`config/index.js`这是设置打包以后生成的静态文件文件名
+```js
+    // Template for index.html
+    index: path.resolve(__dirname, '../netQuality/index.html'),
+
+    // Paths
+    assetsRoot: path.resolve(__dirname, '../netQuality'),
+```
