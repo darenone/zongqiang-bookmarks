@@ -171,6 +171,12 @@ export const asyncRoutes = [
 ]
 
 ```
+```js
+// arr.filter(item => !(/^test|^System/i.test(item.ServiceID)))
+this.ip_list = this.ip_list.filter(item => {
+    return !(eval('/^'+ip+'/i').test(item.ipAddress));
+});
+```
 ### 链接
 - [弹性盒布局兼容写法](https://www.cnblogs.com/yangjie-space/p/4856109.html, '弹性盒布局兼容写法')
 - vue递归获取菜单
@@ -186,3 +192,28 @@ export const asyncRoutes = [
     // Paths
     assetsRoot: path.resolve(__dirname, '../netQuality'),
 ```
+- 递归实现面包屑
+```js
+getBreadcrumb() {
+  var list = this.$route.fullPath.split('/')//list[0]:是空格
+  this.breadListLast = []
+  function fn(obj, arr, index,self) {
+    if (obj.hasOwnProperty('children')&&obj['children'].length>0) {
+      for (let one of obj.children) {
+        if (one.name != 'index' && one.name == arr[index]) {
+          self.breadListLast.push({'title': one.meta.title, 'path': list.slice(0,index+1).join('/')})
+          return one.hasOwnProperty('children')&&one['children'].length>0?fn(one,arr,index+1,self):false
+        }
+      }
+    }
+  }
+  for(let one of this.$router.options.routes){
+    if(one.hasOwnProperty('name')&&one.name == list[1]){
+      this.breadListLast.push({'title': one.meta.title, 'path': one.path})
+      fn(one,list,2,this)
+    }
+  }
+  // console.log(this.breadListLast)
+}
+```
+- [vue中正确封装echarts](https://forum.vuejs.org/t/vue-echarts/23214 "vue中正确封装echarts")
