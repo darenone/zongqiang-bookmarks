@@ -217,3 +217,4 @@ getBreadcrumb() {
 }
 ```
 - [vue中正确封装echarts](https://forum.vuejs.org/t/vue-echarts/23214 "vue中正确封装echarts")
+- [echarts封装](https://segmentfault.com/a/1190000021039343?utm_source=tag-newest "echarts封装")

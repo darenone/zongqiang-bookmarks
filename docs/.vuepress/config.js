@@ -66,6 +66,7 @@ module.exports = {
                         ['/article/vue/styles','在vue项目中如何组织样式styles文件'],
                         ['/article/vue/router','vue项目中router设置'],
                         ['/article/vue/method','vue语法介绍'],
+                        ['/article/vue/function','常用函数整理']
                     ]
                 },
                 {
