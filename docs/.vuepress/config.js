@@ -12,8 +12,9 @@ module.exports = {
         lineNumbers: true // 代码块显示行号
     },
     themeConfig: {
-        sidebarDepth: 4, // 将同时提取markdown中h2 和 h3 标题，显示在侧边栏上
+        sidebarDepth: 2, // 将同时提取markdown中h2 和 h3 标题，显示在侧边栏上
         lastUpdated: '上次更新' ,// 文档更新时间：每个文件git最后提交的时间,
+        sidebar: 'auto',
         // 顶部导航栏
         nav: [
             // 单项 text：显示文字，link：指向链接
@@ -24,7 +25,14 @@ module.exports = {
             {text: '网址大全', link: '/website/'},
             // {text: '链接2', link: '/Store/'},
             // {text: '链接3', link: '/Thought/'},
+            {text: '常用函数', link: '/function/'},
             // 多项，下拉形式
+            {
+                text: 'vue系列',
+                items: [
+                    { text: 'vue开发实战', link: '/vue-practice/practice-1'},
+                ]
+            },
             {
                 text: '友情链接',
                 items: [
@@ -81,6 +89,20 @@ module.exports = {
             '/website/': [
                 ['/website/','网站大全'],
             ],
+            '/function/': [
+                ['/function/','常用函数'],
+            ],
+            '/vue-practice/': [
+                {
+                    title: 'vue开发实战',
+                    children: [
+                        ['/vue-practice/practice-1','使用vue-cli3.0创建项目'],
+                        ['/vue-practice/practice-2','项目路由配置'],
+                        // ['/article/vue/mock','vue中利用mock模拟后端接口'],
+                    ],
+                    collapsable: false
+                }
+            ]
              // 打开Thought主页链接时生成下面这个菜单
             // '/Thought/':[
             //     ['/Thought/','随笔首页'],
