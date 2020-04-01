@@ -1,3 +1,9 @@
+### 简介
+这里存放了项目中常用的一些函数，随着做的项目增多我会继续持续更新此页面...<br>
+项目中对数组和对象的操作，我们可以借助`Lodash`或则`underScore`提供的工具函数来实现，这样会大大提高程序的运行效率，所以我建议这样做...<br>
+- [Lodash](https://www.lodashjs.com/ "Lodash")
+- [underScore](https://underscorejs.net/ "underScore")
+
 ## Date
 ### parseTime( )
 > parseTime(time, cFormat)
@@ -287,7 +293,7 @@ function getQueryObject(url) {
       return rs
     })
     return obj
-  }
+}
 ```
 #### 功能
 截取url中携带的参数，并转成json格式
@@ -324,7 +330,7 @@ function param2Obj(url) {
       return rs
     })
     return obj
-  }
+}
 ```
 #### 功能
 截取url中携带的参数,并转成json格式
@@ -340,4 +346,45 @@ function param2Obj(url) {
 let url2 = 'http://localhost:8082/#/taskQuery/mapOverview?task_id=10000036&optType=U,R,O,T'
 let param2 = param2Obj(url2)
 // => { task_id: "10000036", optType: "U,R,O,T" }
+```
+### objectMerge( )
+> objectMerge(target, source)
+```js
+/**
+ * Merges two objects, giving the last one precedence
+ * @param {Object} target
+ * @param {(Object)} source
+ * @returns {Object}
+ */
+function objectMerge(target, source) {
+    url = url == null ? window.location.href : url
+    const search = url.substring(url.lastIndexOf('?') + 1)
+    const obj = {}
+    const reg = /([^?&=]+)=([^?&=]*)/g
+    search.replace(reg, (rs, $1, $2) => {
+      const name = decodeURIComponent($1)
+      let val = decodeURIComponent($2)
+      val = String(val)
+      obj[name] = val
+      return rs
+    })
+    return obj
+}
+```
+#### 功能
+将两个object合并成一个新的object
+
+#### 参数
+<i style="color: #3492ff;font-weight: 700;">target:</i> object<br>
+<i style="color: #3492ff;font-weight: 700;">source:</i> 需要合并的object<br>
+
+#### 返回
+<i style="color: #3492ff;font-weight: 700;">(Object):</i> 转化后的object
+
+#### 例子
+```js
+let obj1 = { name: '宗强', sex: '男' }
+let obj2 = { age: '27'}
+let obj3 = objectMerge(obj1, obj2)
+// => { age: "27", name: "宗强", sex: "男" }
 ```
