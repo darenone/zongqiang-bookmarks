@@ -34,6 +34,12 @@ module.exports = {
                 ]
             },
             {
+                text: '小程序系列',
+                items: [
+                    { text: '微信小程序开发实战', link: '/miniprogram/practice-1'},
+                ]
+            },
+            {
                 text: '友情链接',
                 items: [
                     // link：指向链接也可以是外网链接
@@ -102,7 +108,16 @@ module.exports = {
                     ],
                     collapsable: false
                 }
-            ]
+            ],
+            '/miniprogram/': [
+                {
+                    title: '微信小程序开发实战',
+                    children: [
+                        ['/miniprogram/practice-1','小程序项目结构'],
+                    ],
+                    collapsable: false
+                }
+            ],
              // 打开Thought主页链接时生成下面这个菜单
             // '/Thought/':[
             //     ['/Thought/','随笔首页'],
