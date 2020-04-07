@@ -1,5 +1,5 @@
 ### 简介
-这里存放了项目中常用的一些函数，随着做的项目增多我会继续持续更新此页面...<br>
+这里存放了项目中常用的一些函数，随着做的项目增多我会持续更新此页面...<br>
 项目中对数组和对象的操作，我们可以借助`Lodash`或则`underScore`提供的工具函数来实现，这样会大大提高程序的运行效率，所以我建议这样做...<br>
 - [Lodash](https://www.lodashjs.com/ "Lodash")
 - [underScore](https://underscorejs.net/ "underScore")
