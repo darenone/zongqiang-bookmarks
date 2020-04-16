@@ -40,6 +40,12 @@ module.exports = {
                 ]
             },
             {
+                text: 'nodeJs系列',
+                items: [
+                    { text: 'nodeJs基础实战', link: '/nodeJs/practice-1'},
+                ]
+            },
+            {
                 text: '友情链接',
                 items: [
                     // link：指向链接也可以是外网链接
@@ -114,6 +120,15 @@ module.exports = {
                     title: '微信小程序开发实战',
                     children: [
                         ['/miniprogram/practice-1','小程序项目结构'],
+                    ],
+                    collapsable: false
+                }
+            ],
+            '/nodeJs/': [
+                {
+                    title: 'nodeJs基础实战',
+                    children: [
+                        ['/nodeJs/practice-1','nodeJs入门'],
                     ],
                     collapsable: false
                 }
