@@ -54,7 +54,7 @@ module.exports = {
                     { text: '掘金', link: 'https://juejin.im/user/57ca3f4c128fe1006969be2c'},
                     { text: '知乎专栏', link: 'https://zhuanlan.zhihu.com/zongqiang'},
                     { text: '简书', link: 'https://www.jianshu.com/u/944f222b2ad4'},
-                    { text: 'markDown语法', link: 'https://www.mdeditor.com/'},
+                    { text: 'markDown语法', link: 'https://github.com/younghz/Markdown'},
                 ]
             },
             // {
@@ -129,6 +129,7 @@ module.exports = {
                     title: 'nodeJs基础实战',
                     children: [
                         ['/nodeJs/practice-1','nodeJs入门'],
+                        ['/nodeJs/practice-2','创建一个nodeJs引用及调试'],
                     ],
                     collapsable: false
                 }
