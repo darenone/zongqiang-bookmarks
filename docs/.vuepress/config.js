@@ -130,6 +130,7 @@ module.exports = {
                     children: [
                         ['/nodeJs/practice-1','nodeJs入门'],
                         ['/nodeJs/practice-2','创建一个nodeJs引用及调试'],
+                        ['/nodeJs/practice-3','nodeJs核心模块'],
                     ],
                     collapsable: false
                 }
