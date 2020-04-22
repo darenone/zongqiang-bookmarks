@@ -11,7 +11,7 @@ arr[2] = 4
 arr.length // 3
 ```
 以上数组的大小是可以改变的，buffer创建后这个数组长度是不可以改变的
-<h4>创建buffer的几种方式</h4>
+<h4>创建buffer的3种方式</h4>
 
 第一种创建方式：[Buffer.alloc(size[, fill[, encoding]])](http://nodejs.cn/api/buffer.html#buffer_class_method_buffer_alloc_size_fill_encoding)
 ```js
@@ -25,7 +25,7 @@ Buffer.alloc(size[, fill[, encoding]]) // 创建buffer类
 eg:
 ```js
 const buf1 = Buffer.alloc(10)
-buf1[10] = 1 // 不可以这样，大小没法修改
+buf1[10] = 1 // 虽然buffer实例也是数组，但是其大小不能修改
 
 const buf2 = Buffer.alloc(10, 2)
 
@@ -64,13 +64,13 @@ Buffer.allocUnsafe(size)
 eg:
 ```js
 const buf1 = Buffer.alloc(10)
-buf1[10] = 1 // 不可以这样，大小没法修改
+buf1[10] = 1 // 虽然buffer实例也是数组，但是其大小不能修改
 const buf8 = Buffer.allocUnsafe(10)
 
 console.log(buf1)
 // <Buffer 00 00 00 00 00 00 00 00 00 00>
 console.log(buf8)
-// <Buffer 65 72 66 65 42 75 66 66 70 05> 来至于创建过得buffer实例的旧数据
+// <Buffer 65 72 66 65 42 75 66 66 70 05> 来来自创建过的buffer实例的旧数据
 ```
 alloc默认预填充buffer的值是0，allocUnsafe这种方式印证了文档里说的，新创建的buffer的内容是未知的，可能创建好的buffer包含敏感数据，文档里是这样说的：
 ```js
