@@ -54,7 +54,7 @@ console.log(buf6)
 console.log(buf7)
 // <Buffer ce 89 e0 ce 89 e0 ce 89 e0 ce>
 ```
-[在线进制转换](https://tool.oschina.net/hexconvert/) 官方文档了说了Buffer类的实例类似于从 0 到 255 之间的整数数组，对于大于255和小于0的值，buffer会强行进行转换<br>
+[在线进制转换工具](https://tool.oschina.net/hexconvert/) 官方文档了说了Buffer类的实例类似于从 0 到 255 之间的整数数组，对于大于255和小于0的值，buffer会强行进行转换<br>
 [Buffer 与字符编码](http://nodejs.cn/api/buffer.html#buffer_buffers_and_character_encodings)
 
 第二种创建方式：[Buffer.allocUnsafe(size)](http://nodejs.cn/api/buffer.html#buffer_class_method_buffer_allocunsafeslow_size)<br>
@@ -107,12 +107,12 @@ eg:
 ```js
 let byteLength1 = Buffer.byteLength('zongq')
 
-let byteLength2 = Buffer.byteLength('中文')
+let byteLength2 = Buffer.byteLength('中文') // 一个中文字符3个字节
 
 console.log(byteLength1)
 // 5
 console.log(byteLength2)
-// 6
+// 6 
 ```
 - [Buffer.isBuffer(obj)](http://nodejs.cn/api/buffer.html#buffer_class_method_buffer_isbuffer_obj) 判断是否是buffer实例<br>
 eg:
@@ -152,15 +152,76 @@ console.log(concat2)
 console.log(concat2.length)
 // 14
 ```
-- [buf.write(string[, offset[, length]][, encoding])](http://nodejs.cn/api/buffer.html#buffer_buf_write_string_offset_length_encoding) 将字符串写入buffer，返回已经写入的字节数<br>
+- [buf.write(string[, offset[, length]][, encoding])](http://nodejs.cn/api/buffer.html#buffer_buf_write_string_offset_length_encoding) 将字符串写入buffer，返回值是已经写入的字节数<br>
 eg:
 ```js
 const buf1 = Buffer.allocUnsafe(20) // 利用这种方式创建的buffer实例值是不确定的，利用write方法可以修复这种问题
 
-const buf_write1 = buf1.write('buffer')
 
 console.log(buf1)
-// <Buffer 62 75 66 66 65 72 00 00 00 00 00 00 00 00 00 00 a0 a6 63 41>
+// <Buffer 00 00 00 00 00 00 00 00 00 02 0c 51 61 b2 33 6a 53 08 00 00>
+
+const buf_write1 = buf1.write('zongqiang')
+
 console.log(buf_write1)
-// 6
+// 9 返回值是写入字节的长度
+console.log(Buffer.byteLength('zongqiang'))
+// 9
+console.log(buf1) // buffer重写之后的值
+// <Buffer 7a 6f 6e 67 71 69 61 6e 67 02 0c 51 61 b2 33 6a 53 08 00 00>
+
+const buf_write2 = buf1.write('zongqiang', 5, 3)
+
+console.log(buf_write2)
+// 3
+console.log(buf1)
+// <Buffer 7a 6f 6e 67 71 7a 6f 6e 67 00 00 00 00 00 00 00 96 29 0f 0b>
 ```
+经过write重写，buffer的默认值发生了改变,`buf1.write('zongqiang', 5, 3, encoding)`offset(5)指定开始写入的索引，从0开始，length(3)指定要写入的字节数,encoding要写入的字符串的字符编码<br>
+没有指定offset和length: <Buffer 7a 6f 6e 67 71 <strong>69 61 6e</strong> 67 02 0c 51 61 b2 33 6a 53 08 00 00><br>
+指定offset和length: <Buffer 7a 6f 6e 67 71 <strong>7a 6f 6e</strong> 67 00 00 00 00 00 00 00 96 29 0f 0b><br>
+
+wome
+
+- [buf.fill(value[, offset[, end]][, encoding])](http://nodejs.cn/api/buffer.html#buffer_buf_fill_value_offset_end_encoding) 填充buffer 返回值是填充后的buffer
+
+和write的区别，使用write的时候，我们首先是创建了一个长度为20的buffer，然后用write重写，参照例子，你会发现，zongqiang这个字符串的字节长度为9，重写buffer的时候，只修改了前面9个buffer的内容，后面长度的内容是不变的，而fill则会全部重写buffer里面的内容<br>
+eg:
+```js
+console.log(buf1)
+// <Buffer 00 00 00 00 00 00 00 00 00 02 0c 51 61 b2 33 6a 53 08 00 00>
+console.log(buf1.fill('zongqiang'))
+// <Buffer 7a 6f 6e 67 71 69 61 6e 67 7a 6f 6e 67 71 69 61 6e 67 7a 6f>
+console.log(buf1.fill('zongqiang', 5, 10))
+// <Buffer 00 00 00 00 00 7a 6f 6e 67 71 00 00 00 00 00 00 00 00 00 00>
+console.log(buf1.length)
+// 20
+```
+同样的offset和end，指定buffer哪个长度范围需要填充
+- [buf.length](http://nodejs.cn/api/buffer.html#buffer_buf_length)  返回buffer中的字节数，也就是buffer的长度
+和Buffer.byteLength是有区别的，它返回字符串的字节长度buf.length返回buffer的长度
+- [buf.toString([encoding[, start[, end]]])](http://nodejs.cn/api/buffer.html#buffer_buf_tostring_encoding_start_end) 根据 encoding 指定的字符编码将 buf 解码成字符串
+
+eg:<br>
+```js
+const buf2 = Buffer.from('zongq')
+
+console.log(buf2)
+// <Buffer 7a 6f 6e 67 71>
+console.log(buf2.toString())
+// zongq
+console.log(buf2.toString('base64', 1, 3))
+// b24=
+```
+- [buf.toJSON()](http://nodejs.cn/api/buffer.html#buffer_buf_tojson) 返回 buf 的 JSON 格式
+
+eg:<br>
+```js
+const buf2 = Buffer.from('zongq')
+
+console.log(buf2.toJSON())
+// { type: 'Buffer', data: [ 122, 111, 110, 103, 113 ] }
+```
+- [buf.equals(otherBuffer)](http://nodejs.cn/api/buffer.html#buffer_buf_equals_otherbuffer) 对比两个buffer是否具有完全相同的字节
+
+eg: 看官方文档
