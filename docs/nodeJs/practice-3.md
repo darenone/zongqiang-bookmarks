@@ -2,7 +2,7 @@
 
 <h3 style="color: #FB7477">Buffer缓冲器类常用api</h3>
 
-buffer用于处理二进制数据（二进制流，比如图片，word文件等），在V8堆外分配物理内存，buffer实例类似0-255之间的整数数组，显示的数据为十六进制，buffer创建后大小是固定的，无法修改，详细的buffer介绍可以参考官方文档
+buffer用于处理二进制数据（二进制流，比如图片，word文件等），在V8堆外分配物理内存，buffer实例类似0-255之间的整数组成的数组，显示的数据为十六进制，buffer创建后大小是固定的，无法修改，详细的buffer介绍可以参考官方文档
 [buffer缓冲器介绍](http://nodejs.cn/api/buffer.html)如何理解这句话：buffer创建后大小是固定的，我们来看代码
 ```js
 let arr = [1, 3]

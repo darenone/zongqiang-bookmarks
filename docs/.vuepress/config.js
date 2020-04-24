@@ -131,6 +131,8 @@ module.exports = {
                         ['/nodeJs/practice-1','nodeJs入门'],
                         ['/nodeJs/practice-2','创建一个nodeJs引用及调试'],
                         ['/nodeJs/practice-3','nodeJs核心模块'],
+                        ['/nodeJs/practice-4','nodeJs核心模块-2'],
+                        ['/nodeJs/practice-5','nodeJs文件系统模块常用api'],
                     ],
                     collapsable: false
                 }
