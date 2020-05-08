@@ -30,7 +30,8 @@ module.exports = {
             {
                 text: 'vue系列',
                 items: [
-                    { text: 'vue开发实战', link: '/vue-practice/practice-1'},
+                    { text: 'vue开发实战', link: '/vue/vue-practice/practice-1'},
+                    { text: 'vue系列文章', link: '/vue/vue-article/practice-1'},
                 ]
             },
             {
@@ -97,6 +98,13 @@ module.exports = {
                         ['/article/Console/A002','#A002_插件清单']
                     ]
                 },
+                {
+                    title: 'web安全',
+                    children: [
+                        ['/article/Console/A001','#A001_VuePress'],
+                        ['/article/Console/A002','#A002_插件清单']
+                    ]
+                },
             ],
             '/website/': [
                 ['/website/','网站大全'],
@@ -104,13 +112,19 @@ module.exports = {
             '/function/': [
                 ['/function/','常用函数'],
             ],
-            '/vue-practice/': [
+            '/vue/': [
                 {
                     title: 'vue开发实战',
                     children: [
-                        ['/vue-practice/practice-1','使用vue-cli3.0创建项目'],
-                        ['/vue-practice/practice-2','项目路由配置'],
-                        // ['/article/vue/mock','vue中利用mock模拟后端接口'],
+                        ['/vue/vue-practice/practice-1','使用vue-cli3.0创建项目'],
+                        ['/vue/vue-practice/practice-2','项目路由配置'],
+                    ],
+                    collapsable: false
+                },
+                {
+                    title: 'vue开发总结',
+                    children: [
+                        ['/vue/vue-article/practice-1','介绍一些vue开发中的小技巧'],
                     ],
                     collapsable: false
                 }
