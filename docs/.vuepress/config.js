@@ -101,8 +101,8 @@ module.exports = {
                 {
                     title: 'web安全',
                     children: [
-                        ['/article/Console/A001','#A001_VuePress'],
-                        ['/article/Console/A002','#A002_插件清单']
+                        ['/article/web-security/article-1','谈谈web安全'],
+                        ['/article/web-security/article-2', '常见六大web安全攻防解析',]
                     ]
                 },
             ],

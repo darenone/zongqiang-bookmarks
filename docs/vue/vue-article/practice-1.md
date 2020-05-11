@@ -243,30 +243,49 @@ export default {
 ```
 ### 3 样式穿透
 
-在开发中，修改第三方组件的样式，比如修改iviewUI框架的样式，但由于`scoped`属性的样式隔离，可能需要去除`scope`或者另外起一个`style`，这些做法会造成组件样式污染，不够优雅，这里的样式穿透需要在css预处理器中使用才有效，比如在less或则scss中使用
-
-我们可以使用`>>>`或`/deep/`来解决这一问题
-```css
-<style scoped>
-外层 >>> .el-checkbox {
-  display: block;
-  font-size: 26px;
-
-  .el-checkbox__label {
-    font-size: 16px;
-  }
+在开发中，会涉及到修改第三方组件的样式，比如修改iviewUI框架中table的样式，但由于`scoped`属性的样式隔离，我们这样写可能不会生效
+```less
+<style lang="less" scoped>
+.ivu-table-wrapper .ivu-table {
+    th {
+        background:red;
+    }
 }
 </style>
 ```
+常规的解决方式是，把`scope`去掉或者另外起一个`style`
+```less
+<style lang="less" scoped>
+
+</style>
+// 另外起一个style并且把scope去掉
+<style lang="less">
+.ivu-table-wrapper .ivu-table {
+    th {
+        background:red;
+    }
+}
+</style>
+```
+这些做法会造成组件样式污染，不够优雅，我们可以使用深度选择器`>>>`或`/deep/`来解决这一问题，它能使scoped样式中的选择器作用的更深
+```less
+.a >>> .b {}
+```
 ```css
 <style scoped>
-/deep/ .el-checkbox {
+.el-wrapper >>> .el-checkbox {
   display: block;
   font-size: 26px;
-
-  .el-checkbox__label {
-    font-size: 16px;
-  }
+}
+</style>
+```
+但是在sass和less预处理中，无法正确解析`>>>`，所以用`/deep/`来取而代之，这里`/deep/`就是`>>>`的别名
+```less
+<style lang="less" scoped>
+.ivu-table-wrapper /deep/ .ivu-table {
+    th {
+        background:red;
+    }
 }
 </style>
 ```
