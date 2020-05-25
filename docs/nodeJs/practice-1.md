@@ -3,7 +3,9 @@ nodeJS是什么？<br>
 nodeJS是一个基于Chrome的V8引擎的JavaScript运行环境（它相当于一个平台）
 
 [nodeJs下载](https://nodejs.org/zh-cn/download/)然后直接安装到你的电脑上即可<br>
-[nodeJs中文文档](http://nodejs.cn/api/)
+[nodeJs中文文档](http://nodejs.cn/api/)<br>
+[代码练习地址](https://github.com/darenone/NodeJs)<br>
+[visual studio code 编辑器](https://code.visualstudio.com/)
 
 <h3 style="color: #FB7477">nvm安装</h3>
 

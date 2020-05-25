@@ -147,6 +147,8 @@ module.exports = {
                         ['/nodeJs/practice-3','nodeJs核心模块'],
                         ['/nodeJs/practice-4','nodeJs核心模块-2'],
                         ['/nodeJs/practice-5','nodeJs文件系统模块常用api'],
+                        ['/nodeJs/practice-6','nodeJs文件流讲解'],
+                        ['/nodeJs/practice-7','nodeJs基础模块path常用api'],
                     ],
                     collapsable: false
                 }

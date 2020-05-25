@@ -1,7 +1,7 @@
 ### 创建一个nodeJs引用及调试
 nodeJs和JavaScript有什么区别？<br>
-上节课说了nodeJs是一个平台，在nodeJs上可以运行用JavaScript编写的程序，一个基本常识就是用JavaScript编写的程序只能在浏览器环境中运行，有了nodeJs，JavaScript程序就就可以脱离浏览器，在node环境里运行<br>
-新建代码库[NodeJs](https://github.com/darenone/NodeJs)，编辑器使用的是[visual studio code](https://code.visualstudio.com/)新增如下代码：
+上文说了nodeJs是一个平台，在nodeJs上可以运行用JavaScript编写的程序，如果没有nodeJS，用JavaScript编写的程序只能在浏览器环境中运行，有了nodeJs，JavaScript程序就就可以脱离浏览器，在node环境里运行<br>
+新建以下代码：
 ```js
 let name= 'zongq'
 
@@ -11,7 +11,7 @@ function sayHi () {
 
 sayHi()
 ```
-在编辑器内打开终端,执行`node index.js`此命令的含义就是在node里运行js程序，以上就完成了一个简单的在nodeJs里引用js并且调试js
+在编辑器内打开终端，执行`node index.js`此命令的含义就是在node里运行js，以上就完成了一个简单的在nodeJs里引用js并且调试js
 
 <h3 style="color: #FB7477">理解commonjs模块规范</h3>
 
@@ -88,7 +88,7 @@ console.log(arr2) // [ 1, 2, 3, 4, 5 ]
 var a = 1
 console.log(window.a)
 ```
-但是在node里面，每一个js文件都是一个模块，模块有自己的作用域，想访问模块里的变量，就要采用export和require来访问模块里的变量，如果想定义全局变量，可以采用node提供的global对象，演示如下：
+但是在node里面，每一个js文件都是一个模块，模块有自己的作用域，想访问模块里的变量，就要采用require和module来引入引出模块，如果想定义全局变量，可以采用node提供的global对象，演示如下：
 修改`calculate.js`文件
 ```js
 function add (a, b) {
