@@ -1,4 +1,4 @@
-### nodeJs核心模块-2
+### nodeJs核心模块-buffer缓冲器2
 
 <h3 style="color: #FB7477">Buffer缓冲器类常用api</h3>
 

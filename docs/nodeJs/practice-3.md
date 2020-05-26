@@ -1,9 +1,9 @@
-### nodeJs核心模块
+### nodeJs核心模块-buffer缓冲器
 
 <h3 style="color: #FB7477">Buffer缓冲器类常用api</h3>
 
-buffer用于处理二进制数据（二进制流，比如图片，word文件等），在V8堆外分配物理内存，buffer实例类似0-255之间的整数组成的数组，显示的数据为十六进制，buffer创建后大小是固定的，无法修改，详细的buffer介绍可以参考官方文档
-[buffer缓冲器介绍](http://nodejs.cn/api/buffer.html)如何理解这句话：buffer创建后大小是固定的，我们来看代码
+js语言自身只有字符串类型的数据，没有二进制数据类型，但是在处理TCP流和文件流时，必须使用二进制数据，因此在nodeJs里面，定义了一个buffer类，该类是专门存放二进制数据的缓冲器，在nodeJs里面
+buffer类是nodeJs的核心库，buffer类为nodeJs带来了一种存储原始数据的方法，可以让nodeJs处理二进制数据，原始数据存储在buffer类的实例中，一个buffer实例类似一个数组（此数组由0-255之间的整数组成的数组，这个数组显示的时候是以16进制显示的），它对应v8堆内存之外的物理内存[buffer缓冲器介绍](http://nodejs.cn/api/buffer.html)如何理解这句话：buffer创建后大小是固定的，我们来看代码
 ```js
 let arr = [1, 3]
 arr.length // 2
@@ -29,7 +29,7 @@ buf1[10] = 1 // 虽然buffer实例也是数组，但是其大小不能修改
 // <Buffer 00 00 00 00 00 00 00 00 00 00>
 const buf2 = Buffer.alloc(10, 2)
 // <Buffer 02 02 02 02 02 02 02 02 02 02> 十六进制的方式来显示
-const buf3 = Buffer.alloc(10, 100)
+const buf3 = Buffer.alloc(10, 100) // 100是十进制
 // <Buffer 64 64 64 64 64 64 64 64 64 64>
 const buf4 = Buffer.alloc(10, 257) // (257 / 256) 对256求余
 // <Buffer 01 01 01 01 01 01 01 01 01 01>
@@ -40,7 +40,7 @@ const buf6 = Buffer.alloc(10, 'zongq') // 默认utf-8
 const buf7 = Buffer.alloc(10, 'zongq', 'base64')
 // <Buffer ce 89 e0 ce 89 e0 ce 89 e0 ce>
 ```
-[在线进制转换工具](https://tool.oschina.net/hexconvert/) 官方文档说了Buffer类的实例类似于从 0 到 255 之间的整数数组，对于大于255和小于0的值，buffer会强行进行转换<br>
+[在线进制转换工具](https://tool.oschina.net/hexconvert/) 官方文档说了Buffer类的实例类似于由 0 到 255 之间的整数数组，对于大于255和小于0的值，buffer会强行进行转换<br>
 [Buffer 与字符编码](http://nodejs.cn/api/buffer.html#buffer_buffers_and_character_encodings)
 
 第二种创建方式：[Buffer.allocUnsafe(size)](http://nodejs.cn/api/buffer.html#buffer_class_method_buffer_allocunsafeslow_size)<br>
@@ -118,7 +118,7 @@ console.log(concat2)
 console.log(concat2.length)
 // 14
 ```
-- [buf.write(string[, offset[, length]][, encoding])](http://nodejs.cn/api/buffer.html#buffer_buf_write_string_offset_length_encoding) 将字符串写入buffer，返回值是已经写入的字节数<br>
+- [buf.write(string[, offset[, length]][, encoding])](http://nodejs.cn/api/buffer.html#buffer_buf_write_string_offset_length_encoding) 将字符串写入buffer，返回值是写入的字节数<br>
 eg:
 ```js
 const buf1 = Buffer.allocUnsafe(20) // 利用这种方式创建的buffer实例，值是不确定的，利用write方法可以修复这种问题

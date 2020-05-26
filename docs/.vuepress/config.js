@@ -144,11 +144,14 @@ module.exports = {
                     children: [
                         ['/nodeJs/practice-1','nodeJs入门'],
                         ['/nodeJs/practice-2','创建一个nodeJs引用及调试'],
-                        ['/nodeJs/practice-3','nodeJs核心模块'],
-                        ['/nodeJs/practice-4','nodeJs核心模块-2'],
-                        ['/nodeJs/practice-5','nodeJs文件系统模块常用api'],
+                        ['/nodeJs/practice-3','nodeJs核心模块-buffer缓冲器'],
+                        ['/nodeJs/practice-4','nodeJs核心模块-buffer缓冲器2'],
+                        ['/nodeJs/practice-5','nodeJs文件系统fs模块常用api'],
                         ['/nodeJs/practice-6','nodeJs文件流讲解'],
                         ['/nodeJs/practice-7','nodeJs基础模块path常用api'],
+                        ['/nodeJs/practice-8','nodeJs事件触发器events'],
+                        ['/nodeJs/practice-9','node核心模块util常用工具'],
+                        ['/nodeJs/practice-10','http解析-http发展历史'],
                     ],
                     collapsable: false
                 }
