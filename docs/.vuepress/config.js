@@ -92,10 +92,10 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '输出层',
+                    title: 'css相关',
                     children: [
-                        ['/article/Console/A001','#A001_VuePress'],
-                        ['/article/Console/A002','#A002_插件清单']
+                        ['/article/css/practice-1','css常用布局介绍'],
+                        // ['/article/Console/A002','#A002_插件清单']
                     ]
                 },
                 {
@@ -152,6 +152,9 @@ module.exports = {
                         ['/nodeJs/practice-8','nodeJs事件触发器events'],
                         ['/nodeJs/practice-9','node核心模块util常用工具'],
                         ['/nodeJs/practice-10','http解析-http发展历史'],
+                        ['/nodeJs/practice-11','搭建自己的第一个http服务器'],
+                        ['/nodeJs/practice-12','利用nodejs做一个简易的爬虫'],
+                        ['/nodeJs/practice-13','如何处理客户端get/post请求'],
                     ],
                     collapsable: false
                 }

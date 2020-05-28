@@ -54,7 +54,7 @@ fs.readFile('./hello.txt', 'utf8', (err, data) => {
 })
 ```
 
-##### [2. fs.writeFile(file, data[, options], callback)](http://nodejs.cn/api/fs.html#fs_fs_writefile_file_data_options_callback)写入文件
+##### [2. fs.writeFile(file, data[, options], callback)](http://nodejs.cn/api/fs.html#fs_fs_writefile_file_data_options_callback)写入文件，如果文件不存在就新建这个文件
 
 ```js
 fs.writeFile('./hello.txt', 'this is a test',  err => {
