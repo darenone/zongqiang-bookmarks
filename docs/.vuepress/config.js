@@ -99,6 +99,20 @@ module.exports = {
                     ]
                 },
                 {
+                    title: 'javascript相关',
+                    children: [
+                        ['/article/javascript/practice-1','JavaScript学习'],
+                        // ['/article/Console/A002','#A002_插件清单']
+                    ]
+                },
+                {
+                    title: 'typescript相关',
+                    children: [
+                        ['/article/typescript/practice-1','typescript学习'],
+                        // ['/article/Console/A002','#A002_插件清单']
+                    ]
+                },
+                {
                     title: 'web安全',
                     children: [
                         ['/article/web-security/article-1','谈谈web安全'],
@@ -155,6 +169,10 @@ module.exports = {
                         ['/nodeJs/practice-11','搭建自己的第一个http服务器'],
                         ['/nodeJs/practice-12','利用nodejs做一个简易的爬虫'],
                         ['/nodeJs/practice-13','如何处理客户端get/post请求'],
+                        ['/nodeJs/practice-14','初始化路由及接口开发'],
+                        ['/nodeJs/practice-15','实战-利用模拟数据对用户列表增删改查'],
+                        ['/nodeJs/practice-16','轻松解决接口跨域问题'],
+                        ['/nodeJs/practice-17','nodeJs连接Mysql'],
                     ],
                     collapsable: false
                 }

@@ -28,6 +28,10 @@
 - OPTIONS 允许客户端查看服务器的性能（有时候请求某一个接口，会发送两次请求，第一个请求就是option请求（浏览器向服务器发送的预请求，向服务器询问是否可以请求，如果不同意就不再发送请求，如果同意就发送真正的请求），第二个就是你需要请求接口的post请求或其它请求）
 - TRACE 回显服务器收到的请求，主要用于测试或诊断
 
+<b>我们来讲一下为啥会有options请求</b>
+1. 请求已get/head/post以外的方法发起请求，或者使用post，但请求数据为 application/x-www-form-urlencoded, multipart/form-data 或者 text/plain 以外的数据类型。比如说，用 POST 发送数据类型为 application/xml 或者 text/xml 的 XML 数据的请求 或则 使用自定义请求头（比如添加诸如 X-PINGOTHER）都会出现两次请求的情况
+2. get请求比较简单，没有预请求，直接发送即可，但是遇到了预请求，后端还是要处理一下options请求，放开options请求，前端才能够请求成功
+
 ##### 5. HTTP响应头信息 response header
 应答头
 - Allow 服务器支持哪些请求方法（如get、post等）

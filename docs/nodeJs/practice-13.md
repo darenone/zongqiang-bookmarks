@@ -1,5 +1,5 @@
 ### 如何处理客户端get/post请求
-讲解如何处理从页面中传来的参数
+讲解node如何处理从页面传来的参数
 ##### [1. url.parse(urlString[, parseQueryString[, slashesDenoteHost]])](http://nodejs.cn/api/url.html#url_url_parse_urlstring_parsequerystring_slashesdenotehost) 解析url
 ```js
 const url = require('url')
@@ -28,7 +28,7 @@ server.listen(3000, () => {
     console.log('监听3000端口')
 })
 ```
-然后执行`node index.js`本地服务器启动，启动以后再浏览器输入：`http://localhost:3000/?name=zongqiang`就可以看到页面显示了一个`{"name":"zongqiang"}`
+然后执行`node index.js`本地服务器启动，启动以后在浏览器输入：`http://localhost:3000/?name=zongqiang`就可以看到页面显示了一个`{"name":"zongqiang"}`
 ##### 3. 如何处理post请求
 ```js
 const http = require('http')
@@ -99,18 +99,25 @@ server.listen(3000, () => {
 ```
 然后我们通过`postman`来分别发送一个get和post请求<br>
 ```js
-// post请求
-// http://localhost:3000/api/postData
-// 传递参数
 /*
+post请求
+http://localhost:3000/api/postData
+
+传递参数
 {
 	"name": "zongqiang",
 	"age": 27
 }
-*/
 
-// get请求
-// http://localhost:3000/api/postData?name=zongqiang&age=27
+返回参数
+{
+    "data": "请求成功",
+    "code": 0
+}
+
+get请求
+http://localhost:3000/api/postData?name=zongqiang&age=27
+*/
 ```
 ##### 5. nodemon自动重启工具安装配置
 
@@ -144,4 +151,4 @@ npm/cnpm install -g nodemon
 ```
 npm run start
 ```
-服务器就启动成功了！这个和我们在vue项目执行`npm run dev`和`npm run serve`是一样的
+服务器就启动成功了！这个和我们基于vue-cli项目构建工具中执行`npm run dev`和`npm run serve`是一样的

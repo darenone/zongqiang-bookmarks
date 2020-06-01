@@ -29,7 +29,7 @@ https.get('https://www.baidu.com/', (res) => {
 > cheerio是jquery核心功能的一个快速灵活而又简洁的实现，主要是为了用在服务器端需要对DOM进行操作的地方
 
 - 安装cheerio
-先在你的文件下夹执行`npm init -y`生成package.json文件，然后再执行下面的代码
+先在你的文件夹下cmd执行`npm init -y`生成package.json文件，然后再执行下面的代码
 ```
 npm install cheerio --save-dev
 ```
@@ -46,7 +46,7 @@ https.get('https://www.baidu.com/', (res) => {
         html += chunk
     })
     res.on('end', () => {
-        const $ = cheerio.load(html) // 这样就可以进行dom操作了
+        const $ = cheerio.load(html) // 这样就可以进行dom操作了，完成了在服务端操作dom
         let text = $('title').text()
         fs.writeFile('./html.txt', text, err => {
             if (err) throw err
@@ -55,4 +55,4 @@ https.get('https://www.baidu.com/', (res) => {
     })
 })
 ```
-以上，我们就只爬到了`title`这个标签里的内容
+以上，我们就只爬到了`title`这个标签里的内容,根据这个就可以拓展你的功能，对网页特定内容进行爬虫
