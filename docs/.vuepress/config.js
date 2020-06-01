@@ -173,6 +173,7 @@ module.exports = {
                         ['/nodeJs/practice-15','实战-利用模拟数据对用户列表增删改查'],
                         ['/nodeJs/practice-16','轻松解决接口跨域问题'],
                         ['/nodeJs/practice-17','nodeJs连接Mysql'],
+                        ['/nodeJs/practice-18','结合数据库改造用户列表接口'],
                     ],
                     collapsable: false
                 }
