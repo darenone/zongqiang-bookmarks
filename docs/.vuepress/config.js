@@ -174,6 +174,7 @@ module.exports = {
                         ['/nodeJs/practice-16','轻松解决接口跨域问题'],
                         ['/nodeJs/practice-17','nodeJs连接Mysql'],
                         ['/nodeJs/practice-18','结合数据库改造用户列表接口'],
+                        ['/nodeJs/practice-19','MongoDB的介绍及安装'],
                     ],
                     collapsable: false
                 }

@@ -1,12 +1,14 @@
 ### nodeJs连接Mysql
 
-这里需要首先安装mysql和Navicat，关于如何安装可以自行百度解决，这里主要介绍如何使用node连接已在本地成功安装的mysql数据库
+需要先安装MySQL和Navicat，关于如何安装可以自行百度解决，这里主要介绍如何使用node连接已在本地成功安装的mysql数据库
 ##### 1. 什么是mysql
 mysql是一个数据库管理系统，数据库是存储，管理数据的仓库，操作MySQL需要熟悉一些常用的语句，比如增删改查，排序，模糊查询等
 - 增加表格数据
 ```sql
-INSERT INTO use_list (name, city, sex) VALUE ('王伟', '杭州', 2); -- 向use_list表插入一条数据
-INSERT INTO use_list (name, city, sex) VALUES ('王伟', '杭州', 2),('蒋勇', '杭州', 2),('孙东辉', '杭州', 2),('王伟', '杭州', 2); -- 向use_list表插入多条数据
+-- 向use_list表插入一条数据
+INSERT INTO use_list (name, city, sex) VALUE ('王伟', '杭州', 2);
+-- 向use_list表插入多条数据
+INSERT INTO use_list (name, city, sex) VALUES ('王伟', '杭州', 2),('蒋勇', '杭州', 2),('孙东辉', '杭州', 2),('王伟', '杭州', 2); 
 ```
 - 删除表格数据
 ```sql
@@ -43,12 +45,12 @@ SELECT * FROM use_list WHERE `name` LIKE '%王%'
 ```
 以上是常用的MySQL语句，关于更多用法可以参考此文章[MySQL查询语句大全](https://www.cnblogs.com/mofujin/p/11355517.html)
 ##### 2. nodejs连接MySQL
-如果在node里先要连接MySQL，需要安装mysql模块，这个模块可以通过npm安装
+如果在node操作MySQL，需要安装mysql模块，这个模块可以通过npm安装
 ```
 npm/cnpm install mysql --save
 ```
-同样的安装这个模块，别忘记在你的项目目录下执行`npm init -y`生成`package.json`文件，便于对你项目中所安装的模块进行管理<br>
-然后就写代码来连接数据库
+同样安装这个模块，别忘记在你的项目目录下执行`npm init -y`生成`package.json`文件，便于对你项目中所安装的模块进行管理<br>
+接下来就看一下具体操作数据库的流程：
 ```js
 const mysql = require('mysql')
 
