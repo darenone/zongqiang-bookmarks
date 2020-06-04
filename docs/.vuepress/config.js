@@ -175,6 +175,15 @@ module.exports = {
                         ['/nodeJs/practice-17','nodeJs连接Mysql'],
                         ['/nodeJs/practice-18','结合数据库改造用户列表接口'],
                         ['/nodeJs/practice-19','MongoDB的介绍及安装'],
+                        ['/nodeJs/practice-20','MongoDB如何导入文件数据'],
+                        ['/nodeJs/practice-21','MongoDB常用数据库操作之查询文档'],
+                        ['/nodeJs/practice-22','MongoDB常用数据库操作之更新文档'],
+                        ['/nodeJs/practice-23','MongoDB常用数据库操作之删除文档'],
+                        ['/nodeJs/practice-24','MongoDB字段验证'],
+                        ['/nodeJs/practice-25','nodejs进程和线程讲解'],
+                        ['/nodeJs/practice-26','多进程之child_process模块'],
+                        ['/nodeJs/practice-27','深度讲解cluster模块'],
+                        ['/nodeJs/practice-28','express框架知识讲解'],
                     ],
                     collapsable: false
                 }
