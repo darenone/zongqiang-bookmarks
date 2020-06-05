@@ -3,9 +3,18 @@
 > 进程是正在运行程序的实例，我们启动一个服务，运行一个实例，就是开了一个服务进程，进程是线程的容器，进程包括文本区域（text region）数据区域（data region）和堆栈（stack region）
 - 线程概念
 > 线程是操作系统能够进行运算调度的最小单位，它被包含在进程之中，是进程中的实际运作单位，一个进程可以由一个或多个线程组成，每条线程并行执行不同的任务
-- process进程模块的使用<br>
-process模块是node集成的模块，不需要npm下载安装，直接使用即可[process](http://nodejs.cn/api/process.html)
+- process进程模块的使用
+> process模块是一个全局变量，提供了有关当前Node.js进程信息并对其进行控制，作为全局变量，无需使用require()引入[process](http://nodejs.cn/api/process.html)
 ##### [1. process.env](http://nodejs.cn/api/process.html#process_process_env) 返回包含用户环境的对象，可设置环境变量，例如process.env.NODE_ENV
+```json
+// process.env对象
+{
+    "ALLUSERSPROFILE": "C:\\ProgramData",
+    "APPDATA": "C:\\Users\\喔喔牛在路上\\AppData\\Roaming",
+    "asl.log": "Destination=file",
+    ...
+}
+```
 新建一个文件夹，新建`index.js`，并在此文件夹下执行`npm init -y`，生成`package.json`文件，然后修改这个文件：
 ```json
 {
@@ -26,7 +35,7 @@ process模块是node集成的模块，不需要npm下载安装，直接使用即
 ```
 `index.js`内容如下：
 ```js
-// 设置一个环境变量，和js用let或var声明变量不同，node里声明变量需要加前缀process.env
+// 在process.env对象上新建一个属性NODE_ENV
 // process.env.NODE_ENV = 'dev'
 
 console.log(process.env.NODE_ENV)
@@ -73,7 +82,7 @@ console.log(process.pid)
 ```
 npm run dev
 ```
-就看到进程的pid为12736<br>
+就看到进程的pid为12736，windows下打开`cmd`命令行工具，输入`tasklist`可查看所有进程
 ##### [3. process.platform](http://nodejs.cn/api/process.html#process_process_platform) 返回当前进程的操作系统平台
 ```js
 const http = require('http')

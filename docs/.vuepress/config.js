@@ -184,6 +184,14 @@ module.exports = {
                         ['/nodeJs/practice-26','多进程之child_process模块'],
                         ['/nodeJs/practice-27','深度讲解cluster模块'],
                         ['/nodeJs/practice-28','express框架知识讲解'],
+                        ['/nodeJs/practice-29','利用express的Router方法构建模块化路由'],
+                    ],
+                    collapsable: false
+                },
+                {
+                    title: '利用NodeJs开发简易博客系统实战',
+                    children: [
+                        ['/myBlog/practice-1','项目初始化及前端框架搭建'],
                     ],
                     collapsable: false
                 }

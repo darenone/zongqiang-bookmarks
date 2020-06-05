@@ -113,7 +113,7 @@ console.log('服务器已启动')
 app.use(bodyParser.json())
 ```
 ##### 3. express中间件
-中间件其实就是一个方法，这个方法可以访问请求对象req,响应对象res，和web应用处于请求响应循环流程中的中间件，一般被命名为`next`变量
+中间件其实就是一个方法，这个方法可以访问请求对象req，响应对象res，和web应用处于请求响应循环流程中的中间件，一般被命名为`next`变量
 ```js
 const express= require('express')
 const bodyParser = require('body-parser')
@@ -291,3 +291,58 @@ app.listen(3000)
 console.log('服务器已启动')
 ```
 上面代码是同步执行错误的方法，下面来讲一下处理异步错误的方法：
+```js
+const express= require('express')
+const bodyParser = require('body-parser')
+const fs = require('fs')
+
+// 创建服务器
+const app = express()
+
+
+app.get('/user', (req, res, next) => {
+    // 读取一个不存在的a.js文件，因为是一个异步操作，下面的处理错误中间件不会捕捉到此错误
+    fs.readFile('./a.js', 'utf8', (err, result) => {
+        if (err) throw err
+    })
+})
+
+// 处理错误中间件（只能捕捉同步里的方法）
+app.use((err, req, res, next) => {
+    res.status(500).send(err.message)
+})
+
+// 监听端口
+app.listen(3000)
+console.log('服务器已启动')
+```
+所以需要对异步操作进行改造：
+```js
+const express= require('express')
+const bodyParser = require('body-parser')
+const fs = require('fs')
+
+// 创建服务器
+const app = express()
+
+
+app.get('/user', (req, res, next) => {
+    fs.readFile('./a.js', 'utf8', (err, result) => {
+        if (err) {
+            next(err) // 调用中间件将错误结果返回
+            return;
+        } else {
+            res.send(result)
+        }
+    })
+})
+
+// 处理错误中间件
+app.use((err, req, res, next) => {
+    res.status(500).send(err.message)
+})
+
+// 监听端口
+app.listen(3000)
+console.log('服务器已启动')
+```
