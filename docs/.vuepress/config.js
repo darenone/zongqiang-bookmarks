@@ -40,12 +40,7 @@ module.exports = {
                     { text: '微信小程序开发实战', link: '/miniprogram/practice-1'},
                 ]
             },
-            {
-                text: 'nodeJs系列',
-                items: [
-                    { text: 'nodeJs基础实战', link: '/nodeJs/practice-1'},
-                ]
-            },
+            { text: 'nodeJs系列', link: '/node/nodeJs/practice-1' },
             {
                 text: '友情链接',
                 items: [
@@ -133,14 +128,14 @@ module.exports = {
                         ['/vue/vue-practice/practice-1','使用vue-cli3.0创建项目'],
                         ['/vue/vue-practice/practice-2','项目路由配置'],
                     ],
-                    collapsable: false
+                    collapsable: true
                 },
                 {
                     title: 'vue开发总结',
                     children: [
                         ['/vue/vue-article/practice-1','介绍一些vue开发中的小技巧'],
                     ],
-                    collapsable: false
+                    collapsable: true
                 }
             ],
             '/miniprogram/': [
@@ -152,48 +147,48 @@ module.exports = {
                     collapsable: false
                 }
             ],
-            '/nodeJs/': [
+            '/node/': [
                 {
                     title: 'nodeJs基础实战',
                     children: [
-                        ['/nodeJs/practice-1','nodeJs入门'],
-                        ['/nodeJs/practice-2','创建一个nodeJs引用及调试'],
-                        ['/nodeJs/practice-3','nodeJs核心模块-buffer缓冲器'],
-                        ['/nodeJs/practice-4','nodeJs核心模块-buffer缓冲器2'],
-                        ['/nodeJs/practice-5','nodeJs文件系统fs模块常用api'],
-                        ['/nodeJs/practice-6','nodeJs文件流讲解'],
-                        ['/nodeJs/practice-7','nodeJs基础模块path常用api'],
-                        ['/nodeJs/practice-8','nodeJs事件触发器events'],
-                        ['/nodeJs/practice-9','node核心模块util常用工具'],
-                        ['/nodeJs/practice-10','http解析-http发展历史'],
-                        ['/nodeJs/practice-11','搭建自己的第一个http服务器'],
-                        ['/nodeJs/practice-12','利用nodejs做一个简易的爬虫'],
-                        ['/nodeJs/practice-13','如何处理客户端get/post请求'],
-                        ['/nodeJs/practice-14','初始化路由及接口开发'],
-                        ['/nodeJs/practice-15','实战-利用模拟数据对用户列表增删改查'],
-                        ['/nodeJs/practice-16','轻松解决接口跨域问题'],
-                        ['/nodeJs/practice-17','nodeJs连接Mysql'],
-                        ['/nodeJs/practice-18','结合数据库改造用户列表接口'],
-                        ['/nodeJs/practice-19','MongoDB的介绍及安装'],
-                        ['/nodeJs/practice-20','MongoDB如何导入文件数据'],
-                        ['/nodeJs/practice-21','MongoDB常用数据库操作之查询文档'],
-                        ['/nodeJs/practice-22','MongoDB常用数据库操作之更新文档'],
-                        ['/nodeJs/practice-23','MongoDB常用数据库操作之删除文档'],
-                        ['/nodeJs/practice-24','MongoDB字段验证'],
-                        ['/nodeJs/practice-25','nodejs进程和线程讲解'],
-                        ['/nodeJs/practice-26','多进程之child_process模块'],
-                        ['/nodeJs/practice-27','深度讲解cluster模块'],
-                        ['/nodeJs/practice-28','express框架知识讲解'],
-                        ['/nodeJs/practice-29','利用express的Router方法构建模块化路由'],
+                        ['/node/nodeJs/practice-1','nodeJs入门'],
+                        ['/node/nodeJs/practice-2','创建一个nodeJs引用及调试'],
+                        ['/node/nodeJs/practice-3','nodeJs核心模块-buffer缓冲器'],
+                        ['/node/nodeJs/practice-4','nodeJs核心模块-buffer缓冲器2'],
+                        ['/node/nodeJs/practice-5','nodeJs文件系统fs模块常用api'],
+                        ['/node/nodeJs/practice-6','nodeJs文件流讲解'],
+                        ['/node/nodeJs/practice-7','nodeJs基础模块path常用api'],
+                        ['/node/nodeJs/practice-8','nodeJs事件触发器events'],
+                        ['/node/nodeJs/practice-9','node核心模块util常用工具'],
+                        ['/node/nodeJs/practice-10','http解析-http发展历史'],
+                        ['/node/nodeJs/practice-11','搭建自己的第一个http服务器'],
+                        ['/node/nodeJs/practice-12','利用nodejs做一个简易的爬虫'],
+                        ['/node/nodeJs/practice-13','如何处理客户端get/post请求'],
+                        ['/node/nodeJs/practice-14','初始化路由及接口开发'],
+                        ['/node/nodeJs/practice-15','实战-利用模拟数据对用户列表增删改查'],
+                        ['/node/nodeJs/practice-16','轻松解决接口跨域问题'],
+                        ['/node/nodeJs/practice-17','nodeJs连接Mysql'],
+                        ['/node/nodeJs/practice-18','结合数据库改造用户列表接口'],
+                        ['/node/nodeJs/practice-19','MongoDB的介绍及安装'],
+                        ['/node/nodeJs/practice-20','MongoDB如何导入文件数据'],
+                        ['/node/nodeJs/practice-21','MongoDB常用数据库操作之查询文档'],
+                        ['/node/nodeJs/practice-22','MongoDB常用数据库操作之更新文档'],
+                        ['/node/nodeJs/practice-23','MongoDB常用数据库操作之删除文档'],
+                        ['/node/nodeJs/practice-24','MongoDB字段验证'],
+                        ['/node/nodeJs/practice-25','nodejs进程和线程讲解'],
+                        ['/node/nodeJs/practice-26','多进程之child_process模块'],
+                        ['/node/nodeJs/practice-27','深度讲解cluster模块'],
+                        ['/node/nodeJs/practice-28','express框架知识讲解'],
+                        ['/node/nodeJs/practice-29','利用express的Router方法构建模块化路由'],
                     ],
-                    collapsable: false
+                    collapsable: true
                 },
                 {
-                    title: '利用NodeJs开发简易博客系统实战',
+                    title: '利用node开发简易博客系统',
                     children: [
-                        ['/myBlog/practice-1','项目初始化及前端框架搭建'],
+                        ['/node/myBlog/practice-1','项目初始化及前端框架搭建'],
                     ],
-                    collapsable: false
+                    collapsable: true
                 }
             ],
              // 打开Thought主页链接时生成下面这个菜单
