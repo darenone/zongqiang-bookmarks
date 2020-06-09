@@ -136,7 +136,8 @@ module.exports = {
                     title: 'vue开发总结',
                     children: [
                         ['/vue/vue-article/practice-1','介绍一些vue开发中的小技巧'],
-                        ['/vue/vue-article/practice-2','介绍一些vue开发中的'],
+                        ['/vue/vue-article/practice-2','axios封装'],
+                        ['/vue/vue-article/practice-3','vue项目跨域配置'],
                     ],
                     collapsable: true
                 }
