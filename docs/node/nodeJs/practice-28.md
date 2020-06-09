@@ -1,6 +1,6 @@
 ### express框架知识讲解
 ##### 1. express框架介绍
-[express](https://www.expressjs.com.cn/)是基于Node.js平台，快速、开放、极简的web开发框架,express框架特性：
+[express](https://www.expressjs.com.cn/)是基于Node.js平台，快速、开放、极简的web开发框架，express框架特性：
 - 可以设置中间件来响应http请求
 - 提供方便的路由定义方式
 - 可以通过模板引擎动态渲染HTML页面

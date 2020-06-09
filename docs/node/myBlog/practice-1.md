@@ -20,7 +20,7 @@ vue --version
 vue create my-blog
 ```
 接下来需要对项目进行手动配置：
-选择`Manually select features`手动配置项目-->选中`Babel`，`Router`，`vuex`，`css pre-processors`，`linter`-->路由是否采用history模式，选择no-->然后选择sass/scss (with node-sass)-->然后再选择`eslint + prettier`-->然后再选择`lint on save`-->然后再选择`in dedicated config files`生成配置文件config.js-->然后提示是否将以上操作保存，方便下次新建项目使用，我们选择否-->这些操作完成，就等着项目下载下来吧~<br>
+选择`Manually select features`手动配置项目-->选中`Babel`，`Router`，`vuex`，`css pre-processors`，`linter`-->路由是否采用history模式，选择no-->然后选择sass/scss (with node-sass)-->然后再选择`eslint + prettier`-->然后再选择`lint on save`-->然后再选择`in dedicated config files`生成配置文件config.js-->然后提示是否将以上操作保存`save this as a preset for future project`，我们选择否-->这些操作完成，就等着项目下载下来吧~<br>
 进入项目目录，启动项目：
 ```
 npm run serve
@@ -29,7 +29,7 @@ npm run serve
 ```
 npm/cnpm install element-ui --save
 ```
-然后在项目里找到`src/main.js`把`element-ui`引入到项目里，同时引入入elementUI样式：
+然后在项目里找到`src/main.js`把`element-ui`引入到项目里，同时引入elementUI样式：
 ```js
 import Vue from 'vue'
 import App from './App.vue'
@@ -47,7 +47,7 @@ new Vue({
   render: h => h(App)
 }).$mount('#app')
 ```
-然后`npm run serve`启动项目，此时会看到cmd命令行有一堆错误信息，这个时候需要修改`my-blog/.eslintrc.js`这个文件，去掉`@vue/prettier`，然后重新运行项目，就不会再提示错误信息
+然后`npm run serve`启动项目，此时会看到cmd命令行有一堆错误信息，这个时候需要修改`my-blog/.eslintrc.js`这个文件，去掉`@vue/prettier`，然后重新运行项目，就不会再提示错误信息，
 接下来改造项目，首先将`src/components/HelloWorld.vue`重命名为：`layout.vue`:
 ```vue
 // layout.vue
@@ -111,7 +111,7 @@ export default router
 // elementUI样式重置
 // @import './elementUI/reset.scss';
 ```
-j然后在`main.js`里面引入：
+然后在`main.js`里面引入：
 ```js
 import Vue from 'vue'
 import App from './App.vue'
@@ -132,9 +132,9 @@ new Vue({
 
 ```
 改造完毕，启动项目，浏览器输入：`http://localhost:8081/#/`，页面只有三个div，分别为顶部，中间，底部，我们的博客页面就分为三部分：
-- 顶部 用来展示用户头像和用户名，以及登入登出等操作
+- 顶部 用来展示用户头像和用户名，以及登入登出等操作菜单
 - 中间 用来作为博客的主体部分，展示博客列表或详情
-- 底部 用来作为博客的介绍
+- 底部 用来作为博客系统的介绍
 针对这三部分，我们分别封装3个组件来实现：
 ##### 1. 顶部组件`components/header.vue`
 

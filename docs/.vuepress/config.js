@@ -30,6 +30,7 @@ module.exports = {
             {
                 text: 'vue系列',
                 items: [
+                    { text: '简介', link: '/vue/'},
                     { text: 'vue开发实战', link: '/vue/vue-practice/practice-1'},
                     { text: 'vue系列文章', link: '/vue/vue-article/practice-1'},
                 ]
@@ -122,6 +123,7 @@ module.exports = {
                 ['/function/','常用函数'],
             ],
             '/vue/': [
+                ['/vue/','简介'],
                 {
                     title: 'vue开发实战',
                     children: [
@@ -134,6 +136,7 @@ module.exports = {
                     title: 'vue开发总结',
                     children: [
                         ['/vue/vue-article/practice-1','介绍一些vue开发中的小技巧'],
+                        ['/vue/vue-article/practice-2','介绍一些vue开发中的'],
                     ],
                     collapsable: true
                 }
