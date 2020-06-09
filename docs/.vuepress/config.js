@@ -138,6 +138,7 @@ module.exports = {
                         ['/vue/vue-article/practice-1','介绍一些vue开发中的小技巧'],
                         ['/vue/vue-article/practice-2','axios封装'],
                         ['/vue/vue-article/practice-3','vue项目跨域配置'],
+                        ['/vue/vue-article/practice-4','vue项目中不同环境配置不同的接口地址'],
                     ],
                     collapsable: true
                 }

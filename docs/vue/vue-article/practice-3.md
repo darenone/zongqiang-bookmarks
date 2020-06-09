@@ -129,4 +129,45 @@ module.exports = {
 ```js
 var SERVER_URL='/idcMonitorServer/'
 ```
-其它的都是一样滴哦
+其它的都是一样滴哦，如果不配置跨域，需要在`vue.config.js`注释掉这行代码：
+```js
+// vue.config.js
+module.exports = {
+    // devServer: {
+    //     proxy: {
+    //         '/api': {
+    //             target: 'http://localhost:3000',
+    //         }
+    //     }
+    // }
+}
+```
+同时也需要修改`$http.js`:
+```js
+// $http.js
+const SERVER_URL = "http://localhost:3000/api/"
+```
+相当于把接口写死，然后重启vue项目，打开浏览器控制台，会提示以下信息：
+> Access to XMLHttpRequest at 'http://localhost:3000/api/addUser' from origin 'http://localhost:8081' has been blocked by CORS policy: The 'Access-Control-Allow-Origin' header has a value 'http://localhost:4000' that is not equal to the supplied origin.
+
+也就是说我们的vue项目部署在`http://localhost:8081`端口为8081的服务器上，当服务器去访问`localhost:3000`端口为3000的服务器时，由于同源策略，访问被浏览器拦截
+而我们设置了跨域，然后在控制台`network`那里看到，本来是请求`http://localhost:3000/api/addUser`这个接口，设置了跨域以后，我们请求的接口变成了`http://localhost:8081/api/addUser`
+可以看到相当于启用了一个代理服务器为`localhost:8081`，我们先访问代理服务器，然后代理服务器再访问我们的`localhost:3000`这台服务器，拿数据，为啥这样可以呢？<br>
+因为同源策略这是浏览器进行的一个安全设置，而服务器与服务器之间通信，是不存在这种限制滴！好啦，关于vue如何设置跨域，我已经讲得很明白了，希望对你开发项目有所帮助
+需要提一下，可以对多个不同接口配置跨域请求
+```js
+devServer: {
+        open: true, // 浏览器自动打开
+        hot: true, // 热更新，保存自动更新
+        host: '0.0.0.0', // 局域网内可以访问
+        port: 8082,
+        proxy: {
+            '/idcMonitorServer': {
+                target: 'http://113.207.110.212:8091', // http://113.207.110.212:8091/idcMonitorServer/addUser
+            },
+            '/api': {
+                target: 'http://113.207.110.212:8090', // http://113.207.110.212:8090/api/addUser
+            },
+        }
+    }
+```
