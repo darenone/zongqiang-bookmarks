@@ -1,8 +1,9 @@
-vuex是vue的同一状态管理模式,类似于React的redux，可以将它想象成为一个“前端数据库”，这些数据可以在项目中所有的组件中获取，修改，并且在某一组件中对数据的修改可以得到全局的响应。
+### vuex的使用
+vuex是vue状态管理器，类似于React的redux，可以将它想象成为一个`前端数据库`，项目中所有的页面组件都可以对这个数据库进行增、删、改、查的操作，而且在某一组件中对数据进行修改，在其它组件中需要使用到此数据时，都会得到更新后的值
 
 vuex分为五个部分：
 1. state 单一状态树
-2. getters 状态获取
+2. getters 状态获取，类似一个计算属性
 3. mutations 触发同步事件
 4. actions 提交mutation，可以包含异步操作
 5. module 将vuex进行分模块
@@ -11,7 +12,7 @@ vuex分为五个部分：
 ![vuex图解](./img/001.png "vuex图解")
 下面我们就来按照图解的思路，具体举几个例子，来理解vuex:
 
-首先安装vuex
+首先在项目中安装`vuex`
 ```
 npm/cnpm install vuex --save
 ```
@@ -127,7 +128,7 @@ this.$store.commit('setScore', 50);
 this.$store.dispatch('changeScore', 50);
 ```
 在组件里面利用vuex辅助函数（`mapState`，`mapGetters`，`mapMutations`，`mapActions `）调用方式如下：
-```js
+```vue
 <template>
     <section style="padding: 10px;">
         <el-row :gutter="20">
@@ -162,8 +163,33 @@ export default {
 }
 </script>
 ```
+::: tip
+如果调用actions需要传参怎么办呢？下面我来演示一下：
+:::
+```vue {16}
+<script>
+import {mapState, mapGetters, mapMutations, mapActions} from 'vuex';
+export default {
+    data() {
+        return {
+        }
+    },
+    computed: {
+        ...mapState(['score']), // ...是拓展运算符（超引用），state里有多少属性值这里就可以放多少
+        ...mapGetters(['getScore'])
+    },
+    methods: {
+        ...mapMutations(['setName', 'setSex', 'setScore']),
+        ...mapActions(['changeName', 'changeSex', 'changeScore']),
+        changeScore () {
+            this.changeScore(20)
+        }
+    }
+}
+</script>
+```
 在组件里使用vuex辅助函数不简写方式：
-```js
+```vue
 <script>
 import {mapState, mapGetters, mapMutations, mapActions} from 'vuex';
 export default {
@@ -360,7 +386,7 @@ const store = new Vuex.Store({
 export default store;
 ```
 调用模块里的方法如下：
-```js
+```vue
 <template>
     <section style="padding: 10px;">
         <el-row :gutter="20">
@@ -431,7 +457,7 @@ export default {
 }
 ```
 组件里调用异步示例：
-```js
+```vue
 <script>
 import {mapState, mapGetters, mapMutations, mapActions} from 'vuex';
 export default {

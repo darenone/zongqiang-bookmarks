@@ -35,13 +35,16 @@ module.exports = {
                     { text: 'vue系列文章', link: '/vue/vue-article/practice-1'},
                 ]
             },
+            // { text: 'nodeJs系列', link: '/node/nodeJs/practice-1' },
             {
-                text: '小程序系列',
+                text: '武功绝学',
                 items: [
-                    { text: '微信小程序开发实战', link: '/miniprogram/practice-1'},
+                    { text: '独孤九剑-Vue', link: '/vue/'},
+                    { text: '六脉神剑-React', link: '/react/'},
+                    { text: '两仪剑法-微信小程序', link: '/miniprogram/'},
+                    { text: '斗转星移-NodeJs', link: '/node/'},
                 ]
             },
-            { text: 'nodeJs系列', link: '/node/nodeJs/practice-1' },
             {
                 text: '友情链接',
                 items: [
@@ -53,23 +56,10 @@ module.exports = {
                     { text: '简书', link: 'https://www.jianshu.com/u/944f222b2ad4'},
                     { text: 'markDown语法', link: 'https://github.com/younghz/Markdown'},
                 ]
-            },
-            // {
-            //     text: 'gitHub',
-            //     items: [
-            //         { text: 'GitHub首页', link: 'https://github.com/Mulander-J' },
-            //         { text: 'Island', link: 'https://mulander-j.github.io/island/code/html/index.html' },
-            //         { text: 'TimeWaster', link: 'https://mulander-j.github.io/timeWaster/demo/index.html#/' },
-            //     ]
-            // }
+            }
         ],
         // 侧边栏菜单( 一个模块对应一个菜单形式 )
         sidebar: {
-            // 打开FAQ主页链接时生成下面这个菜单
-            // ['','']=>[路径,标题]
-            // 或者写成 '路径',标题自动识别为该地址的文件中的h1标题
-            // 不以 '/' 结尾的就是指向.md文件
-            // '/FAQ/DigestionHeap/Digested.md'文件
             '/article/': [
                 ['/article/','简介'],
                 // ['/FAQ/Pool/SkillStack','技术栈'],
@@ -78,7 +68,6 @@ module.exports = {
                     title: 'vue相关', // 菜单名
                     children: [ // 子菜单
                         ['/article/vue/menu','vue+iview配置导航栏'],
-                        ['/article/vue/vuex','vuex在项目中的使用'],
                         ['/article/vue/mock','vue中利用mock模拟后端接口'],
                         ['/article/vue/styles','在vue项目中如何组织样式styles文件'],
                         ['/article/vue/router','vue项目中router设置'],
@@ -139,20 +128,33 @@ module.exports = {
                         ['/vue/vue-article/practice-2','axios封装'],
                         ['/vue/vue-article/practice-3','vue项目跨域配置'],
                         ['/vue/vue-article/practice-4','vue项目中不同环境配置不同的接口地址'],
+                        ['/vue/vue-article/practice-5','vuex的使用'],
                     ],
                     collapsable: true
                 }
             ],
             '/miniprogram/': [
+                ['/miniprogram/', '简介'],
                 {
-                    title: '微信小程序开发实战',
+                    title: '教你开发第一个微信小程序',
                     children: [
-                        ['/miniprogram/practice-1','小程序项目结构'],
+                        ['/miniprogram/mini-1/practice-1','微信小程序介绍'],
                     ],
-                    collapsable: false
-                }
+                    collapsable: true
+                },
+            ],
+            '/react/': [
+                ['/react/', '简介'],
+                {
+                    title: '从零学习react',
+                    children: [
+                        ['/react/react-1/practice-1','react介绍'],
+                    ],
+                    collapsable: true
+                },
             ],
             '/node/': [
+                ['/node/', '简介'],
                 {
                     title: 'nodeJs基础实战',
                     children: [
@@ -196,46 +198,6 @@ module.exports = {
                     collapsable: true
                 }
             ],
-             // 打开Thought主页链接时生成下面这个菜单
-            // '/Thought/':[
-            //     ['/Thought/','随笔首页'],
-            //     {
-            //         title: '游记',
-            //         children: [
-            //             ['/Thought/Travels/beiPing','北平游记'],
-            //         ]
-            //     },
-            //     {
-            //         title: '年终回顾',
-            //         children: [
-            //             ['/Thought/YearReview/2018','2018年'],
-            //             ['/Thought/YearReview/2019','2019年']
-            //         ]
-            //     },
-            // ],
-            // 打开Store主页链接时生成下面这个菜单
-            // '/Store/': [
-            //     ['','仓库首页'],
-            //     {
-            //         title: '应用',
-            //         children: [
-            //             ['/Store/Apps/DownDoors', '下载门户'],
-            //             ['/Store/Apps/OwnTest', '博主测评']
-            //         ]
-            //     },
-            //     {
-            //         title: '电影',
-            //         children: [
-            //             ['/Store/Films/','收藏级电影']
-            //         ]
-            //     },
-            //     {
-            //         title: '动画',
-            //         children: [
-            //             ['/Store/Anime/','收藏级动画']
-            //         ]
-            //     },
-            // ]
         }
     }
     
