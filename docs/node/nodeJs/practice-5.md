@@ -190,6 +190,10 @@ fs.watch('./', {
 ```
 利用fs文件系统提供的watch这个方法，输出的时候，改动一下，会同时打印多次，效果不是特别理想，所以我们可以利用`chokidar`这个插件来监听文件的变化<br>
 [chokidar](https://www.npmjs.com/package/chokidar)
+在需要安装此插件的文件执行如下命令：
+```
+npm init -y
+```
 ```
 npm/cnpm install chokidar --save-dev
 ```

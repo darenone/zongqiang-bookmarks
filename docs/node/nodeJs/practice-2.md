@@ -1,6 +1,6 @@
 ### 创建一个nodeJs引用及调试
 nodeJs和JavaScript有什么区别？<br>
-上文说了nodeJs是一个基于Chrome v8引擎的js运行平台，在nodeJs上可以运行用JavaScript编写的程序，如果没有nodeJS，用JavaScript编写的程序只能在浏览器环境中运行，有了nodeJs，JavaScript程序就就可以脱离浏览器，在node环境里运行<br>
+nodeJs是一个基于Chrome v8引擎的javascript运行平台，在nodeJs上可以运行用js语言编写的程序，如果没有nodeJS，用js语言编写的程序只能在浏览器环境中运行，有了nodeJs，JavaScript程序就就可以脱离浏览器，在node环境里运行<br>
 新建以下代码：
 ```js
 let name= 'zongq'
@@ -22,7 +22,7 @@ function add (a, b) {
     console.log(a + b)
 }
 ```
-在另外一个`index.js`里来调用它，按照常规思维，如果是在浏览器环境里，我们需要在html文件里，同时引入这两个js文件，这样才能在`index.js`里面调用此function；但是在node环境里，这样的方式是不可行的，这个时候怎么办呢？更具commonjs规范，node将每一个js文件都定义成一个模块，利用require引入和module导出模块，这就是commonjs的核心，具体怎么用呢？上代码：<br>
+在另外一个`index.js`里来调用它，按照常规思维，如果是在浏览器环境里，我们需要在html文件里，同时引入这两个js文件，这样才能在`index.js`里面调用此function；但是在node环境里，这样的方式是不可行的，这个时候怎么办呢？根据commonjs规范，node将每一个js文件都定义成一个模块，利用require引入和module导出模块，这就是commonjs的核心，具体怎么用呢？上代码：<br>
 在`calculate.js`文件里，写法如下：
 ```js
 function add (a, b) {
@@ -75,12 +75,12 @@ npm init -y
 ```
 会在`1-5`文件下生成`package.json`，接下来就可以安装依赖了，我们尝试来安装[Lodash](https://www.lodashjs.com/),执行如下命令：
 ```
-cnpm install loadsh --save
+cnpm install lodash --save
 ```
-然后在`index.js`里引入`loadsh`
+然后在`index.js`里引入`lodash`
 ```js
 let cal = require('./calculate')
-let _ = require('loadsh')
+let _ = require('lodash')
 
 cal.add(5, 5)
 
@@ -97,28 +97,33 @@ console.log(arr2) // [ 1, 2, 3, 4, 5 ]
 var a = 1
 console.log(window.a)
 ```
-但是在node里面，每一个js文件都是一个模块，模块有自己的作用域，想访问模块里的变量，就要采用require和module来引入导出模块，如果想定义全局变量，可以采用node提供的global对象，演示如下：
-修改`calculate.js`文件
+但是在node里面，每一个js文件都是一个模块，模块有自己的作用域，想访问模块里的变量，就要采用require和module来引入导出模块，如果想定义全局变量，可以采用node提供的global对象，演示如下：<br>
+在`test1.js`文件里定义一个全局变量
 ```js
-function add (a, b) {
-    console.log(a + b)
+let name = '宗强'
+global.name = '天王盖地虎'
+
+function sayhello (name) {
+    console.log('Hello' + name)
 }
 
-function reduce(a, b) {
-    console.log(a - b)
-}
 
-var a = 1
-global.a = 2
+// sayhello(name)
 
 module.exports = {
-    add,
-    reduce
+    sayhello
 }
 ```
-在`index.js`里打印结果
+在`test2.js`文件里获取这个全局变量
 ```js
-let { add, reduce } = require('./calculate')
-console.log(a) // 2
-console.log(global.a) // 2
+let { sayhello } = require('./test1')
+let _ = require('lodash')
+
+sayhello('喔喔牛在路上')
+
+let arr1 = [0, 1, 2]
+let arr2 = _.concat(arr1, 3, 4, [5, 6, 7])
+
+console.log(name)
+// 天王盖地虎
 ```

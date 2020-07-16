@@ -61,6 +61,11 @@ const buf8 = Buffer.allocUnsafe(10)
 // 这个方法比调用 Buffer.alloc() 更快，
 // 但返回的 Buffer 实例可能包含旧数据，这些旧数据来至于其它已经创建的buffer
 // 因此需要使用 fill() 或 write() 重写
+const buf1 = Buffer.alloc(10, 'hello-zongqiang')
+const buf2 = Buffer.allocUnsafe(10).fill('hello-zongqiang')
+console.log(buf1)
+console.log(buf2)
+buf2.write('hello-zongqiang') // 这种方式只能写入字符串
 ```
 第三种创建方式：[Buffer.from(array)](http://nodejs.cn/api/buffer.html#buffer_class_method_buffer_from_array)<br>
 ```js
@@ -84,7 +89,11 @@ eg:
 let byteLength1 = Buffer.byteLength('zongq')
 // 5
 let byteLength2 = Buffer.byteLength('中文') // 一个中文字符3个字节
-// 6 
+// 6
+Buffer.byteLength('zongqiang', 'base64')
+// 6
+Buffer.byteLength('zongqiang', 'utf8')
+// 9
 ```
 - [Buffer.isBuffer(obj)](http://nodejs.cn/api/buffer.html#buffer_class_method_buffer_isbuffer_obj) 判断是否是buffer实例<br>
 eg:
