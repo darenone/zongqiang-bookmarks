@@ -21,6 +21,7 @@ module.exports = {
             // 这里的'/' 指的是 docs文件夹路径
             // 以 '/' 结尾的默认指向该路径下README.md文件
             {text: '主页', link: '/'}, // 导航条
+            {text: 'vue系列', link: '/vue/'},
             {text: '我的文章', link: '/article/'},
             {text: '网址大全', link: '/website/'},
             // {text: '链接2', link: '/Store/'},
@@ -114,15 +115,7 @@ module.exports = {
             '/vue/': [
                 ['/vue/','简介'],
                 {
-                    title: 'vue开发实战',
-                    children: [
-                        ['/vue/vue-practice/practice-1','使用vue-cli3.0创建项目'],
-                        ['/vue/vue-practice/practice-2','项目路由配置'],
-                    ],
-                    collapsable: true
-                },
-                {
-                    title: 'vue开发总结',
+                    title: 'vue理论',
                     children: [
                         ['/vue/vue-article/practice-1','介绍一些vue开发中的小技巧'],
                         ['/vue/vue-article/practice-2','axios封装'],
@@ -131,7 +124,15 @@ module.exports = {
                         ['/vue/vue-article/practice-5','vuex的使用'],
                     ],
                     collapsable: true
-                }
+                },
+                {
+                    title: 'vue实战',
+                    children: [
+                        ['/vue/vue-practice/practice-1','使用vue-cli3.0创建项目'],
+                        ['/vue/vue-practice/practice-2','项目路由配置'],
+                    ],
+                    collapsable: true
+                },
             ],
             '/miniprogram/': [
                 ['/miniprogram/', '简介'],
