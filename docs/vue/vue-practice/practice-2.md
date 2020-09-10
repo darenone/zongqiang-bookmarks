@@ -51,14 +51,18 @@ export default {
 ```js
 import colorConfig from '@/config/color'
 ```
-6. 在src里新增errorpage文件夹，当路由出错，服务器出错，浏览器兼容等问题的时候，能够跳转到相应的页面，在这里文件夹下新增4个文件
+6. 在src里新增errorpage文件夹，当出现路由出错，服务器出错，浏览器兼容等问题的时候，能够跳转到相应的页面提示用户
+
+具体实现方法如下：在src/errorpage文件夹下新增4个文件
 ```
 1. browser_check.vue // 浏览器兼容
 2. extra_401_option.vue // 未登录或登录超时
 3. extra_404_option.vue // 访问的页面未找到
 4. extra_500_option.vue // 访问接口出错
 ```
-具体这几个页面里的内容，代码已上传至git，可以直接找到src/errorpage这个文件夹查看[vue-base-frame](https://github.com/darenone/vue-base-frame)页面有了，接下来就是配置这几个页面的路由了
+具体这几个页面里的内容，代码已上传至git，可以直接找到src/errorpage这个文件夹查看[vue-base-frame](https://github.com/darenone/vue-base-frame)
+
+现在4个页面有了，接下来就是配置这几个页面的路由了
 
 找到项目里，src/router这个文件夹新增error-router.js文件，配置路由如下：
 ```js
@@ -152,7 +156,83 @@ router.afterEach((to, from, next) => {
 
 export default router
 ```
-完事儿npm run serve启动项目，浏览器输入比如：http://localhost:4000/#/abnormal，就可以看到新增的几个页面了
+然后npm run serve启动项目，浏览器输入启动地址，比如：http://localhost:4000/#/abnormal，就可以看到新增的几个页面了
+
+7. 在src/store文件夹下新增几个文件（关于vue的状态管理，我会单独写一篇文章放在vue理论里面讲，搞清楚vuex到低是什么以及怎么用）
+```
+state.js
+mutations.js
+actions.js
+```
+然后在index.js里面引入这几个文件
+```js
+// index.js
+import Vue from 'vue'
+import Vuex from 'vuex'
+import state from './state'
+import mutations from './mutations'
+import actions from './actions'
+
+Vue.use(Vuex)
+
+export default new Vuex.Store({
+  state,
+  mutations,
+  actions,
+  modules: {
+  }
+})
+```
+如果你的项目比较负载有可能需要对state进行模块化管理，这个时候就需要在src/store下新增module文件
+
+举个例子
+
+在src/store/module下新增user.js文件，内容如下：
+```js
+// user.js
+const state = {}
+const mutations = {}
+const actions = {}
+
+export default {
+    state,
+    mutations,
+    actions
+}
+```
+然后在index.js里面引入这个文件
+```js
+import Vue from 'vue'
+import Vuex from 'vuex'
+import state from './state'
+import mutations from './mutations'
+import actions from './actions'
+import user from './module/user'
+
+Vue.use(Vuex)
+
+export default new Vuex.Store({
+  state,
+  mutations,
+  actions,
+  modules: {
+    user
+  }
+})
+```
+8. 在src下新增mock，在我们开发的时候可以用来模拟数据用，并新增src/mock/index.js文件，在里面添加两行代码：
+```js
+import Mock from 'mockjs'
+
+
+export default Mock
+```
+
+这里需要在项目里安装`mockjs`依赖，cmd执行如下命令：
+```
+cnpm/npm install mockjs -D // 此依赖只作为开发环境使用，所以后缀不是--save 而是-D，而且打包的时候这个依赖不会打包进去
+```
+OK，完成上述步骤，一个真正满足开发需求的vue项目框架已经搭建完成，接下里的文章，我都会在这个框架之上修修补补，来搭建起一个功能更加丰富的项目
 <style>
     .page p, div, ol {
         font-size: 14px;

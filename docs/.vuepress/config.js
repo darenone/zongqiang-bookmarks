@@ -24,18 +24,16 @@ module.exports = {
             {text: 'vue系列', link: '/vue/'},
             {text: '我的文章', link: '/article/'},
             {text: '网址大全', link: '/website/'},
-            // {text: '链接2', link: '/Store/'},
-            // {text: '链接3', link: '/Thought/'},
             {text: '常用函数', link: '/function/'},
             // 多项，下拉形式
-            {
-                text: 'vue系列',
-                items: [
-                    { text: '简介', link: '/vue/'},
-                    { text: 'vue开发实战', link: '/vue/vue-practice/practice-1'},
-                    { text: 'vue系列文章', link: '/vue/vue-article/practice-1'},
-                ]
-            },
+            // {
+            //     text: 'vue系列',
+            //     items: [
+            //         { text: '简介', link: '/vue/'},
+            //         { text: 'vue开发实战', link: '/vue/vue-practice/practice-1'},
+            //         { text: 'vue系列文章', link: '/vue/vue-article/practice-1'},
+            //     ]
+            // },
             // { text: 'nodeJs系列', link: '/node/nodeJs/practice-1' },
             {
                 text: '武功绝学',
@@ -115,6 +113,15 @@ module.exports = {
             '/vue/': [
                 ['/vue/','简介'],
                 {
+                    title: 'vue实战',
+                    children: [
+                        ['/vue/vue-practice/practice-1','使用vue-cli3.0创建项目'],
+                        ['/vue/vue-practice/practice-2','改造由vue-cli 3.x创建的模板项目'],
+                        ['/vue/vue-practice/practice-3','详解如何在项目里配置路由（1）'],
+                    ],
+                    collapsable: true
+                },
+                {
                     title: 'vue理论',
                     children: [
                         ['/vue/vue-article/practice-1','介绍一些vue开发中的小技巧'],
@@ -122,14 +129,6 @@ module.exports = {
                         ['/vue/vue-article/practice-3','vue项目跨域配置'],
                         ['/vue/vue-article/practice-4','vue项目中不同环境配置不同的接口地址'],
                         ['/vue/vue-article/practice-5','vuex的使用'],
-                    ],
-                    collapsable: true
-                },
-                {
-                    title: 'vue实战',
-                    children: [
-                        ['/vue/vue-practice/practice-1','使用vue-cli3.0创建项目'],
-                        ['/vue/vue-practice/practice-2','项目路由配置'],
                     ],
                     collapsable: true
                 },
@@ -146,13 +145,13 @@ module.exports = {
             ],
             '/react/': [
                 ['/react/', '简介'],
-                {
-                    title: '从零学习react',
-                    children: [
-                        ['/react/react-1/practice-1','react介绍'],
-                    ],
-                    collapsable: true
-                },
+                // {
+                //     title: '从零学习react',
+                //     children: [
+                //         ['/react/react-1/practice-1','react介绍'],
+                //     ],
+                //     collapsable: true
+                // },
             ],
             '/node/': [
                 ['/node/', '简介'],
