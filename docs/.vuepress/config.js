@@ -12,9 +12,10 @@ module.exports = {
         lineNumbers: true // 代码块显示行号
     },
     themeConfig: {
-        sidebarDepth: 2, // 将同时提取markdown中h2 和 h3 标题，显示在侧边栏上
+        sidebarDepth: 2, // 将同时提取markdown中h2 和 h3, h4 标题，显示在侧边栏上
+        // displayAllHeaders: true,
         lastUpdated: '上次更新' ,// 文档更新时间：每个文件git最后提交的时间,
-        sidebar: 'auto',
+        // sidebar: 'auto',
         // 顶部导航栏
         nav: [
             // 单项 text：显示文字，link：指向链接
@@ -45,15 +46,21 @@ module.exports = {
                 ]
             },
             {
+                text: '测试', link: '/vue/vue-practice/'
+            },
+            {
                 text: '友情链接',
                 items: [
                     // link：指向链接也可以是外网链接
-                    { text: 'gitHub', link: 'https://github.com/darenone'},
+                    { text: '我的gitHub', link: 'https://github.com/darenone'},
+                    { text: '我的gitHub主页', link: 'https://darenone.github.io/zongqiang-bookmarks/'},
                     { text: 'Segmentfault', link: 'https://segmentfault.com/u/niuzailushang_587d8385a71e9'},
-                    { text: '掘金', link: 'https://juejin.im/user/57ca3f4c128fe1006969be2c'},
-                    { text: '知乎专栏', link: 'https://zhuanlan.zhihu.com/zongqiang'},
+                    { text: '掘金', link: 'https://juejin.im/user/826444566503496/activities'},
+                    { text: '我的知乎', link: 'https://www.zhihu.com/people/zongqinag/posts'},
                     { text: '简书', link: 'https://www.jianshu.com/u/944f222b2ad4'},
                     { text: 'markDown语法', link: 'https://github.com/younghz/Markdown'},
+                    { text: '微信markdown编辑器', link: 'https://openwrite.cn/weixin.html#'},
+                    { text: '微信公众号', link: 'https://mp.weixin.qq.com/'},
                 ]
             }
         ],
@@ -115,9 +122,13 @@ module.exports = {
                 {
                     title: 'vue实战',
                     children: [
-                        ['/vue/vue-practice/practice-1','使用vue-cli3.0创建项目'],
-                        ['/vue/vue-practice/practice-2','改造由vue-cli 3.x创建的模板项目'],
-                        ['/vue/vue-practice/practice-3','详解如何在项目里配置路由（1）'],
+                        '/vue/vue-practice/practice-1',
+                        '/vue/vue-practice/practice-2',
+                        '/vue/vue-practice/practice-3',
+                        '/vue/vue-practice/practice-4',
+                        '/vue/vue-practice/practice-5',
+                        '/vue/vue-practice/practice-6',
+                        '/vue/vue-practice/practice-7',
                     ],
                     collapsable: true
                 },

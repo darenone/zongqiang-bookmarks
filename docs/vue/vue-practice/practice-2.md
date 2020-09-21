@@ -1,4 +1,5 @@
-### 改造由vue-cli 3.x创建的模板项目
+# 2. 改造由vue-cli 3.x创建的模板项目
+
 这个简单的模板文件此时还不能满足实际的开发需求，接下来就是对其进行实际的改造以便于我们开发vue项目，首先说明，下文中所有的修改基本上是在src这个主文件夹里进行
 1. 在src里新增api文件夹，项目里ajax请求都写在这里面，以便于管理
 2. 在src/assets文件夹，新增img文件夹，新增font文件夹
@@ -158,9 +159,10 @@ export default router
 ```
 然后npm run serve启动项目，浏览器输入启动地址，比如：http://localhost:4000/#/abnormal，就可以看到新增的几个页面了
 
-7. 在src/store文件夹下新增几个文件（关于vue的状态管理，我会单独写一篇文章放在vue理论里面讲，搞清楚vuex到低是什么以及怎么用）
+7. 在src/store文件夹下新增几个文件（关于vue的状态管理，我会单独讲解，搞清楚vuex到低是什么以及怎么用）
 ```
 state.js
+getter.js
 mutations.js
 actions.js
 ```
@@ -170,6 +172,7 @@ actions.js
 import Vue from 'vue'
 import Vuex from 'vuex'
 import state from './state'
+import getters from './getter'
 import mutations from './mutations'
 import actions from './actions'
 
@@ -177,13 +180,14 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state,
+  getters,
   mutations,
   actions,
   modules: {
   }
 })
 ```
-如果你的项目比较负载有可能需要对state进行模块化管理，这个时候就需要在src/store下新增module文件
+如果你的项目比较复杂，有可能需要对state进行模块化管理，这个时候就需要在src/store下新增module文件
 
 举个例子
 
@@ -205,6 +209,7 @@ export default {
 import Vue from 'vue'
 import Vuex from 'vuex'
 import state from './state'
+import getters from './getter'
 import mutations from './mutations'
 import actions from './actions'
 import user from './module/user'
@@ -213,6 +218,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state,
+  getters,
   mutations,
   actions,
   modules: {
