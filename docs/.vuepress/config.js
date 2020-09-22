@@ -53,7 +53,7 @@ module.exports = {
                 items: [
                     // link：指向链接也可以是外网链接
                     { text: '我的gitHub', link: 'https://github.com/darenone'},
-                    { text: '我的gitHub主页', link: 'https://darenone.github.io/zongqiang-bookmarks/'},
+                    { text: '我的博客', link: 'https://darenone.github.io/zongqiang-bookmarks/'},
                     { text: 'Segmentfault', link: 'https://segmentfault.com/u/niuzailushang_587d8385a71e9'},
                     { text: '掘金', link: 'https://juejin.im/user/826444566503496/activities'},
                     { text: '我的知乎', link: 'https://www.zhihu.com/people/zongqinag/posts'},
