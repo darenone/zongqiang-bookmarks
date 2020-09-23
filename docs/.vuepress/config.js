@@ -55,7 +55,7 @@ module.exports = {
                     { text: '我的gitHub', link: 'https://github.com/darenone'},
                     { text: '我的博客', link: 'https://darenone.github.io/zongqiang-bookmarks/'},
                     { text: 'Segmentfault', link: 'https://segmentfault.com/u/niuzailushang_587d8385a71e9'},
-                    { text: '掘金', link: 'https://juejin.im/user/826444566503496/activities'},
+                    { text: '掘金', link: 'https://juejin.im/user/2990287320007886'},
                     { text: '我的知乎', link: 'https://www.zhihu.com/people/zongqinag/posts'},
                     { text: '简书', link: 'https://www.jianshu.com/u/944f222b2ad4'},
                     { text: 'markDown语法', link: 'https://github.com/younghz/Markdown'},
@@ -129,17 +129,17 @@ module.exports = {
                         '/vue/vue-practice/practice-5',
                         '/vue/vue-practice/practice-6',
                         '/vue/vue-practice/practice-7',
+                        '/vue/vue-practice/practice-8',
                     ],
                     collapsable: true
                 },
                 {
                     title: 'vue理论',
                     children: [
-                        ['/vue/vue-article/practice-1','介绍一些vue开发中的小技巧'],
-                        ['/vue/vue-article/practice-2','axios封装'],
-                        ['/vue/vue-article/practice-3','vue项目跨域配置'],
-                        ['/vue/vue-article/practice-4','vue项目中不同环境配置不同的接口地址'],
-                        ['/vue/vue-article/practice-5','vuex的使用'],
+                        '/vue/vue-article/practice-1',
+                        '/vue/vue-article/practice-2',
+                        '/vue/vue-article/practice-3',
+                        '/vue/vue-article/practice-4',
                     ],
                     collapsable: true
                 },
