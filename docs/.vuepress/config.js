@@ -37,16 +37,14 @@ module.exports = {
             // },
             // { text: 'nodeJs系列', link: '/node/nodeJs/practice-1' },
             {
-                text: '武功绝学',
+                text: '技术概览',
                 items: [
-                    { text: '独孤九剑-Vue', link: '/vue/'},
-                    { text: '六脉神剑-React', link: '/react/'},
-                    { text: '两仪剑法-微信小程序', link: '/miniprogram/'},
-                    { text: '斗转星移-NodeJs', link: '/node/'},
+                    { text: 'Vue', link: '/vue/'},
+                    { text: 'React', link: '/react/'},
+                    { text: '微信小程序', link: '/miniprogram/'},
+                    { text: 'NodeJs', link: '/node/'},
+                    { text: '脚手架学习', link: '/scaffold/'},
                 ]
-            },
-            {
-                text: '测试', link: '/vue/vue-practice/'
             },
             {
                 text: '友情链接',
@@ -208,6 +206,16 @@ module.exports = {
                     ],
                     collapsable: true
                 }
+            ],
+            '/scaffold/': [
+                ['/scaffold/','简介'],
+                {
+                    title: 'gulp',
+                    children: [
+                        '/scaffold/gulp/gulp-1',
+                    ],
+                    collapsable: true
+                },
             ],
         }
     }
