@@ -1,6 +1,8 @@
 # 4. 详解如何在项目里配置路由（2）
 
-上篇文章，我讲了路由里面的，动态路由匹配，编程式导航，嵌套路由匹配，命名路由，命名视图，重定向这几个知识点，但是官网[vue-router](https://vue-loader.vuejs.org/zh/)上，不仅仅是这些内容，我提到的这些知识点是针对于真实的项目开发中用到的进行讲解，如果想了解更多vue-router的知识可以查阅官网内容
+> 本文章涉及到的代码已上传至github[vue-base-frame](https://github.com/darenone/vue-base-frame)
+
+上篇文章，我讲了路由里面的，动态路由匹配，编程式导航，嵌套路由匹配，命名路由，命名视图，重定向这几个知识点，但是官网[vue-router](https://router.vuejs.org/zh/)上，不仅仅是这些内容，我提到的这些知识点是针对于真实的项目开发中用到的进行讲解，如果想了解更多vue-router的知识可以查阅官网内容
 
 回忆一下上节的内容，在讲动态路由匹配和编程式导航的时候，组件中是如何获取由路由传递过来的值呢？
 
@@ -28,7 +30,7 @@
 
 第1种：布尔模式
 
-修改src/router/index.js里面的路由：
+修改`src/router/index.js`里面的路由：
 ```js
   {
     path: '/task-detail/:taskId',
@@ -70,7 +72,7 @@ export default {
 ```
 第2种：对象模式
 
-只需要修改src/router/index.js里面的路由，组件里面和布尔模式一样：
+只需要修改`src/router/index.js`里面的路由，组件里面和布尔模式一样：
 ```js
   {
     path: '/task-detail',
@@ -87,7 +89,7 @@ export default {
 ```
 第3种：函数模式
 
-只需要修改src/router/index.js里面的路由，组件里面获取值和上面两种一样：
+只需要修改`src/router/index.js`里面的路由，组件里面获取值和上面两种一样：
 ```js
   {
     path: '/task-detail/:taskId',
@@ -406,7 +408,7 @@ beforeRouteUpdate (to, from, next) {
   next()
 }
 ```
-第五种 路由元信息
+## 4. 路由元信息
 ```js
 {
   path: '/',
@@ -438,7 +440,7 @@ router.beforeEach((to, from, next) => {
   to.meta && setTitle(to.meta.title)
 })
 ```
-第六种 过渡效果
+## 5. 过渡效果
 
 路由切换的时候，在`<router-view>`里面加载页面，我们可以利用`<transition>`组件给它添加一些过渡效果
 ```vue

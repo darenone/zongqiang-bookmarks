@@ -1,10 +1,12 @@
 # 3. 详解如何在项目里配置路由（1）
 
+> 本文章涉及到的代码已上传至github[vue-base-frame](https://github.com/darenone/vue-base-frame)
+
 接着上一节讲，基本框架已经搭建完成，接下来最重要的就是项目里路由配置了，它管理着页面间的跳转
 
-我们做前端项目，基本上步骤就是：搭建前端框架--配置项目路由--开发具体页面，按照这一步骤，我们来详细讲解一下vue Router的知识和使用方法，学习这篇文章你可以可以对照着官方文档[Vue Router](https://router.vuejs.org/zh/)来学习
+我们做前端项目，基本上步骤就是：搭建前端框架--配置项目路由--开发具体页面，本节讲解一下vue Router的知识和使用方法，学习这篇文章你可以可以对照着官方文档[Vue Router](https://router.vuejs.org/zh/)来学习
 
-我们来看一下src/APP.vue里面的内容：
+我们来看一下`src/APP.vue`里面的内容：
 ```vue
 <template>
   <div id="app">
@@ -25,7 +27,7 @@
 
 简单介绍一下，比如`<router-link to="/">Home</router-link>`它里面有home这个内容，所以只能写成闭合标签，像`<router-view></router-view>`这种标签，里面没有内容，就可以简写成开标签`<router-view/>`
 
-接下来切入正题，我们来说第一个知识点：
+接下来切入正题，来说第一个知识点：
 
 ## 1. 动态路由匹配
 
@@ -60,7 +62,7 @@ const routes = [
   ...errorRoutes
 ]
 ```
-在src/App.vue里配置路由：
+在`src/App.vue`里配置路由：
 ```vue
 <router-link to="/task-detail/10000218">任务详情10000218</router-link>
 <router-link to="/task-detail/10000217">任务详情10000217</router-link>
@@ -74,7 +76,7 @@ const routes = [
     </section>
 </template>
 ```
-以上就是动态路由匹配的用法，点击跳转的时候，url是这样的：`http://localhost:4000/#/task-detail/10000218`
+以上就是动态路由匹配的用法，点击跳转的时候，url是这样的：`http://localhost:4000/#/task-detail/10000218`，url上面携带参数进行跳转
 
 ## 2. 编程式导航
 
@@ -176,7 +178,7 @@ export default {
 
 首先咱们，先把这四个页面新建出来：
 
-在src/views文件夹下新建product文件夹，同时新增`index.vue`，`ele-product.vue`，`phone.vue`和`computer.vue`这四个文件
+在src/views文件夹下新建product文件夹，并在此文件夹下新增`index.vue`，`ele-product.vue`，`phone.vue`和`computer.vue`这四个文件
 
 `index.vue`
 ```vue
@@ -212,7 +214,7 @@ export default {
     </section>
 </template>
 ```
-同时需要在src/index.js里面配置我们的嵌套路由：
+此时需要在`src/index.js`里面配置嵌套路由：
 ```js
 const routes = [
   {
@@ -268,7 +270,7 @@ const routes = [
 
 ## 4. 命名路由
 
-在src/index.js文件里配置路由的时候，每个路由对象上都加了一个name属性，为啥子加呢，相当于给这个路由起了一个名字，所以有了命名路由的叫法，有什么用呢？还真有用处，上面我们在用`<router-link>`做路由跳转时，是怎么写的呢？
+在`src/index.js`文件里配置路由的时候，每个路由对象上都加了一个name属性，为啥子加呢，相当于给这个路由起了一个名字，所以有了命名路由的叫法，有什么用呢？上面我们在用`<router-link>`做路由跳转时，是怎么写的呢？
 ```vue
 <router-link to="/product/ele-product/computer">电脑</router-link>
 ```
@@ -284,7 +286,8 @@ const routes = [
 
 还拿上面的产品-电子产品-手机这个嵌套页面说事儿，当进入了手机这个页面，我们又分很多手机品牌，比如要在`phone.vue`这个页面分别展示华为专场，苹果专场，小米专场，vivo专场，怎么做呢？
 
-在src/views/product文件夹下新增`apple.vue`，`mi.vue`，`vivo.vue`这三个文件，同时修改`phone.vue`这个页面的内容，让它做为华为专场的页面展示：
+在`src/views/product`文件夹下新增`apple.vue`，`mi.vue`，`vivo.vue`这三个文件，同时修改`phone.vue`这个页面的内容，让它做为华为专场的页面展示：
+
 `phone.vue`
 ```vue
 <template>

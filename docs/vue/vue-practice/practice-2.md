@@ -1,15 +1,19 @@
 # 2. 改造由vue-cli 3.x创建的模板项目
 
+> 本文章涉及到的代码已上传至github[vue-base-frame](https://github.com/darenone/vue-base-frame)
+
 这个简单的模板文件此时还不能满足实际的开发需求，接下来就是对其进行实际的改造以便于我们开发vue项目，首先说明，下文中所有的修改基本上是在src这个主文件夹里进行
 1. 在src里新增api文件夹，项目里ajax请求都写在这里面，以便于管理
-2. 在src/assets文件夹，新增img文件夹，新增font文件夹
+2. 在src/assets文件夹，新增img文件夹和font文件夹
 3. 在src里新增directive文件夹，用来放vue的自定义指令
 4. 在src里新增lib文件夹，并且新增src/lib/util.js（存放一些与业务结合的工具方法），新增src/lib/tool.js（存放一些与业务无关的工具方法）
 
 举个简单的例子
 ```js
 // util.js
-
+export const setTitle = (title) => {
+    window.document.title = title ? title + '-基础框架' : '基础框架'
+}
 ```
 ```js
 // tool.js
@@ -166,7 +170,7 @@ getter.js
 mutations.js
 actions.js
 ```
-然后在index.js里面引入这几个文件
+然后在`src/store/index.js`里面引入这几个文件
 ```js
 // index.js
 import Vue from 'vue'
@@ -191,7 +195,7 @@ export default new Vuex.Store({
 
 举个例子
 
-在src/store/module下新增user.js文件，内容如下：
+在`src/store/module`下新增`user.js`文件，内容如下：
 ```js
 // user.js
 const state = {}
@@ -204,7 +208,7 @@ export default {
     actions
 }
 ```
-然后在index.js里面引入这个文件
+然后在`src/store/index.js`里面引入这个文件
 ```js
 import Vue from 'vue'
 import Vuex from 'vuex'
