@@ -128,7 +128,7 @@ module.exports = {
                         '/vue/vue-practice/practice-6',
                         '/vue/vue-practice/practice-7',
                         '/vue/vue-practice/practice-8',
-                        '/vue/vue-practice/practice-9',
+                        '/vue/vue-practice/practice-9zo',
                     ],
                     collapsable: true
                 },
