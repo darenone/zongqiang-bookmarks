@@ -1,8 +1,11 @@
-### 利用nodejs做一个简易的爬虫
-从一个网站上面爬取一些信息爬到本地，比如图片，html文档<br>
+# 12-利用nodejs做一个简易的爬虫
 
-##### 1. 创建一个简易的爬虫demo
+从一个网站上面爬取一些信息爬到本地，比如图片，html文档
+
+## 1. 创建一个简易的爬虫demo
+
 比如我们爬虫`https://www.baidu.com/`这个网站，并且将爬到的html文档放入到`html.txt`中
+
 ```js
 const http = require('http')
 const https = require('https') // 引入https模块
@@ -22,7 +25,7 @@ https.get('https://www.baidu.com/', (res) => {
     })
 })
 ```
-##### 2. cheerio实现dom操作
+## 2. cheerio实现dom操作
 
 在上个demo中，我们爬下来所有的HTMl结构，如果我们想只爬出特定的内容，就可以利用这个插件进行操作
 

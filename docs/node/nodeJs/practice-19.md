@@ -1,6 +1,8 @@
-### MongoDB的介绍及安装
+# 19-MongoDB的介绍及安装
+
 在上几节我们讲了MySQL数据库，它是一种关系型数据库，而MongoDB使用c++编写的非关系型数据库
-##### 1. mysql和MongoDB区别
+
+## 1. mysql和MongoDB区别
 <table style="text-align: center;">
     <tr>
         <th></th>
@@ -54,11 +56,13 @@
     </tr>
 </table>
 
-##### 2. MongoDB安装
+## 2. MongoDB安装
+
 - 数据库软件安装 https://www.mongodb.com/download-center/community
 - 可视化软件安装 https://www.mongodb.com/download-center/compass
 
-##### 3. 启动MongoDB命令
+## 3. 启动MongoDB命令
+
 以下命令，需要以管理员身份运行命令行工具才可以执行
 ```
 启动MongoDB
@@ -66,9 +70,12 @@ net start mongodb
 关闭MongoDB
 net stop mongodb
 ```
-##### 4. 启动MongoDB Compass 可视化管理工具
+## 4. 启动MongoDB Compass 可视化管理工具
+
 保证MongoDB启动后，直接打开这个管理工具即可
-##### 5. 使用mongoose连接MongoDB数据库
+
+## 5. 使用mongoose连接MongoDB数据库
+
 同样的，如果想在node环境下，操作MongoDB数据库，需要安装一个mongoose包
 ```
 npm/cnpm install mongoose --save-dev
@@ -86,11 +93,15 @@ mongoose.connect('mongodb://localhost/local', {
     console.log('连接数据库失败')
 })
 ```
-然后执行node语句：`node index.js`,就可以成功安装上MongoDB数据库<br>
+然后执行node语句：`node index.js`,就可以成功安装上MongoDB数据库
+
 因为`mongoose.connect`返回的是一个promise，所以我们可以使用async/await这种写法
-##### 6. MongoDB常用数据库操作之创建集合、文档
-集合类似于MySQL里面的表，
+## 6. MongoDB常用数据库操作之创建集合、文档
+
+集合类似于MySQL里面的表
+
 - MongoDB不需要显示创建数据库，如果数据库不存在，它会自动创建
+
 - 创建集合
 ```js
 const mongoose = require('mongoose')
@@ -125,7 +136,8 @@ const doc = new Model({
 // 5. 将文档插入集合中（将值放入集合中）
 doc.save()
 ```
-然后执行node语句`node index.js`，之后打开`MongoDB Compass`可以看到数据库test中多了一个集合users<br>
+然后执行node语句`node index.js`，之后打开`MongoDB Compass`可以看到数据库test中多了一个集合users
+
 这里还有第二种创建文档的方法，一般在实际开发中也是通过这种方式创建文档：
 ```js
 const mongoose = require('mongoose')

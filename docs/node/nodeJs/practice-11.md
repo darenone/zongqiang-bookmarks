@@ -1,4 +1,4 @@
-### 搭建自己的第一个http服务器
+# 11-搭建自己的第一个http服务器
 
 利用nodejs中http模块搭建服务器
 
@@ -7,7 +7,9 @@
 const http = require('http')
 ```
 
-##### [1. http.createServer](http://nodejs.cn/api/http.html#http_http_createserver_options_requestlistener) 创建http服务器
+##### 1. [http.createServer](http://nodejs.cn/api/http.html#http_http_createserver_options_requestlistener)
+
+创建http服务器
 ```js
 const http = require('http')
 

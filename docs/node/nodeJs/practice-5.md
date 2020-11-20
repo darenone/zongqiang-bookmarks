@@ -1,13 +1,15 @@
-### nodeJs文件系统fs模块常用api
+# 5-nodeJs文件系统fs模块常用api
 
-#### 引入文件系统模块
+引入文件系统模块
 ```js
 const fs = require('fs')
 ```
 
-#### 文件系统类下的属性和方法
+文件系统类下的属性和方法
 
-##### [1. fs.readFile(path[, options], callback)](http://nodejs.cn/api/fs.html#fs_fs_readfile_path_options_callback)读取文件
+## 1. [fs.readFile(path[, options], callback)](http://nodejs.cn/api/fs.html#fs_fs_readfile_path_options_callback)
+
+读取文件
 
 ```js
 const fs = require('fs')
@@ -54,7 +56,9 @@ fs.readFile('./hello.txt', 'utf8', (err, data) => {
 })
 ```
 
-##### [2. fs.writeFile(file, data[, options], callback)](http://nodejs.cn/api/fs.html#fs_fs_writefile_file_data_options_callback)写入文件，如果文件不存在就新建这个文件
+## 2. [fs.writeFile(file, data[, options], callback)](http://nodejs.cn/api/fs.html#fs_fs_writefile_file_data_options_callback)
+
+写入文件，如果文件不存在就新建这个文件
 
 ```js
 fs.writeFile('./hello.txt', 'this is a test',  err => {
@@ -64,13 +68,17 @@ fs.writeFile('./hello.txt', 'this is a test',  err => {
 ```
 经过上述操作，我们就可以成功将`this is a test`这句话写入`hello.txt`文件里
 
-##### [3. fs.writeFileSync(file, data[, options])](http://nodejs.cn/api/fs.html#fs_fs_writefilesync_file_data_options)异步操作写入文件
+## 3. [fs.writeFileSync(file, data[, options])](http://nodejs.cn/api/fs.html#fs_fs_writefilesync_file_data_options)
+
+异步操作写入文件
 
 ```js
 fs.writeFileSync('./hello.txt', 'this is a test!')
 ```
 
-##### [4. fs.appendFile(path, data[, options], callback)](http://nodejs.cn/api/fs.html#fs_fs_appendfile_path_data_options_callback) 追加数据到文件
+## 4. [fs.appendFile(path, data[, options], callback)](http://nodejs.cn/api/fs.html#fs_fs_appendfile_path_data_options_callback)
+
+追加数据到文件
 
 ```js
 const buf = Buffer.alloc(10, 'hello world')
@@ -80,7 +88,9 @@ fs.appendFile('./hello.txt', buf, err => {
 })
 ```
 
-##### [5. fs.stat(path[, options], callback)](http://nodejs.cn/api/fs.html#fs_fs_stat_path_options_callback) 获取文件信息，判断是文件还是文件夹
+## 5. [fs.stat(path[, options], callback)](http://nodejs.cn/api/fs.html#fs_fs_stat_path_options_callback)
+
+获取文件信息，判断是文件还是文件夹
 
 ```js
 fs.stat('./hello.txt', (err, stats) => {
@@ -101,7 +111,9 @@ fs.stat('./hello.txt', (err, stats) => {
 })
 ```
 
-##### [6. fs.rename(oldPath, newPath, callback)](http://nodejs.cn/api/fs.html#fs_fs_rename_oldpath_newpath_callback) 重命名文件
+## 6. [fs.rename(oldPath, newPath, callback)](http://nodejs.cn/api/fs.html#fs_fs_rename_oldpath_newpath_callback)
+
+重命名文件
 
 ```js
 fs.rename('./hello.txt', './test.txt', err => {
@@ -110,7 +122,9 @@ fs.rename('./hello.txt', './test.txt', err => {
 })
 ```
 
-##### [7. fs.unlink(path, callback)](http://nodejs.cn/api/fs.html#fs_fs_unlink_path_callback) 删除文件
+## 7. [fs.unlink(path, callback)](http://nodejs.cn/api/fs.html#fs_fs_unlink_path_callback)
+
+删除文件
 
 ```js
 fs.unlink('./test.txt', err => {
@@ -119,7 +133,9 @@ fs.unlink('./test.txt', err => {
 })
 ```
 
-##### [8. fs.mkdir(path[, options], callback)](http://nodejs.cn/api/fs.html#fs_fs_mkdir_path_options_callback) 创建文件夹
+## 8. [fs.mkdir(path[, options], callback)](http://nodejs.cn/api/fs.html#fs_fs_mkdir_path_options_callback)
+
+创建文件夹
 
 ```js
 fs.mkdir('./test', err => {
@@ -137,7 +153,9 @@ fs.mkdir('./test/test1/test1-1', {
 })
 ```
 
-##### [9. fs.readdir(path[, options], callback)](http://nodejs.cn/api/fs.html#fs_fs_readdir_path_options_callback) 读取文件夹
+## 9. [fs.readdir(path[, options], callback)](http://nodejs.cn/api/fs.html#fs_fs_readdir_path_options_callback)
+
+读取文件夹
 
 ```js
 fs.readdir('./test', (err, files) => {
@@ -155,7 +173,9 @@ fs.readdir('./test', {
 })
 ```
 
-##### [10. fs.rmdir(path[, options], callback)](http://nodejs.cn/api/fs.html#fs_fs_rmdir_path_options_callback) 删除文件夹
+## 10. [fs.rmdir(path[, options], callback)](http://nodejs.cn/api/fs.html#fs_fs_rmdir_path_options_callback)
+
+删除文件夹
 
 ```js
 fs.rmdir('./test/test1/test1-1', err => {
@@ -173,7 +193,9 @@ fs.rmdir('./test', {
 })
 ```
 
-##### [11. fs.watch(filename[, options][, listener])](http://nodejs.cn/api/fs.html#fs_fs_watch_filename_options_listener) 监听文件的变化
+## 11. [fs.watch(filename[, options][, listener])](http://nodejs.cn/api/fs.html#fs_fs_watch_filename_options_listener)
+
+监听文件的变化
 
 ```js
 fs.watch('./', (eventType, filename) => {
@@ -188,7 +210,8 @@ fs.watch('./', {
     console.log(eventType, filename)
 })
 ```
-利用fs文件系统提供的watch这个方法，输出的时候，改动一下，会同时打印多次，效果不是特别理想，所以我们可以利用`chokidar`这个插件来监听文件的变化<br>
+利用fs文件系统提供的watch这个方法，输出的时候，改动一下，会同时打印多次，效果不是特别理想，所以我们可以利用`chokidar`这个插件来监听文件的变化
+
 [chokidar](https://www.npmjs.com/package/chokidar)
 在需要安装此插件的文件执行如下命令：
 ```

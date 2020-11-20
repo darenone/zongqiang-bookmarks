@@ -1,5 +1,5 @@
-### 深度讲解cluster模块
-1. cluster是集群的意思，单个nodeJs实例运行在单个线程中，为了充分利用多核系统，有时需要启用一组NodeJs进程去处理负载任务
+# 27-深度讲解cluster模块
+## 1. cluster是集群的意思，单个nodeJs实例运行在单个线程中，为了充分利用多核系统，有时需要启用一组NodeJs进程去处理负载任务
 ```js
 const cluster = require('cluster');
 const http = require('http');
@@ -27,7 +27,7 @@ if (cluster.isMaster) { // 判断是否是主进程
   console.log(`工作进程 ${process.pid} 已启动`);
 }
 ```
-2. 讲解进程间通信方式
+## 2. 讲解进程间通信方式
 - 子进程通过send方法将结果发送给主进程，主进程通过message监听到信息后处理并退出
 ```js
 // index.js

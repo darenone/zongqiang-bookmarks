@@ -1,5 +1,6 @@
-### 结合数据库改造用户列表接口
-##### 1. 通过接口向mysql写入数据（增）
+# 18-结合数据库改造用户列表接口
+
+## 1. 通过接口向mysql写入数据（增）
 我们首先对上节创建的连接池代码进行修改，创建`conn.js`文件
 ```js
 // conn.js文件
@@ -177,7 +178,7 @@ server.listen(3000, () => {
     "status": 0
 }
 ```
-##### 2. 通过接口删除mysql数据（删）
+## 2. 通过接口删除mysql数据（删）
 修改`controller/user.js`
 ```js
 // controller/user.js
@@ -261,7 +262,7 @@ module.exports = handleRequest
     "status": 1
 }
 ```
-##### 3. 通过接口修改mysql数据（改）
+## 3. 通过接口修改mysql数据（改）
 修改`controller/user.js`
 ```js
 // controller/user.js
@@ -375,7 +376,7 @@ module.exports = handleRequest
     "status": 1
 }
 ```
-##### 4. 通过接口操作mysql查询数据（查）
+## 4. 通过接口操作mysql查询数据（查）
 修改`controller/user.js`
 ```js
 // controller/user.js

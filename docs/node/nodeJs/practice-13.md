@@ -1,6 +1,10 @@
-### 如何处理客户端get/post请求
+# 13-如何处理客户端get/post请求
+
 讲解node如何处理从页面传来的参数
-##### [1. url.parse(urlString[, parseQueryString[, slashesDenoteHost]])](http://nodejs.cn/api/url.html#url_url_parse_urlstring_parsequerystring_slashesdenotehost) 解析url
+
+## 1. [url.parse(urlString[, parseQueryString[, slashesDenoteHost]])](http://nodejs.cn/api/url.html#url_url_parse_urlstring_parsequerystring_slashesdenotehost)
+
+解析url
 ```js
 const url = require('url')
 
@@ -14,7 +18,8 @@ query: {
 },
 */
 ```
-##### 2. 如何处理get请求
+## 2. 如何处理get请求
+
 ```js
 const url = require('url')
 const http = require('http')
@@ -29,7 +34,8 @@ server.listen(3000, () => {
 })
 ```
 然后执行`node index.js`本地服务器启动，启动以后在浏览器输入：`http://localhost:3000/?name=zongqiang`就可以看到页面显示了一个`{"name":"zongqiang"}`
-##### 3. 如何处理post请求
+
+## 3. 如何处理post请求
 ```js
 const http = require('http')
 
@@ -45,7 +51,9 @@ const server = http.createServer((req, res) => {
     })
     // 请求成功，响应给客户端的数据
     res.end(JSON.stringify({
-        data: '请求成功',
+        status: 1,
+        msg: '请求成功',
+        data: postData,
         code: 0
     }))
 })
@@ -65,11 +73,13 @@ server.listen(3000, () => {
 以上操作的目的是来模拟向服务器（http://localhost:3000）发送一个post请求，成功以后我们会看到服务器传递过来的数据
 ```json
 {
-    "data": "请求成功",
-    "code": 0
+    status: 1,
+    msg: '请求成功',
+    data: postData,
+    code: 0
 }
 ```
-##### 4. 整合get和post请求
+## 4. 整合get和post请求
 ```js
 const url = require('url')
 const http = require('http')
@@ -87,7 +97,9 @@ const server = http.createServer((req, res) => {
             console.log(postData)
         })
         res.end(JSON.stringify({
-            data: '请求成功',
+            status: 1,
+            msg: '请求成功',
+            data: postData,
             code: 0
         }))
     }
@@ -119,7 +131,7 @@ get请求
 http://localhost:3000/api/postData?name=zongqiang&age=27
 */
 ```
-##### 5. nodemon自动重启工具安装配置
+## 5. nodemon自动重启工具安装配置
 
 我们在写代码的时候，每次改动都要重启服务器，这样比较麻烦，有了这个工具就可以自动重启，少了很多麻烦
 全局安装

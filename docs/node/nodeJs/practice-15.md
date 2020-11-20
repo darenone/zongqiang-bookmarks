@@ -1,6 +1,6 @@
-### 实战-利用模拟数据对用户列表增删改查
+# 15-实战-利用模拟数据对用户列表增删改查
 
-##### 1. 获取用户列表（查）
+## 1. 获取用户列表（查）
 新建`index.js`
 ```js
 const http = require('http')
@@ -109,7 +109,7 @@ module.exports = {
     ]
 }
 ```
-##### 2. 新增用户 （增）
+## 2. 新增用户 （增）
 在`router/index.js`新配置一条路由
 ```js
 const url = require('url')
@@ -180,7 +180,7 @@ module.exports = {
     }
 }
 ```
-##### 3. 删除用户 （删）
+## 3. 删除用户 （删）
 在`router/index.js`新配置一条路由
 ```js
 const url = require('url')
@@ -254,7 +254,7 @@ module.exports = {
     "data": {}
 }
 ```
-##### 4. 更新用户信息 （改）
+## 4. 更新用户信息 （改）
 在`router/index.js`新配置一条路由
 ```js
 const url = require('url')

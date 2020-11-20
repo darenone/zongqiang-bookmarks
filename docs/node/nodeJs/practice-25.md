@@ -1,11 +1,11 @@
-### nodejs进程和线程讲解
+# 25-nodejs进程和线程讲解
 - 进程概念
 > 进程是正在运行程序的实例，我们启动一个服务，运行一个实例，就是开了一个服务进程，进程是线程的容器，进程包括文本区域（text region）数据区域（data region）和堆栈（stack region）
 - 线程概念
 > 线程是操作系统能够进行运算调度的最小单位，它被包含在进程之中，是进程中的实际运作单位，一个进程可以由一个或多个线程组成，每条线程并行执行不同的任务
 - process进程模块的使用
 > process模块是一个全局变量，提供了有关当前Node.js进程信息并对其进行控制，作为全局变量，无需使用require()引入[process](http://nodejs.cn/api/process.html)
-##### [1. process.env](http://nodejs.cn/api/process.html#process_process_env) 返回包含用户环境的对象，可设置环境变量，例如process.env.NODE_ENV
+## [1. process.env](http://nodejs.cn/api/process.html#process_process_env) 返回包含用户环境的对象，可设置环境变量，例如process.env.NODE_ENV
 ```json
 // process.env对象
 {
@@ -67,7 +67,7 @@ npm install cross-env --save-dev
 ```
 npm run dev
 ```
-##### [2. process.pid](http://nodejs.cn/api/process.html#process_process_pid) 返回进程的pid
+## [2. process.pid](http://nodejs.cn/api/process.html#process_process_pid) 返回进程的pid
 为了看下一我们创建的进程的pid，来先启动一个服务器
 ```js
 const http = require('http')
@@ -83,7 +83,7 @@ console.log(process.pid)
 npm run dev
 ```
 就看到进程的pid为12736，windows下打开`cmd`命令行工具，输入`tasklist`可查看所有进程
-##### [3. process.platform](http://nodejs.cn/api/process.html#process_process_platform) 返回当前进程的操作系统平台
+## [3. process.platform](http://nodejs.cn/api/process.html#process_process_platform) 返回当前进程的操作系统平台
 ```js
 const http = require('http')
 const server = http.createServer()
@@ -93,7 +93,7 @@ server.listen(3000, () => {
 console.log(process.pid) // 1200
 console.log(process.platform) // win32
 ```
-##### [4. process.title](http://nodejs.cn/api/process.html#process_process_title) 获取或指定进程名称
+## [4. process.title](http://nodejs.cn/api/process.html#process_process_title) 获取或指定进程名称
 ```js
 const http = require('http')
 const server = http.createServer()
@@ -105,7 +105,7 @@ console.log(process.platform)
 process.title = 'node学习'
 console.log(process.title)
 ```
-##### [5. process.on('uncaughtException', cb)](http://nodejs.cn/api/process.html#process_event_uncaughtexception) 捕获异常信息
+## [5. process.on('uncaughtException', cb)](http://nodejs.cn/api/process.html#process_event_uncaughtexception) 捕获异常信息
 我们打印一个未声明的变量a
 ```js
 console.log(a)
@@ -125,7 +125,7 @@ process.on('uncaughtException', (err) => {
 console.log(a)
 ```
 顺便提一下，如果在代码中使用try/catch来处理异常，那么上面的捕获异常的监听函数就不会再执行
-##### [6. process.on('exit', cb)](http://nodejs.cn/api/process.html#process_event_exit) 监听进程退出
+## [6. process.on('exit', cb)](http://nodejs.cn/api/process.html#process_event_exit) 监听进程退出
 ```js
 process.on('uncaughtException', (err) => {
     console.log('捕获异常' + err)
@@ -140,7 +140,7 @@ process.on('exit', (code) => {
 })
 // 退出码：0
 ```
-##### [7. process.cwd()](http://nodejs.cn/api/process.html#process_process_cwd) 返回当前进程的工作目录
+## [7. process.cwd()](http://nodejs.cn/api/process.html#process_process_cwd) 返回当前进程的工作目录
 ```js
 process.on('uncaughtException', (err) => {
     console.log('捕获异常' + err)
@@ -155,7 +155,7 @@ process.on('exit', (code) => {
     console.log('退出码：' + code)
 })
 ```
-##### [8. process.uptime()](http://nodejs.cn/api/process.html#process_process_uptime) 返回当前进程的运行时长
+## [8. process.uptime()](http://nodejs.cn/api/process.html#process_process_uptime) 返回当前进程的运行时长
 ```js
 process.on('uncaughtException', (err) => {
     console.log('捕获异常' + err)

@@ -1,4 +1,4 @@
-### 介绍
+# 1-介绍
 nodeJS是什么？<br>
 nodeJS是一个基于Chrome的V8引擎的JavaScript运行环境（它相当于一个平台）
 
@@ -9,7 +9,9 @@ nodeJS是一个基于Chrome的V8引擎的JavaScript运行环境（它相当于�
 
 <h3 style="color: #FB7477">nvm安装</h3>
 
-[nvm管理工具](https://github.com/nvm-sh/nvm/blob/master/README.md)为什么需要安装这个nvm管理工具呢？因为在官网下载的nodeJs安装包，在安装时会覆盖掉之前的版本，如果需要在电脑上同时安装不同版本的nodeJs，就需要这个nvm管理工具，此nvm安装不适合windows系统的电脑，如果是苹果电脑可以执行以下代码进行安装
+[nvm管理工具](https://github.com/nvm-sh/nvm/blob/master/README.md)
+
+为什么需要安装这个nvm管理工具呢？因为在官网下载的nodeJs安装包，在安装时会覆盖掉之前的版本，如果需要在电脑上同时安装不同版本的nodeJs，就需要这个nvm管理工具，此nvm安装不适合windows系统的电脑，如果是苹果电脑可以执行以下代码进行安装
 ```
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 ```
@@ -31,7 +33,9 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 - nvm uninstall node版本号      删除已安装的指定版本
 - nvm ls                       列出所有安装的版本
 ```
-以上是苹果电脑下使用nvm，在windows电脑下使用nvm可从这里下载[nvm-windows](https://github.com/coreybutler/nvm-windows/releases)在这个页面找到`nvm-setup.zip`，把它下载下来，它是一个安装软件，然后解压点击next进行傻瓜式安装即可，提示一下，这些开发用到的软件，最好都安装到c盘系统盘，保持`C:\Program Files\nvm`和`C:\Program Files\nodejs`一致，安装完成，命令行输入`nvm`出现下面结果就证明安装成功
+以上是苹果电脑下使用nvm
+
+在windows电脑下使用nvm可从这里下载[nvm-windows](https://github.com/coreybutler/nvm-windows/releases)在这个页面找到`nvm-setup.zip`，把它下载下来，它是一个安装软件，然后解压点击next进行傻瓜式安装即可，提示一下，这些开发用到的软件，最好都安装到c盘系统盘，保持`C:\Program Files\nvm`和`C:\Program Files\nodejs`一致，安装完成，命令行输入`nvm`出现下面结果就证明安装成功
 ```
 Running version 1.1.7.
 
@@ -44,3 +48,8 @@ Usage:
                                  Add --insecure to the end of this command to bypass SSL validation of the remote 
 ......
 ```
+<style>
+    .page p, div, ol {
+        font-size: 14px;
+    }
+</style>

@@ -1,12 +1,16 @@
-### MongoDB如何导入文件数据
+# 20-MongoDB如何导入文件数据
+
 首先新建`user.json`文件
+
 ```json
 { "name": "1", "city": "上海", "sex": 1}
 { "name": "2", "city": "北京", "sex": 2}
 { "name": "3", "city": "广州", "sex": 2}
 { "name": "4", "city": "深圳", "sex": 1}
 ```
+
 - 数据库导入数据
+
 ```
 mongoimport -d 数据库名称 -c 集合名称 --file 导入的数据文件路径
 ```

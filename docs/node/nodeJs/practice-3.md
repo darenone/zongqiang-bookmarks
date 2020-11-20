@@ -1,4 +1,4 @@
-### nodeJs核心模块-buffer缓冲器
+# 3-nodeJs核心模块-buffer缓冲器
 
 <h3 style="color: #FB7477">Buffer缓冲器类常用api</h3>
 
@@ -13,7 +13,7 @@ arr.length // 3
 以上数组的大小是可以改变的，buffer创建后这个数组长度是不可以改变的
 <h4>创建buffer的3种方式</h4>
 
-第一种创建方式：[Buffer.alloc(size[, fill[, encoding]])](http://nodejs.cn/api/buffer.html#buffer_class_method_buffer_alloc_size_fill_encoding)
+## 1. [Buffer.alloc(size[, fill[, encoding]])](http://nodejs.cn/api/buffer.html#buffer_class_method_buffer_alloc_size_fill_encoding)
 ```js
 Buffer.alloc(size[, fill[, encoding]]) // 创建buffer类
 /**
@@ -43,7 +43,7 @@ const buf7 = Buffer.alloc(10, 'zongq', 'base64')
 [在线进制转换工具](https://tool.oschina.net/hexconvert/) 官方文档说了Buffer类的实例类似于由 0 到 255 之间的整数数组，对于大于255和小于0的值，buffer会强行进行转换<br>
 [Buffer 与字符编码](http://nodejs.cn/api/buffer.html#buffer_buffers_and_character_encodings)
 
-第二种创建方式：[Buffer.allocUnsafe(size)](http://nodejs.cn/api/buffer.html#buffer_class_method_buffer_allocunsafeslow_size)<br>
+## 2. [Buffer.allocUnsafe(size)](http://nodejs.cn/api/buffer.html#buffer_class_method_buffer_allocunsafeslow_size)<br>
 ```js
 Buffer.allocUnsafe(size)
 ```
@@ -67,7 +67,7 @@ console.log(buf1)
 console.log(buf2)
 buf2.write('hello-zongqiang') // 这种方式只能写入字符串
 ```
-第三种创建方式：[Buffer.from(array)](http://nodejs.cn/api/buffer.html#buffer_class_method_buffer_from_array)<br>
+## 3. [Buffer.from(array)](http://nodejs.cn/api/buffer.html#buffer_class_method_buffer_from_array)<br>
 ```js
 Buffer.from(array)
 ```
@@ -83,7 +83,10 @@ const buf11 = Buffer.from('zongq', 'base64')
 
 <h4>buffer类上常用的属性和方法</h4>
 
-- [Buffer.byteLength(string[, encoding])](http://nodejs.cn/api/buffer.html#buffer_class_method_buffer_bytelength_string_encoding) 返回字符串的字节长度<br>
+## 4. [Buffer.byteLength(string[, encoding])](http://nodejs.cn/api/buffer.html#buffer_class_method_buffer_bytelength_string_encoding) 
+
+返回字符串的字节长度
+
 eg:
 ```js
 let byteLength1 = Buffer.byteLength('zongq')
@@ -95,7 +98,10 @@ Buffer.byteLength('zongqiang', 'base64')
 Buffer.byteLength('zongqiang', 'utf8')
 // 9
 ```
-- [Buffer.isBuffer(obj)](http://nodejs.cn/api/buffer.html#buffer_class_method_buffer_isbuffer_obj) 判断是否是buffer实例<br>
+## 5. [Buffer.isBuffer(obj)](http://nodejs.cn/api/buffer.html#buffer_class_method_buffer_isbuffer_obj)
+
+判断是否是buffer实例
+
 eg:
 ```js
 let isBuffer1 = Buffer.isBuffer({})
@@ -103,7 +109,10 @@ let isBuffer1 = Buffer.isBuffer({})
 let isBuffer2 = Buffer.isBuffer(Buffer.from('zongq'))
 // true
 ```
-- [Buffer.concat(list[, totalLength])](http://nodejs.cn/api/buffer.html#buffer_class_method_buffer_concat_list_totallength) 合并buffer<br>
+## 5. [Buffer.concat(list[, totalLength])](http://nodejs.cn/api/buffer.html#buffer_class_method_buffer_concat_list_totallength)
+
+合并buffer
+
 eg:
 ```js
 let buf12 = Buffer.from('hello')
@@ -127,7 +136,10 @@ console.log(concat2)
 console.log(concat2.length)
 // 14
 ```
-- [buf.write(string[, offset[, length]][, encoding])](http://nodejs.cn/api/buffer.html#buffer_buf_write_string_offset_length_encoding) 将字符串写入buffer，返回值是写入的字节数<br>
+## 6. [buf.write(string[, offset[, length]][, encoding])](http://nodejs.cn/api/buffer.html#buffer_buf_write_string_offset_length_encoding)
+
+将字符串写入buffer，返回值是写入的字节数
+
 eg:
 ```js
 const buf1 = Buffer.allocUnsafe(20) // 利用这种方式创建的buffer实例，值是不确定的，利用write方法可以修复这种问题
@@ -156,9 +168,12 @@ console.log(buf1)
 没有指定offset和length: <Buffer 7a 6f 6e 67 71 <strong>69 61 6e</strong> 67 02 0c 51 61 b2 33 6a 53 08 00 00><br>
 指定offset和length: <Buffer 7a 6f 6e 67 71 <strong>7a 6f 6e</strong> 67 00 00 00 00 00 00 00 96 29 0f 0b><br>
 
-- [buf.fill(value[, offset[, end]][, encoding])](http://nodejs.cn/api/buffer.html#buffer_buf_fill_value_offset_end_encoding) 填充buffer 返回值是填充后的buffer
+## 7. [buf.fill(value[, offset[, end]][, encoding])](http://nodejs.cn/api/buffer.html#buffer_buf_fill_value_offset_end_encoding)
 
-和write的区别，使用write的时候，我们首先是创建了一个长度为20的buffer，然后用write重写，参照例子，你会发现，zongqiang这个字符串的字节长度为9，重写buffer的时候，只修改了前面9个buffer的内容，后面长度的内容是不变的，而fill则会全部重写buffer里面的内容<br>
+填充buffer 返回值是填充后的buffer
+
+和write的区别，使用write的时候，我们首先是创建了一个长度为20的buffer，然后用write重写，参照例子，你会发现，zongqiang这个字符串的字节长度为9，重写buffer的时候，只修改了前面9个buffer的内容，后面长度的内容是不变的，而fill则会全部重写buffer里面的内容
+
 eg:
 ```js
 console.log(buf1)
@@ -171,11 +186,16 @@ console.log(buf1.length)
 // 20
 ```
 同样的offset和end，指定buffer哪个长度范围需要填充
-- [buf.length](http://nodejs.cn/api/buffer.html#buffer_buf_length)  返回buffer中的字节数，也就是buffer的长度
-和Buffer.byteLength是有区别的，它返回字符串的字节长度buf.length返回buffer的长度
-- [buf.toString([encoding[, start[, end]]])](http://nodejs.cn/api/buffer.html#buffer_buf_tostring_encoding_start_end) 根据 encoding 指定的字符编码将 buf 解码成字符串
+## 8. [buf.length](http://nodejs.cn/api/buffer.html#buffer_buf_length)
 
-eg:<br>
+返回buffer中的字节数，也就是buffer的长度
+
+和Buffer.byteLength是有区别的，它返回字符串的字节长度buf.length返回buffer的长度
+## 9. [buf.toString([encoding[, start[, end]]])](http://nodejs.cn/api/buffer.html#buffer_buf_tostring_encoding_start_end)
+
+根据 encoding 指定的字符编码将 buf 解码成字符串
+
+eg:
 ```js
 const buf2 = Buffer.from('zongq')
 
@@ -186,15 +206,25 @@ console.log(buf2.toString())
 console.log(buf2.toString('base64', 1, 3))
 // b24=
 ```
-- [buf.toJSON()](http://nodejs.cn/api/buffer.html#buffer_buf_tojson) 返回 buf 的 JSON 格式
+## 10. [buf.toJSON()](http://nodejs.cn/api/buffer.html#buffer_buf_tojson)
 
-eg:<br>
+返回 buf 的 JSON 格式
+
+eg:
 ```js
 const buf2 = Buffer.from('zongq')
 
 console.log(buf2.toJSON())
 // { type: 'Buffer', data: [ 122, 111, 110, 103, 113 ] }
 ```
-- [buf.equals(otherBuffer)](http://nodejs.cn/api/buffer.html#buffer_buf_equals_otherbuffer) 对比两个buffer是否具有完全相同的字节
+## 11. [buf.equals(otherBuffer)](http://nodejs.cn/api/buffer.html#buffer_buf_equals_otherbuffer)
+
+对比两个buffer是否具有完全相同的字节
 
 eg: 看官方文档
+
+<style>
+    .page p, div, ol {
+        font-size: 14px;
+    }
+</style>

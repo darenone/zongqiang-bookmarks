@@ -1,16 +1,19 @@
-### nodeJs文件流（stream）讲解
+# 6-nodeJs文件流（stream）讲解
 
-简介：讲解如何创建读取文件流和创建写入文件流<br>
-利用fs读取数据的时候，我们可以读取整个文件的数据，也可以先读取一部分数据，比如，看视频，不是一下子把整段视频加载完成，而是一段一段传递<br>
+本章讲解如何创建读取文件流和创建写入文件流
 
-##### [1. 流的类型](http://nodejs.cn/api/stream.html#stream_types_of_streams)
+利用fs读取数据的时候，我们可以读取整个文件的数据，也可以先读取一部分数据，比如，看视频，不是一下子把整段视频加载完成，而是一段一段传递
+
+## 1. [流的类型](http://nodejs.cn/api/stream.html#stream_types_of_streams)
 
 - Writable 可写入数据流（常用）
 - Readable 可读取数据流 （常用）
 - Duplex 可读又可写数据流
 - Transform 在读过程中可以修改或转换的数据流
 
-##### [2. fs.createReadStream(path[, options])](http://nodejs.cn/api/fs.html#fs_fs_createreadstream_path_options) 创建读取文件流
+## 2. [fs.createReadStream(path[, options])](http://nodejs.cn/api/fs.html#fs_fs_createreadstream_path_options)
+
+创建读取文件流
 
 ```js
 const fs = require('fs')
@@ -31,7 +34,7 @@ rs.on('end', () => {
 ```js
 rs.on('data', chunk => {
     console.log(chunk.toString())
-    // 返回js代码
+    // ...返回js代码
 })
 ```
 在`options`里设置`highWaterMark`来分段读取数据
@@ -53,7 +56,9 @@ rs.on('end', () => {
 })
 ```
 
-##### [3. fs.createWriteStream(path[, options])](http://nodejs.cn/api/fs.html#fs_fs_createwritestream_path_options) 创建写入文件流
+## 3. [fs.createWriteStream(path[, options])](http://nodejs.cn/api/fs.html#fs_fs_createwritestream_path_options)
+
+创建写入文件流
 
 ```js
 let ws = fs.createWriteStream('./a.txt')
@@ -74,7 +79,9 @@ ws.on('finish', () => {
 })
 ```
 
-##### [4. pipe](http://nodejs.cn/api/stream.html#stream_event_pipe) 管道流
+## 4. [pipe](http://nodejs.cn/api/stream.html#stream_event_pipe)
+
+管道流
 
 通俗来讲，就是从a文件读取的文件流写入b文件，就可以利用管道流来实现
 ```js

@@ -1,6 +1,6 @@
-### node核心模块util常用工具
+# 9-node核心模块util常用工具
 
-##### [1. util.callbackify(original)](http://nodejs.cn/api/util.html#util_util_callbackify_original)
+## 1. [util.callbackify(original)](http://nodejs.cn/api/util.html#util_util_callbackify_original)
 
 功能：将async异步函数（或者一个返回值为Promise的函数）转换成遵循异常优先的回调风格的函数
 ```js
@@ -18,7 +18,7 @@ helloCb((err, res) => {
     console.log(res)
 })
 ```
-##### [2. util.promisify(original)](http://nodejs.cn/api/util.html#util_util_promisify_original)
+## 2. [util.promisify(original)](http://nodejs.cn/api/util.html#util_util_promisify_original)
 
 功能：转换成promise版本的函数
 ```js

@@ -1,5 +1,5 @@
-### express框架知识讲解
-##### 1. express框架介绍
+# 28-express框架知识讲解
+## 1. express框架介绍
 [express](https://www.expressjs.com.cn/)是基于Node.js平台，快速、开放、极简的web开发框架，express框架特性：
 - 可以设置中间件来响应http请求
 - 提供方便的路由定义方式
@@ -28,7 +28,7 @@ app.listen(3000)
 console.log('服务器已启动')
 ```
 执行`node index.js`启动服务器，浏览器输入：`http://localhost:3000/`,可正常访问
-##### 2. express如何处理get/post请求
+## 2. express如何处理get/post请求
 - 处理get请求
 ```js
 const express= require('express')
@@ -112,7 +112,7 @@ console.log('服务器已启动')
 ```js
 app.use(bodyParser.json())
 ```
-##### 3. express中间件
+## 3. express中间件
 中间件其实就是一个方法，这个方法可以访问请求对象req，响应对象res，和web应用处于请求响应循环流程中的中间件，一般被命名为`next`变量
 ```js
 const express= require('express')
@@ -147,7 +147,7 @@ app.listen(3000)
 console.log('服务器已启动')
 ```
 由此可以看到，next中间件可以对请求进行拦截，做一些处理，然后再由下一个中间件做一些处理，在我们写的代码里app.use、app.get、app.post都是中间件
-##### 4. app.use用法
+## 4. app.use用法
 app.use加载用于处理http请求的中间件，当一个请求来的时候，会依次被这些中间件处理
 ```js
 const express= require('express')
@@ -186,7 +186,7 @@ app.get('/user', (req, res) => {
 app.listen(3000)
 console.log('服务器已启动')
 ```
-##### 5. 讲解中间件常用的应用场景
+## 5. 讲解中间件常用的应用场景
 - 路由保护 客户端访问需要登录的请求时，可以使用中间件进行拦截，判断用户的登录状态，进而响应用户是否允许访问
 - 网站维护 在所有中间件上定义一个接收所有请求的中间件，不使用next，直接给客户端响应表示网站维护中
 - 自定义404页面
@@ -262,7 +262,7 @@ app.use((req, res, next) => {
 app.listen(3000)
 console.log('服务器已启动')
 ```
-##### 6. 处理错误的中间件
+## 6. 处理错误的中间件
 [app.use](https://www.expressjs.com.cn/4x/api.html#app.use)
 ```js
 const express= require('express')
