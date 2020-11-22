@@ -44,6 +44,7 @@ module.exports = {
                     { text: '微信小程序', link: '/miniprogram/'},
                     { text: 'NodeJs', link: '/node/'},
                     { text: '脚手架学习', link: '/scaffold/'},
+                    { text: '原生移动端开发', link: '/web-app/'},
                 ]
             },
             {
@@ -217,6 +218,16 @@ module.exports = {
                     ],
                     collapsable: true
                 },
+            ],
+            '/vue-app/': [
+                ['/web-app/','简介'],
+                {
+                    title: '原生移动端开发教程',
+                    children: [
+                        '/web-app/article-1',
+                    ],
+                    collapsable: true
+                }
             ],
         }
     }

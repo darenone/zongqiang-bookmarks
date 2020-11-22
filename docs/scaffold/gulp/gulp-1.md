@@ -86,7 +86,7 @@ npm/cnpm install --global gulp-cli
 3.npm/cnpm install gulp --save-dev // 在项目里安装gulp，作为开发时的依赖
 4.npm/cnpm install gulp-autoprefixer gulp-cache gulp-clean gulp-connect gulp-file-include gulp-imagemin gulp-jshint gulp-less gulp-minify-css gulp-minify-html gulp-rev gulp-rev-collector gulp-uglify gulp-util imagemin-pngquant http-proxy-middleware --save-dev // 安装这些gulp插件
 ```
-如果要在你的项目里安装这些依赖，最好参考我的[package.json](https://github.com/darenone/JS-Web-Skill/blob/master/package.json)里的插件版本安装，防止启动项目的时候报错
+如果要在你的项目里安装这些依赖，最好参考我的[S-Web-Skill/package.json](https://github.com/darenone/JS-Web-Skill/blob/master/package.json)里的插件版本安装，防止启动项目的时候报错
 
 接下来改造我创建的项目`JS_Web_Skill`，其目录结构如下：
 
@@ -106,7 +106,7 @@ E:\project\JS-Web-Skill>mddir
 
 代码我已上传至GitHub，也可以参考[JS-Web-Skill](https://github.com/darenone/JS-Web-Skill.git)来查看我是怎么创建的项目
 
-关于项目中每个文件和文件夹的作用，我在[README.md](https://github.com/darenone/JS-Web-Skill/blob/master/README.md)做了介绍，你可以参考便于了解本项目，为什么选择把打包后的文件放到static文件中， 这是为了如果项目中使用node等服务层框架，可以一并打包放入dist下，这样，dist就是一个完整的包括前后端服务的项目目录了
+关于项目中每个文件和文件夹的作用，我在[JS-Web-Skill/README.md](https://github.com/darenone/JS-Web-Skill/blob/master/README.md)做了介绍，你可以参考便于了解本项目，为什么选择把打包后的文件放到static文件中， 这是为了如果项目中使用node等服务层框架，可以一并打包放入dist下，这样，dist就是一个完整的包括前后端服务的项目目录了
 
 为了区分开发环境和生产环境，所以在config文件夹里，使用`gulp.dev.js`来处理开发环境的任务，使用`gulp.prod.js`来处理生产环境的任务
 
