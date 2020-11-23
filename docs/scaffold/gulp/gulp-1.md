@@ -403,6 +403,14 @@ npm run start // 启动本地服务，可以愉快的开发项目了
 npm run build // 开发完毕，打包你的项目
 ```
 
+我再说一下，[JS-Web-Skill](https://github.com/darenone/JS-Web-Skill.git)这个项目里，在`views/index.html`里面，引入css的时候，我是这样写的：
+
+```html
+<link rel="stylesheet" href="./../css/index.css">
+```
+
+但是我的css文件夹下只写了`index.less`文件，并没有这个`index.css`文件，不过不用担心，gulp已经自动给你转换了，因为浏览器编译的html是`dist`文件夹里的html
+
 <style>
     .page p, div, ol {
         font-size: 14px;
