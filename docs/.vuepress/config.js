@@ -225,6 +225,8 @@ module.exports = {
                     title: '原生移动端开发教程',
                     children: [
                         '/web-app/article-1',
+                        '/web-app/article-2',
+                        '/web-app/article-3',
                     ],
                     collapsable: true
                 }
