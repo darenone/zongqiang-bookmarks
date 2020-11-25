@@ -228,6 +228,8 @@ module.exports = {
                         '/web-app/article-2',
                         '/web-app/article-3',
                         '/web-app/article-4',
+                        '/web-app/article-5',
+                        '/web-app/article-6',
                     ],
                     collapsable: true
                 }
