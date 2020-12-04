@@ -1,10 +1,10 @@
 # 10. 手写一个导航菜单-1
 
-这里咱们不利用任何外部UI组件来实现一个导航菜单，帮助我们来学习vue的开发，只要可以手写一个菜单，其它的菜单照着这个思路，也是没有问题的
+这里我不利用任何外部UI组件来实现一个导航菜单，帮助学习vue的开发，只要可以手写一个菜单，其它的菜单照着这个思路，也是没有问题的
 
 开发还是在我的项目[vue-base-frame](https://github.com/darenone/vue-base-frame)里进行
 
-首先在项目里新建一个页面`menu-page.vue`
+首先在项目里新建一个页面`views/menu-page.vue`
 
 ```vue
 <template>
@@ -84,7 +84,6 @@ export default {
     height: 45px;
     line-height: 45px;
     text-align: left;
-    padding-left: 15px;
     cursor: pointer;
 }
 </style>
@@ -114,7 +113,6 @@ export default {
         height: 45px;
         line-height: 45px;
         text-align: left;
-        padding-left: 15px;
     }
 }
 </style>
@@ -137,30 +135,6 @@ export default {
 
 ```vue
 <template>
-    <div class="menu-box">
-        <a-menu>
-            <a-menu-item>111</a-menu-item>
-            <a-menu-item>222</a-menu-item>
-        </a-menu>
-    </div>
-</template>
-<script>
-import menuComponents from "_c/menu"
-const { AMenu, AMenuItem, ASubMenu } = menuComponents
-export default {
-    name: 'menu_page',
-    components: {
-        AMenu,
-        AMenuItem,
-        ASubMenu
-    },
-    data () {
-        return {
-        
-        }
-    }
-}
-</script><template>
     <div class="menu-box">
         <a-menu>
             <a-menu-item>111</a-menu-item>
@@ -235,7 +209,7 @@ export default {
 </style>
 ```
 
-菜单基本的结构就是这样的，二级菜单有一个展开和收缩的功能，咱把它实现以下
+菜单基本的结构就是这样的，二级菜单有一个展开和收缩的功能，咱把它实现一下
 
 改造`a-submenu.vue`，先把`a-submenu.vue`后面一个slot用div包裹起来，目的做展开收缩的效果
 
@@ -323,7 +297,7 @@ export default {
 </style>
 ```
 
-功能已实现，咱们再给它加一个图标来表示现在是展开还是收缩的状态，这里我借助View UI里的Icon来实现：
+功能已实现，再给它加一个图标来表示现在是展开还是收缩的状态，这里我借助View UI里的Icon来实现：
 
 ```vue
 <template>
@@ -461,7 +435,7 @@ navList: [
 ```
 这里的关键就是实现一个递归组件，这个递归组件，咱们就叫`re-submenu.vue`吧
 
-新建`components/menu/a-submenu.vue`组件，内容如下：
+新建`components/menu/re-submenu.vue`组件，内容如下：
 
 ```vue
 <template>
@@ -682,7 +656,7 @@ export default {
 
 好啦，做到这里，我们再来设置下，不同级别菜单的`padding-left`值，好让它看起来更好看些
 
-修改`menu-page.vue`里面的代码，在`navList`里增加一个`level`属性，这个骑到关键作用，然后给`AMenuItem`组件添加一个`:style="{'padding-left': `${item.level * 20}px`}"`
+修改`menu-page.vue`里面的代码，在`navList`里增加一个`level`属性，这个起到关键作用，然后给`AMenuItem`组件添加一个`:style="{'padding-left': `${item.level * 20}px`}"`
 
 ```vue
 <template>
