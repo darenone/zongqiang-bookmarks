@@ -26,6 +26,7 @@ module.exports = {
             {text: '我的文章', link: '/article/'},
             {text: '网址大全', link: '/website/'},
             {text: '常用函数', link: '/function/'},
+            {text: '综合', link: '/Thought/'},
             // 多项，下拉形式
             // {
             //     text: 'vue系列',
@@ -67,7 +68,6 @@ module.exports = {
         sidebar: {
             '/article/': [
                 ['/article/','简介'],
-                // ['/FAQ/Pool/SkillStack','技术栈'],
                 ['/article/vuePress/article1','利用vuePress搭建博客'],
                 {
                     title: 'vue相关', // 菜单名
@@ -107,6 +107,15 @@ module.exports = {
                     children: [
                         ['/article/web-security/article-1','谈谈web安全'],
                         ['/article/web-security/article-2', '常见六大web安全攻防解析',]
+                    ]
+                },
+            ],
+            '/Thought/': [
+                {
+                    title: '面试',
+                    children: [
+                        '/Thought/interview/1',
+                        '/Thought/interview/2',
                     ]
                 },
             ],
