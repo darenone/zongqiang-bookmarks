@@ -1,6 +1,6 @@
 # 11. 手写一个导航菜单-2
 
-上节内容，基本实现了导航菜单，接下来就是将项目里的路由给放进来
+上节内容，基本实现了导航菜单，接下来就是将项目里的路由给整进来
 
 这节的开发内容还是放在我的项目[vue-base-frame](https://github.com/darenone/vue-base-frame)里进行
 
@@ -423,7 +423,7 @@ export default {
 </style>
 ```
 <style>
-    .page p, div, ol {
-        font-size: 14px;
-    }
+  .page p, div, ol {
+    font-size: 14px;
+  }
 </style>
