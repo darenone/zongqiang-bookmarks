@@ -1,12 +1,12 @@
-# 12. 在项目中使用View UI（iView）
+# 12. 在项目中使用View UI
 
-## 全局引入
+## 1. 全局引入
 
 具体方法可以参考[view UI](http://v1.iviewui.com/docs/guide/start)官方文档
 
-## 按需引入
+## 2. 按需引入
 
-具体方法可以参考[view UI](http://v1.iviewui.com/docs/guide/start)官方文档，这里提示一下，即使是按需引入，样式文件还是需要在`main.js`里面全局使用：
+具体方法可以参考[view UI](http://v1.iviewui.com/docs/guide/start)官方文档，提示一下，即使是按需引入，样式文件还是需要在`main.js`里面全局使用：
 
 ```js
 import 'view-design/dist/styles/iview.css'
@@ -20,7 +20,9 @@ Vue.component('Button', Button);
 Vue.component('Table', Table);
 ```
 
-官方文档里说，在非 template/render 模式下（例如使用 CDN 引用时），组件名要分隔，例如`DatePicker`必须要写成`date-picker`。以下组件，在非`template/render`模式下，需要加前缀`i-`：
+官方文档里说，在非 template/render 模式下（例如使用 CDN 引用时），组件名要分隔，例如`DatePicker`必须要写成`date-picker`。
+
+以下组件，在非`template/render`模式下，需要加前缀`i-`：
 
 ```
 Button: i-button
@@ -52,7 +54,7 @@ export default {
 </script>
 ```
 
-在这里面，就可以直接例如写成`DatePicker`，如果在所有模式下都不想加前缀使用，可以在项目中使用`iview-loader`这个插件，此插件安装可以参考官方文档[View UI Loader](http://v1.iviewui.com/docs/guide/iview-loader)
+在这里面，就可以直接写成`DatePicker`，如果在所有模式下都不想加前缀使用，可以在项目中使用`iview-loader`这个插件，此插件安装可以参考官方文档[View UI Loader](http://v1.iviewui.com/docs/guide/iview-loader)
 
 安装好以后，在`vue.config.js`里面配置如下：
 
@@ -68,9 +70,9 @@ module.exports = {
 }
 ```
 
-## 使用layout布局
+## 2. 使用layout布局
 
-新建`views/Layout.vue`组件，并在`router/index.js`里面引入，然后把`home`替换掉成`Layout`
+新建`views/Layout.vue`组件，并在`router/index.js`里面引入，然后把`home`替换成`Layout`
 
 `views/Layout.vue`
 ```vue
@@ -291,7 +293,7 @@ export default {
 </template>
 ```
 
-我们在`header`里增加一个小图标，点击来控制`Sider`的展开和收缩
+我们在`header`里增加一个小图标，点击这个`icon`来控制`Sider`的展开和收缩
 
 `views/Layout.vue`
 ```vue
@@ -539,7 +541,7 @@ export default {
 </style>
 ```
 
-接下来修改下路由，将原来`home.vue`里的内容显示在`Layout.vue`里面，这样当路由改变，整个`Layout`不会重新加载，只是`Content`组件里的内容重新加载
+接下来修改路由，将原来`home.vue`里的内容显示在`Layout.vue`里面，这样当路由改变，整个`Layout`不会重新加载，只是`Content`组件里的内容重新加载
 
 `router/index.js`
 ```js
@@ -561,6 +563,8 @@ const routes = [
   }
 ]
 ```
+
+浏览器访问路由`http://localhost:4000/home`就可以看到，原来home里的内容已经成功加载到`Content`组件里面了
 
 <style>
   .page p, div, ol {
