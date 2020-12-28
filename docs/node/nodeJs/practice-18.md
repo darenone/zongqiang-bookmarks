@@ -512,3 +512,7 @@ module.exports = handleRequest
     ]
 }
 ```
+
+## 备注
+
+完整的利用nodeJs连接数据库并且与前端进行数据交互的完整代码可以阅读我另外一个项目[vue-base-server](https://github.com/darenone/vue-base-server)
