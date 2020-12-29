@@ -11,14 +11,15 @@
 - [力扣-LeetCode](https://leetcode-cn.com/ "LeetCode") 程序员刷题网站
 - [深入理解JavaScript系列-汤姆大叔](https://www.cnblogs.com/TomXu/archive/2011/12/15/2288411.html "深入理解JavaScript系列") 值得深入学习的JavaScript文章
 ## 开发
-- [地图生成器](http://datav.aliyun.com/tools/atlas/#&lat=31.769817845138945&lng=104.29901249999999&zoom=3)
-- [iconfont](https://www.iconfont.cn/)
-- [dataV](https://www.kancloud.cn/lemon-m/js-html-css/998101) vue大屏数据展示组件库
+- [地图生成器](http://datav.aliyun.com/tools/atlas/#&lat=31.769817845138945&lng=104.29901249999999&zoom=3) 可以从这里下载echart map图表所需的json文件，涵盖了全国的区县市
+- [geojson](http://geojson.io/#map=2/20.0/0.0) 可以自己制作json地图，比如乡镇级别的地图，或者对老的json地图进行微调
+- [iconfont](https://www.iconfont.cn/) 阿里的图标库，比较方便和全面
+- [dataV](https://www.kancloud.cn/lemon-m/js-html-css/998101) 前端面试题精编
 - [3D图形绘制](https://segmentfault.com/q/1010000020242805?utm_source=tag-newesthttp://datav.jiaminghi.com/)
 - [dataV](https://datav.aliyun.com/share/5a2335ee9571434e29acbe0eb19f2ea5) 阿里云数据可视化
 - [BizCharts](https://bizcharts.net/product/bizcharts/category/7/page/36) 图表工具
-- [echarts](https://echarts.apache.org/zh/index.html) 百度chart
-- [highcharts](https://www.highcharts.com.cn/) 另外一个好用的chart
+- [echarts](https://echarts.apache.org/zh/index.html) 百度前端图表库
+- [highcharts](https://www.highcharts.com.cn/) 另外一个好用的图表库
 ## 好用的网站
 - [YAMADIE](https://yamadie.net/) 无敌实用资源站，你需要的软件这里都有
 - [多媒体数字报](http://www.53bk.com/baokan/) 国家级报纸大全，考公务员有用
