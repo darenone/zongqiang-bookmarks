@@ -160,9 +160,10 @@ module.exports = {
             '/miniprogram/': [
                 ['/miniprogram/', '简介'],
                 {
-                    title: '微信小程序基础',
+                    title: '微信小程序实战',
                     children: [
                         '/miniprogram/part-01/1',
+                        '/miniprogram/part-01/2',
                     ],
                     collapsable: true
                 },
