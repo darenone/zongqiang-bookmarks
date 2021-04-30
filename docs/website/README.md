@@ -49,6 +49,11 @@
 ## 教程
 - [重学前端-极客时间](https://time.geekbang.org/column/article/77804 "重学前端-极客时间") 重学前端-极客时间
 - [一个有趣的背单词网站](https://fox.ftqq.com/#/)
+- [老马课程集锦](https://qtxh.ke.qq.com/#tab=0&category=-1)
+- [老马canvas教程](https://www.bilibili.com/video/BV1ss411V7s1?p=18&spm_id_from=pageDriver)
+- [老马webpack教程](https://ke.qq.com/course/321174?quicklink=1)
+- [老马笔记资源](https://malun666.github.io/aicoder_vip_doc/#/)
+- [极客时间 我的课程](https://time.geekbang.org/dashboard/course)
 
 ## 资源分享
 - [office 2016安装与破解](https://pan.baidu.com/s/16lNWkvPglt2WF7gGEmxxsw "资源分享") 提取码：3mpa

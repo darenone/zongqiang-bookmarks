@@ -2,11 +2,9 @@
 
 > 本文章涉及到的代码已上传至github[vue-base-frame](https://github.com/darenone/vue-base-frame)
 
-接着上一节讲，基本框架已经搭建完成，接下来最重要的就是项目里路由配置了，它管理着页面间的跳转
+项目搭建完成，接下来配置路由，讲几个官方文档[Vue Router](https://router.vuejs.org/zh/)里的概念：动态路由，命名路由，嵌套路由，命名视图，重定向，编程式导航
 
-我们做前端项目，基本上步骤就是：搭建前端框架--配置项目路由--开发具体页面，本节讲解一下vue Router的知识和使用方法，学习这篇文章你可以可以对照着官方文档[Vue Router](https://router.vuejs.org/zh/)来学习
-
-我们来看一下`src/APP.vue`里面的内容：
+项目`APP.vue`组件内容如下：
 ```vue
 <template>
   <div id="app">
@@ -18,48 +16,34 @@
   </div>
 </template>
 ```
-其中`<router-link></router-link>`和`<router-view/>`都是vue的内置组件，这里简单介绍下这种内置组件的作用
-```
-<router-link></router-link> 它是一个闭合标签，等同于封装后的a标签，里面有一个很重要的属性to，它的值是一个需要跳转的路径
-<router-view/> 它是一个开标签，等同于<router-view></router-view>，它是视图渲染组件，通过<router-link>跳转到某个页面时所加载的组件都会在这里渲染
-```
-可能有些人有些疑问，什么是闭合标签什么是开标签呢？
+① `<router-link></router-link>` 路由跳转组件：闭合标签，等同于封装后的a标签，里面有一个很重要的属性to，它的值是一个需要跳转的路径
 
-简单介绍一下，比如`<router-link to="/">Home</router-link>`它里面有home这个内容，所以只能写成闭合标签，像`<router-view></router-view>`这种标签，里面没有内容，就可以简写成开标签`<router-view/>`
+② `<router-view/>`视图渲染组件：开标签，等同于`<router-view></router-view>`，通过`<router-link>`跳转到某个页面时所加载的组件都会在这里渲染
 
-接下来切入正题，来说第一个知识点：
+题外话：开标签和闭合标签的区别？
 
-## 1. 动态路由匹配
+`<router-link to="/">Home</router-link>`它里面有home这个内容，只能写成闭合标签，比如`<router-view></router-view>`这种标签，里面没有内容，就可以简写成开标签`<router-view/>`
 
-来举一个实际的例子：有一个页面，展示的是所有任务的一个table页，在table页的每一行，都有一个查看按钮，点击查看可以跳转到任务详情的页面，查看任务详细数据
+## 1. 动态路由
+
+动态路由在实际业务中用到的很多，比如一个任务详情页面，想要查看每个任务的详情，就可以在访问这个详情页面的路由上携带每个任务的id，在这个页面通过`this.$route.params.taskId`，获取路由传递过来的id，然后再根据id去请求后端接口
+
+可能是这样的url
 ```
 http://10.0.0.186:18090/#/task/task-detail/10000218
 http://10.0.0.186:18090/#/task/task-detail/10000217
 http://10.0.0.186:18090/#/task/task-detail/10000216
 ```
-跳转的时候，需要把taskId传过去，然后详情页面才能根据taskId请求接口，获取任务的详情
+上代码：
 
-好了，知道需求了，利用动态路由匹配我们应该怎么做呢？
-
-在src/index.js里面配置路由：
+在`src/index.js`里，path设置如下：
 ```js
 const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/about',
-    name: 'About',
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  },
   {
     path: '/task-detail/:taskId',
     name: 'taskDetail',
     component: () => import('../views/task-detail.vue')
   },
-  ...errorRoutes
 ]
 ```
 在`src/App.vue`里配置路由：
@@ -68,7 +52,7 @@ const routes = [
 <router-link to="/task-detail/10000217">任务详情10000217</router-link>
 <router-link to="/task-detail/10000216">任务详情10000216</router-link>
 ```
-新增src/views/task-detail.vue页面，来接收通过路由传递过来的值
+新增`src/views/task-detail.vue`页面，获取url传递过来的值
 ```vue
 <template>
     <section>
@@ -76,7 +60,7 @@ const routes = [
     </section>
 </template>
 ```
-以上就是动态路由匹配的用法，点击跳转的时候，url是这样的：`http://localhost:4000/#/task-detail/10000218`，url上面携带参数进行跳转
+点击跳转的时候，浏览器地址栏显示的url是这样的：`http://localhost:4000/#/task-detail/10000218`
 
 ## 2. 编程式导航
 

@@ -12,7 +12,7 @@ module.exports = {
         lineNumbers: true // 代码块显示行号
     },
     themeConfig: {
-        sidebarDepth: 2, // 将同时提取markdown中h2 和 h3, h4 标题，显示在侧边栏上
+        sidebarDepth: 1, // 将同时提取markdown中h2 和 h3, h4 标题，显示在侧边栏上
         // displayAllHeaders: true,
         lastUpdated: '上次更新' ,// 文档更新时间：每个文件git最后提交的时间,
         // sidebar: 'auto',
@@ -22,11 +22,11 @@ module.exports = {
             // 这里的'/' 指的是 docs文件夹路径
             // 以 '/' 结尾的默认指向该路径下README.md文件
             {text: '主页', link: '/'}, // 导航条
+            {text: '综合', link: '/Thought/'},
             {text: 'vue系列', link: '/vue/'},
             {text: '我的文章', link: '/article/'},
             {text: '网址大全', link: '/website/'},
             {text: '常用函数', link: '/function/'},
-            {text: '综合', link: '/Thought/'},
             // 多项，下拉形式
             // {
             //     text: 'vue系列',
@@ -91,8 +91,10 @@ module.exports = {
                 {
                     title: 'javascript相关',
                     children: [
-                        ['/article/javascript/practice-1','JavaScript学习'],
-                        // ['/article/Console/A002','#A002_插件清单']
+                        '/article/javascript/1',
+                        '/article/javascript/2',
+                        '/article/javascript/3',
+                        '/article/javascript/4'
                     ]
                 },
                 {
@@ -110,15 +112,15 @@ module.exports = {
                     ]
                 },
             ],
-            '/Thought/': [
-                {
-                    title: '面试',
-                    children: [
-                        '/Thought/interview/1',
-                        '/Thought/interview/2',
-                    ]
-                },
-            ],
+            // '/Thought/': [
+            //     {
+            //         title: '面试',
+            //         children: [
+            //             '/Thought/interview/1',
+            //             '/Thought/interview/2',
+            //         ]
+            //     },
+            // ],
             '/website/': [
                 ['/website/','网站大全'],
             ],

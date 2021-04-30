@@ -17,21 +17,12 @@ sudo npm uninstall vue-cli -g  // 卸载老版本
 sudo npm install -g @vue/cli  // 安装新版本
 ```
 安装完毕，在cmd中输入vue ui，启动项目管理器，新建一个vue项目，在这个过程中需要操作步骤有：
-```
-1. 新建项目文件夹-比如：vue-base-frame
-2. 选择包管理器-npm
-3. 初始化git仓库默认打开
-4. 选择一套预设--选择手动
-5. babel-打开
-6. Router-打开
-7. Vuex-打开
-8. CSS Pre-processors（css预处理器）-打开
-9. 使用配置文件-打开
-10. pick a css pre-processor 下拉选择less
-11. pick a linter / formatter config 下拉选择 eslint + standard config
-12. lint on save-打开
-13. 然后点击“创建项目，不保存预设”
-```
+![创建项目](./../../.vuepress/public/img/vue/1.png)
+![预设](./../../.vuepress/public/img/vue/2.png)
+![功能](./../../.vuepress/public/img/vue/3.png)
+![配置](./../../.vuepress/public/img/vue/5.png)
+![不保存预设](./../../.vuepress/public/img/vue/6.png)
+![cmd截图](./../../.vuepress/public/img/vue/7.png)
 经过上述步骤，就可以静待vue基础模板下载下来，当模板下载完成后，cmd进入项目根目录，执行npm run serve启动项目，这和vue-cli 2.x版本中npm run dev启动方式不一样，启动完成，浏览器打开这个项目，可以看到两个简单的页面Home和About，接下来，需要对这个vue模板进行改造，在改造之前，我先来介绍一下，项目里各个文件的作用
 
 先从项目根目录开始看起，主要有三个文件

@@ -1,12 +1,12 @@
 # 1. 项目架构搭建
 
-我们来引入gulpfile 4.x来管理我们的项目，具体如何利用gulp这个脚手来搭建我们的项目，我之前专门写了一篇关于gulp的教程[利用gulp 4.0搭建前端项目](./../scaffold/gulp/gulp-1.md)，你可以通过阅读这篇文章快速搭建你的前端项目框架
+首先引入gulpfile 4.x来管理新创建的项目，具体如何利用gulp脚手来搭建项目，我之前专门写了一篇gulp的教程[利用gulp 4.0搭建前端项目](./../scaffold/gulp/gulp-1.md)，你可以阅读这篇文章，快速搭建你的前端项目
 
-因为这是一个介绍如何开发移动端的项目，项目名，我这里就叫做`web-app`并且参照[利用gulp 4.0搭建前端项目](./../scaffold/gulp/gulp-1.md)和[JS-Web-Skill](https://github.com/darenone/JS-Web-Skill.git)搭建`web-app`的前端框架
+首先创建一个文件夹，命名为`web-app`，作为项目名，并且参照[利用gulp 4.0搭建前端项目](./../scaffold/gulp/gulp-1.md)和[JS-Web-Skill](https://github.com/darenone/JS-Web-Skill.git)搭建`web-app`的前端框架
 
-搭建完毕在`src/views/index.html`下新建`index.html`文件，作为项目的主页面
+搭建完毕在`src/views/`下新建`index.html`文件，作为项目的主页面
 
-然后就是在这个主页面里，先清除浏览的默认样式和浏览器的默认行为：
+接着在主页面里，写下如下代码，来清除浏览器的默认样式和浏览器的默认行为：
 ```html
 <!DOCTYPE html>
 <html lang="en">
