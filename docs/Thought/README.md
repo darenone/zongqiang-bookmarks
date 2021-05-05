@@ -7,7 +7,7 @@
 - [垃圾代码和优质代码的区别-1](./../article/javascript/1)
 - [js面向对象编程-1](./../article/javascript/2)
 - [promise和async/await的区别](./../article/javascript/3)
-- [宏任务和微任务](./../article/javascript/4)
+- [javascript运行机制](./../article/javascript/4)
 
 ## nodejs
 - [nodejs相关api学习笔记](./../node/nodeJs/practice-1)
