@@ -485,8 +485,3 @@ router.beforeEach((to, from, next) => {
 </style>
 ```
 具体你想要什么效果，都可以按照我这个模式来写就行了
-<style>
-    .page p, div, ol {
-        font-size: 14px;
-    }
-</style>
