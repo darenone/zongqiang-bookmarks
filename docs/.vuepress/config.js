@@ -22,9 +22,8 @@ module.exports = {
             // 这里的'/' 指的是 docs文件夹路径
             // 以 '/' 结尾的默认指向该路径下README.md文件
             {text: '主页', link: '/'}, // 导航条
-            {text: '综合', link: '/Thought/'},
-            {text: 'vue系列', link: '/vue/'},
             {text: '我的文章', link: '/article/'},
+            {text: 'vue系列', link: '/vue/'},
             {text: '网址大全', link: '/website/'},
             {text: '常用函数', link: '/function/'},
             // 多项，下拉形式
@@ -67,60 +66,58 @@ module.exports = {
         // 侧边栏菜单( 一个模块对应一个菜单形式 )
         sidebar: {
             '/article/': [
-                ['/article/','简介'],
-                ['/article/vuePress/article1','利用vuePress搭建博客'],
-                {
-                    title: 'vue相关', // 菜单名
-                    children: [ // 子菜单
-                        ['/article/vue/menu','vue+iview配置导航栏'],
-                        ['/article/vue/mock','vue中利用mock模拟后端接口'],
-                        ['/article/vue/styles','在vue项目中如何组织样式styles文件'],
-                        ['/article/vue/router','vue项目中router设置'],
-                        ['/article/vue/method','vue语法介绍'],
-                        ['/article/vue/function','常用函数整理'],
-                        ['/article/vue/echart','echart在vue中的应用']
-                    ]
-                },
-                {
-                    title: 'css相关',
-                    children: [
-                        ['/article/css/practice-1','css常用布局介绍'],
-                        // ['/article/Console/A002','#A002_插件清单']
-                    ]
-                },
-                {
-                    title: 'javascript相关',
-                    children: [
-                        '/article/javascript/1',
-                        '/article/javascript/2',
-                        '/article/javascript/3',
-                        '/article/javascript/4'
-                    ]
-                },
-                {
-                    title: 'typescript相关',
-                    children: [
-                        ['/article/typescript/practice-1','typescript学习'],
-                        // ['/article/Console/A002','#A002_插件清单']
-                    ]
-                },
-                {
-                    title: 'web安全',
-                    children: [
-                        ['/article/web-security/article-1','谈谈web安全'],
-                        ['/article/web-security/article-2', '常见六大web安全攻防解析',]
-                    ]
-                },
+                // ['/article/','简介'],
+                ['/article/', '目录'],
+                // ['/article/vuePress/article1','利用vuePress搭建博客'],
+                // {
+                //     title: 'vue相关', // 菜单名
+                //     children: [ // 子菜单
+                //         ['/article/vue/menu','vue+iview配置导航栏'],
+                //         ['/article/vue/mock','vue中利用mock模拟后端接口'],
+                //         ['/article/vue/styles','在vue项目中如何组织样式styles文件'],
+                //         ['/article/vue/router','vue项目中router设置'],
+                //         ['/article/vue/method','vue语法介绍'],
+                //         ['/article/vue/function','常用函数整理'],
+                //         ['/article/vue/echart','echart在vue中的应用']
+                //     ]
+                // },
+                // {
+                //     title: 'css相关',
+                //     children: [
+                //         ['/article/css/practice-1','css常用布局介绍'],
+                //         // ['/article/Console/A002','#A002_插件清单']
+                //     ]
+                // },
+                // {
+                //     title: 'javascript相关',
+                //     children: [
+                //         '/article/javascript/1',
+                //         '/article/javascript/2',
+                //         '/article/javascript/3',
+                //         '/article/javascript/4'
+                //     ]
+                // },
+                // {
+                //     title: 'typescript相关',
+                //     children: [
+                //         ['/article/typescript/practice-1','typescript学习'],
+                //         // ['/article/Console/A002','#A002_插件清单']
+                //     ]
+                // },
+                // {
+                //     title: 'web安全',
+                //     children: [
+                //         ['/article/web-security/article-1','谈谈web安全'],
+                //         ['/article/web-security/article-2', '常见六大web安全攻防解析',]
+                //     ]
+                // },
+                // {
+                //     title: '其它',
+                //     children: [
+                //         '/article/other/1',
+                //     ]
+                // },
             ],
-            // '/Thought/': [
-            //     {
-            //         title: '面试',
-            //         children: [
-            //             '/Thought/interview/1',
-            //             '/Thought/interview/2',
-            //         ]
-            //     },
-            // ],
             '/website/': [
                 ['/website/','网站大全'],
             ],

@@ -1,5 +1,7 @@
 # 1. 使用vue-cli3.0创建项目
 
+关键词：`vue ui`，`vue.config.js`
+
 > 本文章涉及到的代码已上传至github[vue-base-frame](https://github.com/darenone/vue-base-frame)
 
 vue-cli 3.x是基于webpack 4.0之上构建的vue脚手架工具，得益于webpack4.0的零配置特性，使得在使用vue-cli 3.0时，零配置就可以开发和打包vue项目

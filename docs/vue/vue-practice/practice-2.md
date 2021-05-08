@@ -1,5 +1,7 @@
 # 2. 改造由vue-cli 3.x创建的模板项目
 
+关键词：`api文件夹`，`src/assets/img文件夹`，`src/assets/font文件夹`，`directive文件夹`，`lib/util.js`，`lib/tool.js`
+
 > 本文章涉及到的代码已上传至github[vue-base-frame](https://github.com/darenone/vue-base-frame)
 
 这个简单的模板文件此时还不能满足实际的开发需求，接下来就是对其进行实际的改造以便于我们开发vue项目，首先说明，下文中所有的修改基本上是在src这个主文件夹里进行

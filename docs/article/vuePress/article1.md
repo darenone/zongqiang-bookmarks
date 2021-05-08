@@ -1,4 +1,5 @@
 
+# 利用vuepress搭建个人博客
 vuePress是静态网页生成器，它可以将markdown文件转化成HTML页面，而且生成的静态网页就是vue项目打包后的静态网页，可以直接部署到服务器上进行访问，它是由vue，vueRouter，webpack驱动的单页应用，
 这里记录一下我是如何从0到1搭建个人博客，并打包发布到GitHub上面
 ### 前期准备
@@ -189,7 +190,7 @@ vuePress
 │   │    │      │   ├── 002.png
 │   │    │      │   ├── 003.png
 │   │    │      ├── article1.md    // 二级目录
-│   │    ├── Pool // 静态池
+│   │    ├── other // 静态池
 │   │    │      ├── SkillStack.md    // 技术栈
 │   │    │      └── Review.md    // 归去来
 │   │    └── README.md  // 求索首页

@@ -1,2 +1,45 @@
-### 为什么要写技术文章
-2016年毕业到现在2019年，从事前端岗位差不多有3年了，虽然平常有记录的习惯，但自己的笔记整理的比较零碎，如果想有更好的发展，就必须养成善于总结的习惯，同行业的很多大牛，他们有一个共同的特点，就是善于去写文章，去总结并且分享和其他人交流，我的理解是学技术还得从业务中去学，但是呢，用某项技术实现了具体的业务，也只是停留在会用的阶段，并没有太多思考，去举一反三，当你要去写文章的时候，为了把文章写好，就会对某一方面有自己的理解和思考，而且当你把你的所知都写下来的时候，这就代表你会哪些，你不会哪些，当文章越写越多的时候，也代表着你知道的懂得越多，所以养成良好的写文章习惯，我认为是成为技术中坚的基础，所以动动自己的手指吧，总结自己会的，去拓展自己不会的领域...
+# 文章列表
+
+2016年毕业至今，从事前端开发工作许久，虽然平常也会记录一些工作中遇到的问题，但是灵灵散散，没有形成系统，这里就想把自己学习过的归纳为一整套可以直接用到开发中从0到1的文章，话不多说，整理很繁琐，开始动起来吧，每天整理一丢丢，也只会越做越少
+
+## vue
+- [vue实战开发笔记](./../vue/vue-practice/practice-1)
+
+待整理
+- [vue+iview配置导航栏](./vue/menu)
+- [vue中利用mock模拟后端接口](./vue/mock)
+- [在vue项目中如何组织样式styles文件](./vue/styles)
+- [vue项目中router设置](./vue/router)
+- [vue语法介绍](./vue/method)
+- [常用函数整理](./vue/function)
+- [echart在vue中的应用](./vue/echart)
+## css相关
+- [px，em，rem，%，vw，vh，vm这些单位的区别](./css/2)
+- [响应式布局/自适应布局/flex弹性盒布局](./css/3)
+- [css常用布局介绍](./css/1)
+
+## JavaScript相关
+- [垃圾代码和优质代码的区别-1](./javascript/1)
+- [js面向对象编程-1](./javascript/2)
+- [promise和async/await的区别](./javascript/3)
+- [javascript运行机制](./javascript/4)
+
+## typeScript相关
+- [typescript学习](./typescript/1)
+
+## nodejs
+- [nodejs相关api学习笔记](./../node/nodeJs/practice-1)
+- [利用nodejs开发博客系统](./../node/myBlog/practice-1)
+
+## 移动端webapp
+- [原生移动端开发笔记](./../web-app/article-1)
+
+## web安全
+- [谈谈web安全](./web-security/1)
+- [常见六大web安全攻防解析](./web-security/2)
+
+## 其它
+- [利用vuepress搭建个人博客](./vuepress/article1)
+- [coding平台vue项目构建计划设置](./other/1)
+- [git的使用](./other/2)
+- [git commit messsage规范](./other/3)
