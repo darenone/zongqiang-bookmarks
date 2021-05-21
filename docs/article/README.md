@@ -4,6 +4,9 @@
 
 ## vue
 - [vue实战开发笔记](./../vue/vue-practice/practice-1)
+- [echart在vue中的应用-封装line](./vue/echart-1)
+- [echart在vue中的应用-封装bar](./vue/echart-2)
+- [echart在vue中的应用-封装map](./vue/echart-3)
 
 待整理
 - [vue+iview配置导航栏](./vue/menu)
@@ -12,7 +15,6 @@
 - [vue项目中router设置](./vue/router)
 - [vue语法介绍](./vue/method)
 - [常用函数整理](./vue/function)
-- [echart在vue中的应用](./vue/echart)
 ## css相关
 - [px，em，rem，%，vw，vh，vm这些单位的区别](./css/2)
 - [响应式布局/自适应布局/flex弹性盒布局](./css/3)
@@ -23,6 +25,7 @@
 - [js面向对象编程-1](./javascript/2)
 - [promise和async/await的区别](./javascript/3)
 - [javascript运行机制](./javascript/4)
+- [es6用法大全-1](./../article/javascript/5)
 
 ## typeScript相关
 - [typescript学习](./typescript/1)
