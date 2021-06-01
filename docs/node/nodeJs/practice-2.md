@@ -131,8 +131,3 @@ let arr2 = _.concat(arr1, 3, 4, [5, 6, 7])
 console.log(name)
 // 天王盖地虎
 ```
-<style>
-    .page p, div, ol {
-        font-size: 14px;
-    }
-</style>

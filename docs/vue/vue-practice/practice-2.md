@@ -245,8 +245,3 @@ export default Mock
 cnpm/npm install mockjs -D // 此依赖只作为开发环境使用，所以后缀不是--save 而是-D，而且打包的时候这个依赖不会打包进去
 ```
 OK，完成上述步骤，一个真正满足开发需求的vue项目框架已经搭建完成，接下里的文章，我都会在这个框架之上修修补补，来搭建起一个功能更加丰富的项目
-<style>
-    .page p, div, ol {
-        font-size: 14px;
-    }
-</style>

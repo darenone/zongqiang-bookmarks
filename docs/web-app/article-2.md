@@ -246,9 +246,3 @@ Unable to preventDefault inside passive event listener due to target being treat
     touch-action: none;
 }
 ```
-
-<style>
-    .page p, div, ol {
-        font-size: 14px;
-    }
-</style>

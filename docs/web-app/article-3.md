@@ -246,9 +246,3 @@ console.log(value) // 返回第一次传递的value
 ```
 
 **备注**：`transformCss()`函数我写在`utils.js`里面，关于具体实现可以参考[web-app](https://github.com/darenone/web-app)
-
-<style>
-    .page p, div, ol {
-        font-size: 14px;
-    }
-</style>

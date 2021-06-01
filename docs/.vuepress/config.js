@@ -45,6 +45,7 @@ module.exports = {
                     { text: 'NodeJs', link: '/node/'},
                     { text: '脚手架学习', link: '/scaffold/'},
                     { text: '移动端开发', link: '/web-app/'},
+                    { text: 'canvas学习', link: '/canvas/'},
                 ]
             },
             {
@@ -247,6 +248,16 @@ module.exports = {
                     collapsable: true
                 }
             ],
+            '/canvas/': [
+                ['/canvas/', '简介'],
+                {
+                    title: 'canvas实战系列',
+                    children: [
+                        '/canvas/article-1',
+                        '/canvas/article-2'
+                    ]
+                }
+            ]
         }
     }
     

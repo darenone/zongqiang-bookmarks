@@ -222,9 +222,3 @@ console.log(buf2.toJSON())
 对比两个buffer是否具有完全相同的字节
 
 eg: 看官方文档
-
-<style>
-    .page p, div, ol {
-        font-size: 14px;
-    }
-</style>

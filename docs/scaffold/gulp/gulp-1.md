@@ -411,8 +411,3 @@ npm run build // 开发完毕，打包你的项目
 
 但是我的css文件夹下只写了`index.less`文件，并没有这个`index.css`文件，不过不用担心，gulp已经自动给你转换了，因为浏览器编译的html是`dist`文件夹里的html
 
-<style>
-    .page p, div, ol {
-        font-size: 14px;
-    }
-</style>

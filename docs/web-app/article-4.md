@@ -271,9 +271,3 @@ function drag () {
 ```
 
 以上，就实现了ul的左右拖动
-
-<style>
-    .page p, div, ol {
-        font-size: 14px;
-    }
-</style>

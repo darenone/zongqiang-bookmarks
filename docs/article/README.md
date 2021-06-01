@@ -41,6 +41,10 @@
 - [谈谈web安全](./web-security/1)
 - [常见六大web安全攻防解析](./web-security/2)
 
+## 系统开发笔记
+- [vue实战开发笔记](./../vue/vue-practice/practice-1)
+- [canvas学习](./../canvas/)
+
 ## 其它
 - [利用vuepress搭建个人博客](./vuepress/article1)
 - [coding平台vue项目构建计划设置](./other/1)

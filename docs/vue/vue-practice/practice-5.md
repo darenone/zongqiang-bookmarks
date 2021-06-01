@@ -615,9 +615,3 @@ export default {
 </script>
 ```
 以上就是vuex的基本用法，通过这篇文章，我相信在项目中使用vuex是没有任何问题的，关于vuex更高级的用法，可以在下一篇文章中学到
-
-<style>
-    .page p, div, ol {
-        font-size: 14px;
-    }
-</style>

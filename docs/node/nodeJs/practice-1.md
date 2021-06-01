@@ -48,8 +48,3 @@ Usage:
                                  Add --insecure to the end of this command to bypass SSL validation of the remote 
 ......
 ```
-<style>
-    .page p, div, ol {
-        font-size: 14px;
-    }
-</style>

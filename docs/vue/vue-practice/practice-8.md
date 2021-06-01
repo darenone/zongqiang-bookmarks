@@ -169,9 +169,3 @@ axios.post(SERVER_URL + url1, qs.stringify(params)).then(function(res) {
   },
 ```
 `proxyTable`变成了`proxy`，其它都是一样的，对于后端人员给的接口的几种情况，上面已经给了解决方案，请参考vue-cli 2.x配置即可
-
-<style>
-    .page p, div, ol {
-        font-size: 14px;
-    }
-</style>

@@ -93,8 +93,3 @@ export default saveLocal
 ::: tip
 `localStorage`和`sessionStorage`里面只能存字符串，所以如果需要存对象或者数组，需要通过JSON.stringify转换为字符串，获取的时候再通过JSON.parse转换回来
 :::
-<style>
-    .page p, div, ol {
-        font-size: 14px;
-    }
-</style>
